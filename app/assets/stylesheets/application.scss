@@ -1,0 +1,75 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self 
+ */
+
+
+@import 'bootstrap';
+@import 'font-awesome';
+@import "tempusdominus-bootstrap-4.css";
+
+#addNew,
+#backBtn {
+    background-image: none;
+    border-color: #007bff;
+}
+
+.border-dotted {
+    border-style: dotted;
+}
+
+button.btn.btn-outline-primary.float-left.border-0.mr-1:hover {
+    background: none;
+    color: green;
+}
+
+.item-control {
+    max-width: 250px;
+    width: 150px;
+}
+
+table td {
+    vertical-align: middle !important;
+}
+
+#reservation_form_box {
+    max-width: 700px;
+    margin-top: 2%;
+
+    .header {
+        border-top: dotted 1px;
+        padding-top: 0.8rem;
+        margin-top: 0.8rem;
+        border-bottom: dotted 1px;
+        padding-bottom: 0.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    form {
+
+
+        label {
+            font-weight: bold;
+        }
+
+
+        .optional::after {
+            content: " optional";
+            font-size: smaller;
+            font-weight: 100;
+            color: gray;
+        }
+    }
+
+}

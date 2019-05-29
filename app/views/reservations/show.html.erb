@@ -1,0 +1,29 @@
+<div class="container mt-5">
+    <% flash.each do |key, value| %>
+        <div class="alert alert-success <%= flash_class(key) %>">
+                <%= value %>
+        </div>
+    <% end %>
+
+<p>
+    <%= button_to reservations_path, class:'btn btn-outline-primary', method: :get do%>
+    <i class="fa fa-arrow-circle-left"></i>
+    <span> Back to Home </span>
+    <% end %>
+</p>
+
+    <ul class="list-group">
+        <h4 class="list-group-item text-capitalize active"><strong>Name:</strong>  <%= @reservation.name %></h4>
+        <li class="list-group-item text-capitalize"><strong>Number of guest:</strong>  <%= @reservation.guestNumber %></li>
+        <li class="list-group-item text-capitalize"><strong>Date:</strong>  <%= @reservation.datetime.to_formatted_s(:weekday) %>, <%= @reservation.datetime.to_formatted_s(:date) %> </li>
+        <li class="list-group-item text-capitalize"><strong>Time:</strong>  <%= @reservation.datetime.to_formatted_s(:time) %></li>
+        <li class="list-group-item text-capitalize"><strong>Phone:</strong>  <%= @reservation.phone %>  </li>
+        <li class="list-group-item text-capitalize"><strong>Email:</strong> <%= @reservation.email %></li>
+    </ul>
+
+    <div class="d-flex pt-3">
+      <span class="col-6 p-0 pr-2"> <%= button_to 'Edit', edit_reservation_path(@reservation.id), method: 'get', class:'btn btn-outline-primary btn-block mr-2 p-2'  %></span>
+      <span class="col-6 p-0 pl-2"><%= link_to 'Remove', reservation_path(@reservation.id), method: 'delete', data: { confirm: 'Are you sure?' }, class:'btn btn-danger btn-block ml-2 p-2'  %></span> 
+    </div>
+      
+</div>

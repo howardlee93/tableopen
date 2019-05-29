@@ -1,0 +1,63 @@
+<div class="container mt-5">
+    <% if flash[:success] %>
+         <div class="notice"><%= flash[:success] %></div>
+    <% end %>
+
+     <% if flash[:error] %>
+         <div class="notice"><%= flash[:error] %></div>
+    <% end %>
+  
+
+    <p>
+        <%= button_to new_reservation_path, class:'btn btn-outline-primary', method: :get do%>
+        <i class="fa fa-plus-circle text-success"> </i>
+        <span> New Reservation</span>
+        <% end %>
+    </p>
+
+
+    <h4 class="list-group-item rounded text-capitalize active">All Reservations (<%= @reservations.count %>) </h4>
+
+
+    <div class="table-responsive">
+        <table class="table table-sm">
+            <thead>
+                <tr class="text-center">
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Size</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th class="d-none d-lg-table-cell">Phone</th>
+                    <th>Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <% @reservations.each_with_index do |reservation, index| %>
+                <tr class="text-center">
+                    <td><%= index+1 %></td>
+                    <td class="text-left text-capitalize"><%= link_to reservation.name, reservation_path(reservation)  %></td>
+                    <td class="font-weight-bold"><%= reservation.guestNumber %></td>
+                    <td><%= reservation.datetime.to_formatted_s(:weekday) %>, <%= reservation.datetime.to_formatted_s(:date) %></td>
+                    <td><%= reservation.datetime.to_formatted_s(:time) %></td>
+                    <td class="d-none d-lg-table-cell"> <%= reservation.phone %></td>
+                    <td class="d-table-cell">
+                        <%= button_to edit_reservation_path(reservation), class:'btn btn-outline-primary d-none d-md-table-cell float-left border-0 mr-1', method: :get do%>
+                        <i class="fa fa-pencil-square-o"></i>
+                        <% end %>
+
+                        <%= button_to reservation_path(reservation), class:'btn btn-danger border-0 rounded-circle', data: { confirm: 'Are you sure?' }, method: :delete do%>
+                        <i class="fa fa-trash-o"></i>
+                        <% end %>
+
+                    </td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+</div>
