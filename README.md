@@ -11,8 +11,8 @@ Things you may want to cover:
 
 * System dependencies
 	sqlite3 as the database for Active Record
- 	Puma as the app server 
- 	Use SCSS for stylesheets
+ 	Puma as the app server  
+ 	Use SCSS for stylesheets  
  	Use Uglifier as compressor for JavaScript assets
  	Use CoffeeScript for .coffee assets and views
  	Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
