@@ -5,20 +5,34 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version 2.5.3
+* Ruby version 2.5.1
+
+* Rails version 5.2.3
 
 * System dependencies
 
+#  sqlite3 as the database for Active Record
+#  Puma as the app server
+# Use SCSS for stylesheets
+# Use Uglifier as compressor for JavaScript assets
+
+# Use CoffeeScript for .coffee assets and views
+# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+# Use Redis adapter to run Action Cable in production
+# Use ActiveModel has_secure_password
+
+
 * Configuration
 
-* Database creation
+-Uses PostgresSql to deploy to Heroku in production 
 
-* Database initialization
+* To run
+	
+	In command line: 
 
-* How to run the test suite
+ - $bundle
+ 
+ - $rails db:migrate (for those using Rails 4: $ rake db:migrate)
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ - $rails s
