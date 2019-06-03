@@ -1,11 +1,18 @@
 Rails.application.routes.draw do
 	resources :reservations
+	resources :static_pages
+
+
+
+  	#get  '/signup',  to: 'users#new'
+
+  	get  '/signup', to: 'static_pages#form'
+
+
+  	get 'reservations', to: 'reservations#index'
 
   	root 'static_pages#home'
 
-  	get  '/signup',  to: 'users#new'
-
-  	get 'reservations', to: 'reservations#index'
 
 
   # resources :reservations
