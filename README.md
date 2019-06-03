@@ -11,14 +11,23 @@ Things you may want to cover:
 
 * System dependencies
 	sqlite3 as the database for Active Record
+
  	Puma as the app server  
+ 	
  	Use SCSS for stylesheets  
+ 	
  	Use Uglifier as compressor for JavaScript assets
+ 	
  	Use CoffeeScript for .coffee assets and views
+ 	
  	Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+ 	
  	Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+ 	
  	Use Redis adapter to run Action Cable in production
+ 	
  	Use ActiveModel has_secure_password
+ 	
  	Use Bootstrap 4 and Tempus Dominus BootStrap4 for styling
  	- to install:
  		1. Add gem 'bootstrap4-datetime-picker-rails' to your Gemfile
@@ -33,6 +42,7 @@ Things you may want to cover:
 -Uses PostgresSql to deploy to Heroku in production 
 
 * To run
+
 	In command line: 
 
  - $bundle
