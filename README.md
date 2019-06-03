@@ -10,7 +10,8 @@ Things you may want to cover:
 * Rails version 5.2.3
 
 * System dependencies
-	sqlite3 as the database for Active Record
+
+	sqlite3 as the database for Active Record 
 
  	Puma as the app server  
  	
