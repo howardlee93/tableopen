@@ -1,8 +1,6 @@
 <div class="container mt-5">
-    <% flash.each do |key, value| %>
-        <div class="alert alert-success <%= flash_class(key) %>">
-                <%= value %>
-        </div>
+    <% if flash[:success] %>
+         <div class="notice"><%= flash[:success] %></div>
     <% end %>
 
 <p>

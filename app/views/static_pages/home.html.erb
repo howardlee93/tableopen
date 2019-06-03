@@ -2,15 +2,17 @@
 <main id = "root"></main>
 
 
-<h1>This is the home page</h1>
+<h1 style>ProjectX</h1>
+<p style>
+  This is the home page and will be replaced with React frontend in the future.
+</p>
+
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Search for restaurants:") %>
+  <%= text_field_tag(:q, "McDonalds") %>
+  <%= submit_tag("Search") %>
+<% end %>
 
 
-
-<h3>Welcome</h3>
-
-
-<h4>Log in/ sign up</h4>
-
-<h4>View reservations</h4>
-
-<h5>Search</h5>
+<%=link_to "Sign in/ log in" %>
+<p><%=link_to "Manage reservations", reservations_path %></p>

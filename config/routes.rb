@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
-  resources :reservations
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'reservations#index'
+	resources :reservations
+
+  	root 'static_pages#home'
+
+  	get  '/signup',  to: 'users#new'
+
+  	get 'reservations', to: 'reservations#index'
+
+
+  # resources :reservations
+  # # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # root 'reservations#index'
 end

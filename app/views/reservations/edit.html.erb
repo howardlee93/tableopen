@@ -1,9 +1,8 @@
 <div id="reservation_form_box" class="container col-xs-12 mt-5">
-    <% flash.each do |key, value| %>
-        <div class="alert alert-success <%= flash_class(key) %>">
-                <%= value %>
-        </div>
+    <% if flash[:success] %>
+         <div class="notice"><%= flash[:success] %></div>
     <% end %>
+
 
    <p>
        <%= button_to :back, class:'btn btn-outline-primary', data: { confirm: 'Discard changes?' }, method: :get do%>
