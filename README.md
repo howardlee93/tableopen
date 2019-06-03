@@ -39,14 +39,14 @@ Things you may want to cover:
 
 * Configuration
 
--Uses PostgresSql to deploy to Heroku in production 
+Uses PostgresSql to deploy to Heroku in production 
 
 * To run
 
 	In command line: 
 
- - $bundle
- 
- - $rails db:migrate (for those using Rails 4: $ rake db:migrate)
+		$bundle
 
- - $rails s
+		$rails db:migrate (for those using Rails 4: $ rake db:migrate)
+
+		$rails s
