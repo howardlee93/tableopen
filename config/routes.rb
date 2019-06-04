@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
+  resources :users
 	resources :reservations
 	resources :static_pages
 
 
 
-  	#get  '/signup',  to: 'users#new'
+  	get  '/signup',  to: 'users#new'
 
-  	get  '/signup', to: 'static_pages#form'
+  	#get  '/signup', to: 'static_pages#form'
 
 
   	get 'reservations', to: 'reservations#index'
