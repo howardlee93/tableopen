@@ -12,6 +12,9 @@ gem 'bootstrap4-datetime-picker-rails'
 gem 'jquery-rails'
 
 
+#adding react to the project
+# gem 'webpacker'
+#gem 'react_on_rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
