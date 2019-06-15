@@ -158,13 +158,13 @@ function (_React$Component) {
           style: restaurantBox
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: business.image_url,
-          height: "40%",
+          height: "20%",
           width: "30%"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           style: restaurantInfo
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, business.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Rating:", business.rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Phone: ", business.display_phone), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Address:", business.location.display_address), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, business.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Rating:", business.rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Phone: ", business.display_phone), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Address:", business.location.display_address), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           href: business.url
-        }, " Website")));
+        }, " Website"))));
       }));
     }
   }]);

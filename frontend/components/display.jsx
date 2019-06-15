@@ -47,13 +47,15 @@ class Display extends React.Component{
       		{businesses.map((business) => {  
       			return(
       				<div key={business.id} style={restaurantBox}>
-        				<img src={business.image_url} height='40%' width='30%' ></img>
+        				<img src={business.image_url} height='20%' width='30%' ></img>
         				<div style={restaurantInfo}>
 	      					<h5>{business.name}</h5>
-	        				<h5>Rating:{business.rating}</h5>
-				             <h5>Phone: {business.display_phone}</h5>
-							<h5>Address:{business.location.display_address}</h5>
+	        				<p>Rating:{business.rating}</p>
+				            <p>Phone: {business.display_phone}</p>
+							<p>Address:{business.location.display_address}</p>
+							<p>
 				 			<a href={business.url}> Website</a>
+				 			</p>
 			 			</div>
 			 			
 			      	</div>
