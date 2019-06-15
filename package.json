@@ -5,14 +5,17 @@
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
+    "axios": "^0.19.0",
     "babel-loader": "^8.0.6",
     "lodash": "^4.17.11",
+    "node-sass": "^4.12.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-logger": "^1.1.0",
     "react-redux": "^7.0.3",
     "react-router-dom": "^5.0.1",
     "redux": "^4.0.1",
+    "save": "^2.4.0",
     "webpack": "^4.33.0",
     "webpack-cli": "^3.3.2"
   },
@@ -24,7 +27,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack --mode=development --watch"
   },
   "repository": {
     "type": "git",
