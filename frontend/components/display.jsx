@@ -1,12 +1,21 @@
 import React from 'react';
 
 
+const restaurantResults ={
+	display: 'flex',
+	flexDirection:'row',
+	//flexWrap: 'wrap'
+}
+
+
 
 const restaurantBox = {
-	borderRadius: '5px',
+	borderRadius: '10px',
 	boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)',
 	transition:' 0.3s',
-	backgroundColor: 'grey'
+	backgroundColor: 'gray',
+	margin: '5px',
+	padding: '5px',
 
 
 }
@@ -34,16 +43,16 @@ class Display extends React.Component{
 		const {businesses} = this.props;
 
 		return (
-			<div>
+			<div style ={restaurantResults}>
       		{businesses.map((business) => {  
       			return(
-      				<div key={business.id} className={restaurantBox}>
-        				<img src={business.image_url} height='30%' width='30%'></img>
-        				<div className={restaurantInfo}>
+      				<div key={business.id} style={restaurantBox}>
+        				<img src={business.image_url} height='40%' width='30%' ></img>
+        				<div style={restaurantInfo}>
 	      					<h5>{business.name}</h5>
-	        				<h5>{business.rating}</h5>
-				             <h5>{business.display_phone}</h5>
-							<h5>{business.location.display_address}</h5>
+	        				<h5>Rating:{business.rating}</h5>
+				             <h5>Phone: {business.display_phone}</h5>
+							<h5>Address:{business.location.display_address}</h5>
 				 			<a href={business.url}> Website</a>
 			 			</div>
 			 			

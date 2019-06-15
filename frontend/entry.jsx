@@ -23,6 +23,7 @@ const headers = {
 }
 
 
+//result css 
 
 
 class Root extends React.Component{
@@ -95,7 +96,7 @@ class Root extends React.Component{
 	render(){
 		return(	
 			<div className = 'container'>
-			<h1>React is working!</h1>
+			<h1>ProjectX!</h1>
 			<Search onFormSubmit = {this.onFormSubmit}/>
 			<Display businesses={this.state.businesses}/>
 

@@ -116,11 +116,18 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
+var restaurantResults = {
+  display: 'flex',
+  flexDirection: 'row' //flexWrap: 'wrap'
+
+};
 var restaurantBox = {
-  borderRadius: '5px',
+  borderRadius: '10px',
   boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)',
   transition: ' 0.3s',
-  backgroundColor: 'grey'
+  backgroundColor: 'gray',
+  margin: '5px',
+  padding: '5px'
   /* Add some padding inside the card container */
 
 };
@@ -143,17 +150,19 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       var businesses = this.props.businesses;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, businesses.map(function (business) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: restaurantResults
+      }, businesses.map(function (business) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           key: business.id,
-          className: restaurantBox
+          style: restaurantBox
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: business.image_url,
-          height: "30%",
+          height: "40%",
           width: "30%"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: restaurantInfo
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, business.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, business.rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, business.display_phone), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, business.location.display_address), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          style: restaurantInfo
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, business.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Rating:", business.rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Phone: ", business.display_phone), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Address:", business.location.display_address), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           href: business.url
         }, " Website")));
       }));
@@ -343,7 +352,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 var url = "https://api.yelp.com/v3/businesses/search";
 var API_KEY = 'E9mCBpSwbqOORvzNJtP30UPRoWMzgumu4-gJCtmA6EC0N14efauMdGRK18vYhVDsn48NbmFKgft0JX10g9Isz1QmAVtE1zNT7mwVW_waimO8XZcdI9WYu9b4h_T2XHYx';
 var headers = {
-  Authorization: "Bearer ".concat(API_KEY)
+  Authorization: "Bearer ".concat(API_KEY) //result css 
+
 };
 
 var Root =
@@ -411,7 +421,7 @@ function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "React is working!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_search__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "ProjectX!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_search__WEBPACK_IMPORTED_MODULE_2__["default"], {
         onFormSubmit: this.onFormSubmit
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_display__WEBPACK_IMPORTED_MODULE_3__["default"], {
         businesses: this.state.businesses
