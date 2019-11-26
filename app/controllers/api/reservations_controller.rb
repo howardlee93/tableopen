@@ -4,67 +4,50 @@ class ReservationsController < ApplicationController
   # GET /reservations
   # GET /reservations.json
   def index
-    @reservations = Reservation.all
+    user = User.find_by(id: params[:userId])
+    if user
+      @reservations = user.reservations.order(:date)
+    else
+      render json :["User not found"], status: 404
+    end 
   end
 
   # GET /reservations/1
   # GET /reservations/1.json
   def show
     @reservation = Reservation.find(params[:id])
+    render :show 
   end
 
-  # GET /reservations/new
-  def new
-    @reservation = Reservation.new
-  end
-
-  # GET /reservations/1/edit
-  def edit
-    @reservation = Reservation.find(params[:id])
-  end
-
+ 
   # POST /reservations
   # POST /reservations.json
   def create
     @reservation = Reservation.new(reservation_params)
 
     if @reservation.save
-      flash[:success] = 'Reservation created!'
-      redirect_to reservations_path
+      render 'api/reservations/show'
     else
-      flash[:error] = 'Error creating reservation'
-      redirect_to :new
+      render json: @reservation.errors.full_messages, status: 422
+
     end 
 
 
   end
 
-  # PATCH/PUT /reservations/1
-  # PATCH/PUT /reservations/1.json
-  def update
-    @reservation = Reservation.find(params[:id])
-    @reservation.update(reservation_params)
-
-    if @reservation.save
-      flash[:success] = 'Reservation saved!'
-    else 
-      flash[:error] = 'Error saving reservation'
-      render :edit
-    end 
-
-  end
+  
 
   # DELETE /reservations/1
   # DELETE /reservations/1.json
   def destroy
-    Reservation.find(params[:id]).destroy
-   redirect_to reservations_path
+    reservation = Reservation.find(params[:id])
+    if reservation
+      reservation.destroy
+      render json: reservation
+    else 
+      render json :["Reservation doesnt exist"], status: 404 
+    end 
   end
-
-  def destroy_all
-    Reservation.all.destroy_all
-    redirect_to reservations_path
-  end 
   
 
   private
