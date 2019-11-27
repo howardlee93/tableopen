@@ -1,18 +1,14 @@
 Rails.application.routes.draw do
-  resources :users
-	resources :reservations
-	resources :static_pages
 
+	namespace :api, defauklts: {format: :json} do 
+		resource :session, only: [:create, :destroy, :show, :new]
+		resources :users do
+			resources :restaurants, only: [:create]
+		end 
 
+	end 
 
-  	get  '/signup',  to: 'users#new'
-
-  	#get  '/signup', to: 'static_pages#form'
-
-
-  	get 'reservations', to: 'reservations#index'
-
-  	root 'static_pages#home'
+  	root 'static_pages#root'
 
 
 
