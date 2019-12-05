@@ -43,3 +43,16 @@ export const requestSingleFavorite = id => dispatch =>(
 		})
 	);
 
+export const requestUserFavorites = userId => dispatch => (
+	APIUtil.fetchUserFavorites(userId)
+	.then(favorites => 
+		dispatch(receiveAllFavorites(favorites)),
+		err => dispatch(receiveFavoriteErrors(err.responseJSON)))
+	);
+
+export const deleteFavorite = id => dispatch => (
+	APIUtil.deleteFavorite(id)
+	.then(favorite => dispatch(removeFavorite(favorite)),
+		err => dispatch(receiveFavoriteErrors(err.responseJSON)))
+	);
+
