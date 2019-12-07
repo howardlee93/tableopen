@@ -10,9 +10,12 @@ import {
 } from 'react-router-dom';
 
 
-export default const App =() =>{
+const App = () => (
 		<div>
 			<h1>Testing</h1>
 		</div>
-}
+);
+
+export default App;
+
 

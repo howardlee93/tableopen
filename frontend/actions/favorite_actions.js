@@ -2,7 +2,7 @@ import * as APIUtil from '../util/favorite_api_util';
 
 export const RECEIVE_ALL_FAVORITES = 'RECEIVE_ALL_FAVORITES';
 export const RECEIVE_SINGLE_FAVORITE = 'RECEIVE_SINGLE_FAVORITE';
-export const DESTROY_FAVORITE = 'DESTROY_FAVORITE'l
+export const DESTROY_FAVORITE = 'DESTROY_FAVORITE';
 
 export const RECEIVE_FAVORITE_ERRORS = 'RECEIVE_FAVORITE_ERRORS';
 
@@ -28,7 +28,7 @@ export const receiveFavoriteErrors = errors =>({
 
 
 export const createFavorite = favorite => dispatch => (
-	APIUtil.createFavorite(favorite)
+	APIUtil.createFavorites(favorite)
 	.then(newFavorite => {
 		dispatch(receiveSingleFavorite(newFavorite));
 	},

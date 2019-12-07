@@ -14,7 +14,7 @@ const reservationsReducer = (state ={}, action) => {
 			return action.reservations;
 		case RECEIVE_SINGLE_RESERVATION:
 			const reservation = action.reservation;
-			return Object.assign({}, state {[reservation.id]: reservation});
+			return Object.assign({}, state, {[reservation.id]: reservation});
 		case DESTROY_RESERVATION:
 			let newState = Object.assign({}, state);
 			delete newState[action.reservationId];

@@ -4,7 +4,7 @@ import modal from './modal_reducer';
 import loading from "./loading_reducer";
 
 
-export const default combineReducers({
+export default combineReducers({
 	modal,
 	loading
 });

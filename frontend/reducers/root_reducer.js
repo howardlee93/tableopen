@@ -12,3 +12,6 @@ const rootReducer = combineReducers({
 	ui: uiReducer,
 	entities: entitiesReducer
 })
+
+export default rootReducer;
+ 

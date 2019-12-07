@@ -22,3 +22,6 @@ const reviewErrorsReducer = (state= [], action) => {
 	}
 
 }
+
+export default reviewErrorsReducer;
+ 

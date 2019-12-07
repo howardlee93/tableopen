@@ -8,8 +8,8 @@ const Root = ({ store }) => (
   <Provider store={store}>
     <BrowserRouter>
       <App />
-    </Router>
   </BrowserRouter>
+  </Provider>
 );
 
 export default Root;

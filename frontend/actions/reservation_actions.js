@@ -38,7 +38,7 @@ export const createReservation = reservation => dispatch => (
 
 export const requestSingleReservation = id => (
 	APIUtil.fetchSingleReservation(id)
-		then(reservation =>{
+		.then(reservation =>{
 			dispatch(receiveSingleReservation(reservation));
 			return reservation;
 		})	
@@ -46,19 +46,14 @@ export const requestSingleReservation = id => (
 
 
 export const requestUserReservations = userId => dispatch =>(
-	APIUtil.fetchUserReservation(userId)
-		then((reservation) => dispatch(receiveAllReservations(reservations)),
+	APIUtil.fetchUserReservations(userId)
+		.then((reservation) => dispatch(receiveAllReservations(reservations)),
 			err => dispatch(receiveReservationErrors(err.responseJSON)))
 	);
 
-export const updateReservation = reservation => dispatch =>(
-	APIUtil.updateReservation(reservation)
-		then(updatedReservation => dispatch(receiveSingleReservation(updatedReservation)),
-			err => dispatch(receiveReservationErrors(err.responseJSON)))
-	);
 
 export const deleteReservation = id => dispatch =>(
 	APIUtil.deleteReservation(id)
-	then(reservation => dispatch(destroyReservation(reservation.id)),
+		.then(reservation => dispatch(destroyReservation(reservation.id)),
 		err => dispatch(receiveReservationErrors(err.responseJSON)))
 	); 
