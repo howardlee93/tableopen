@@ -1,0 +1,16 @@
+//reservation_errors_reducer.js
+
+import {
+  RECEIVE_RESERVATION_ERRORS,
+} from '../actions/reservation_actions';
+
+export default (state = [], action) => {
+	Object.freeze(state);
+	switch(action.type){
+		case RECEIVE_RESERVATION_ERRORS:
+			return action.errors;
+		default:
+			return state;
+			
+	}
+}
