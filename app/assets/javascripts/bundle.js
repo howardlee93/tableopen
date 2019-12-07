@@ -576,7 +576,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var App = function App() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Testing"));
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "ProjectX"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Hi! This web application was built with Ruby on Rails and React/Redux as a tribute to the popular reservation service OpenTable."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "This is my capstone project for my Object Oriented Design and Analysis class"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, " Copyright Howard Lee ", new Date().getFullYear()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/howardlee93",
+    target: "_blank"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Github")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/https://www.linkedin.com/in/leehoward93/",
+    target: "_blank"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "LinkedIn")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://howardlee93.github.io/",
+    target: "_blank"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Portfolio"))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
