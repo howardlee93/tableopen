@@ -1,6 +1,6 @@
 import React from 'react';
 
-
+import SearchContainer from './search/search_container';
 import {
   Route,
   Redirect,
@@ -14,8 +14,7 @@ const App = () => (
 
 		<div>
 			<h1>ProjectX</h1>
-
-
+				<SearchContainer/>
 
 
 

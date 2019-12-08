@@ -36,9 +36,6 @@ class Display extends React.Component{
 
 	}
 
-
-
-
 	render(){
 		const {businesses} = this.props;
 

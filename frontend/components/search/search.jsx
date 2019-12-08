@@ -2,6 +2,8 @@
 
 import React from 'react';
 
+import { withRouter } from 'react-router-dom';
+
 
 
 class Search extends React.Component{
@@ -9,46 +11,46 @@ class Search extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
-      		term: '',
+      		term: ''
     	};
-    	this.handleSearchChange = this.handleSearchChange.bind(this);
-    	this.handleFormSubmit = this.handleFormSubmit.bind(this);
 
+    	this.handleFormSubmit = this.handleFormSubmit.bind(this);
 
 	}
 
-
-    handleSearchChange(e) {
-        this.setState({
-            term: e.target.value
+    update(field) {
+        return e => this.setState({
+            [field]: e.currentTarget.value
         });
     }
 
-    handleFormSubmit (e) {
-        const {onFormSubmit} = this.props;
-        const { term } = this.state;
-
+    handleFormSubmit(e) {
         e.preventDefault();
-        
-        onFormSubmit(term);
-
-
+        this.props.openModal("loading");
+        this.props.searchRestaurants(this.state.term)
+            .then(() => this.props.closeModal())
+            .then(()=>
+                this.setState({
+                    term: ''
+                })
+                )
+            .then(()=> this.props.history.push("/restaurants"))
     }	
 
 	render(){
 		 return (
             <div className = "searchForm">
-                {/*add an event listener of form submit so the state only get set when the form is submitted*/}
-                <form onSubmit={(e) => this.handleFormSubmit(e)}>
-                    <label 
-                    >I am looking for food in: </label>
+                <h3> make a reservation</h3>
+                <form onSubmit={e=> this.handleFormSubmit(e)}>
+                    <label>I am looking for food in: </label>
                     <input 
                     type = 'text'
-                    placeholder = 'enter ZIP, city, neighberhood, state, or address'
-                    value = {this.state.term}
-                    onChange = {this.handleSearchChange}
+                    placeholder="Location, Restaurant, or Cuisine"
+                    value={this.state.term}
+                    onChange = {this.update('term')}
                     />
-                    <button type = 'submit' > Go! </button>
+
+                  <button type="submit" onClick={this.handleFormSubmit}>Find a Table </button>
                 </form>
             </div>
         );
@@ -56,4 +58,5 @@ class Search extends React.Component{
 	}
 }
 
-export default Search;
+export default withRouter(Search);
+
