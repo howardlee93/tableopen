@@ -14,8 +14,12 @@ const logoutCurrentUser = () =>({
 	type: LOGOUT_CURRENT_USER
 });
 
+export const receiveErrors = errors => ({
+	type: RECEIVE_SESSION_ERRORS,
+	errors
+})
 
-export const createNewUser = formUser => dispatch => APIUtil.postUser(formUser)
+export const signup = formUser => dispatch => APIUtil.postUser(formUser)
 	.then(user => dispatch(receiveCurrentUser(user)));
 	
 
@@ -25,3 +29,4 @@ export const login = formUser => dispatch => APIUtil.postSession(formUser)
 
 export const logout = () => dispatch => APIUtil.deleteSession()
 	.then(()=> dispatch(logoutCurrentUser()));
+

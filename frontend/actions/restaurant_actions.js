@@ -58,7 +58,7 @@ export const  createRestaurant = restaurant => dispatch =>{
 };
 
 
-export const searchRestaraurants = searchTerms => dispatch =>{
+export const searchRestaurants = searchTerms => dispatch =>{
 	dispatch(loadingRestaurants());
 	return APIUtil.fetchSearchRestaurants(searchTerms)
 	.then(searchResult => dispatch(receiveAllRestaurants(searchResult)),
