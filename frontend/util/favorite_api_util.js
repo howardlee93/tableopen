@@ -1,7 +1,6 @@
-import axios from 'axios';
 
 export const createFavorites = id => (
-	axios({
+	$.ajax({
 		method: "POST",
 		url: '/api/favorites',
 		data: {id}
@@ -9,7 +8,7 @@ export const createFavorites = id => (
 	);
 
 export const fetchUserFavorites = userId => (
-	axios({
+	$.ajax({
 		method: 'GET',
 		url: '/api/favorites',
 		data: {userId}
@@ -17,14 +16,14 @@ export const fetchUserFavorites = userId => (
 	);
 
 export const fetchSingleFavorite = id => (
-	axio({
+	$.ajax({
 		method: 'GET',
 		url: `/api/favorites/${id}`
 	})
 	);
 
 export const deleteFavorite = id => (
-	axios({
+	$.ajax({
 		method: 'DELETE',
 		url: `/api/favorites/${id}`,
 		data: {id}

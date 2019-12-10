@@ -1,7 +1,6 @@
-import axios from 'axios';
 
 export const createReservation = (reservation) => (
-	axios({
+	$.ajax({
 		method: 'POST',
 		url: '/api/reservations',
 		data: {reservation}
@@ -10,7 +9,7 @@ export const createReservation = (reservation) => (
 
 
 export const fetchUserReservations = userId => (
-	axios({
+	$.ajax({
 		method: 'GET',
 		url: '/api/reservations',
 		data: {userId}
@@ -18,14 +17,14 @@ export const fetchUserReservations = userId => (
 );
 
 export const fetchSingleReservation = (id) => (
-	axios({
+	$.ajax({
 		method: 'GET',
 		url: `/api/reservations/${id}`
 	})
 );
 
 export const deleteReservation =(id) =>(
-	axios({
+	$.ajax({
 		method: 'DELETE',
 		url: `/api/reservations/${id}`
 	})

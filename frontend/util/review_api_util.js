@@ -1,9 +1,8 @@
-import axios from 'axios';
 
 
 
 export const createReview = review =>(
-axios({
+$.ajax({
 	method: 'POST',
 	url: '/api/reviews',
 	data: {review}
@@ -12,14 +11,14 @@ axios({
 
 
 export const fetchReview = reviewId => (
-	axios({
+	$.ajax({
 		method: 'GET',
 		url: `/api/reviews/${reviewId}`
 	})
 	);
 
 export const fetchRestaurantReviews = restaurantId => (
-	axios({
+	$.ajax({
 		method:'GET',
 		url: '/api/reviews',
 		data: {restaurantId}
@@ -27,14 +26,14 @@ export const fetchRestaurantReviews = restaurantId => (
 	);
 
 export const deleteReview = reviewId => (
-	axios({
+	$.ajax({
 		method: 'DELETE',
 		url: `/api/reviews/${reviewId}`
 	})
 	);
 
 export const updateReview = review => (
-	axios({
+	$.ajax({
 		method: 'PATCH',
 		url: `/api/reviews/${review.id}`,
 		data: {review}

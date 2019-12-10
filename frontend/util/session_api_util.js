@@ -1,8 +1,7 @@
-import axios from 'axios';
 
 
 export const postUser = (user) =>{
-	return axios({
+	return $.ajax({
 		url: '/api/users',
 		method:'POST',
 		data: {user}
@@ -11,7 +10,7 @@ export const postUser = (user) =>{
 
 
 export const postSession = (user) =>{
-	return axios({
+	return $.ajax({
 		url:'/api/session',
 		method:'POST',
 		data: {user}
@@ -19,7 +18,7 @@ export const postSession = (user) =>{
 };
 
 export const deleteSession = () =>{
-	return axios({
+	return $.ajax({
 		url:'/api/session',
 		method:'DELETE'
 	})

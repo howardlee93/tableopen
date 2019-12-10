@@ -1,4 +1,5 @@
-// review_index.jsx	import {connect} from 'react-redux';
+// review_index.jsx	
+
 
 import React from 'react';
 import ReviewIndexItem from './review_index_item';

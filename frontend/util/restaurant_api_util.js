@@ -1,7 +1,6 @@
-import axios from 'axios';
 
 export const fetchAllRestaurants = () => (
-	axios({
+	$.ajax({
 		method: 'GET',
 		url: '/api/restaurants',
 	})
@@ -9,14 +8,14 @@ export const fetchAllRestaurants = () => (
 
 
 export const fetchSingleRestaurant = restaurantId => (
-	axios({
+	$.ajax({
 		method: 'GET',
 		url: `/api/restaurants/${restaurantId}`
 	})
 );
 
 export const createRestaurant = (restaurant) => (
-	axios({
+	$.ajax({
 		method: 'POST',
 		url: `/api/users/${restaurant.owner_id}/restaurants/`,
 		data: {restaurant}
@@ -24,7 +23,7 @@ export const createRestaurant = (restaurant) => (
 );
 
 export const fetchSearchRestaurants =(searchTerms) =>(
-	axios({
+	$.ajax({
 		method: 'GET',
 		url: '/api/restaurants/',
 		data: {searchTerms}
