@@ -1,12 +1,24 @@
 
 class User < ApplicationRecord
-	validates :email, :password_digest, :session_token, presence: true 
+	validates :email, :first_name, :last_name, :password_digest, :session_token, presence: true 
 	validates :password, length: {minimum: 6, allow_nil: true}
 
 	has_many :reservations,
 		primary_key: :id,
 		foreign_key: :user_id,
 		class_name: :Reservation
+
+	has_many :reviews,
+		primary_key: :id,
+		foreign_key: :user_id,
+		class_name: :Review
+
+	has_many :favorites
+
+	has_many :favorited_restaurants,
+		through: :favorites,
+		source: :restaurant
+
 
 	attr_reader :password
 
@@ -21,6 +33,8 @@ class User < ApplicationRecord
 	def password=(password)
 		@password = password
 		self.password_digest = BCrypt::Password.create(password)
+
+
 	end 
 
 	def is_password?(password)
@@ -40,3 +54,7 @@ class User < ApplicationRecord
 
 
 end
+
+
+
+
