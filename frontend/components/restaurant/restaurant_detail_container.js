@@ -23,11 +23,11 @@ const mapStateToProps = (state, ownProps) =>({
 const mapDispatchToProps = dispatch => ({
 	requestSingleRestaurant: id => dispatch(requestSingleRestaurant(id)),
 	createFavorite: favorite => dispatch(createFavorite(favorite)),
-	deleteReview: reviewId => dispatch(deleteReview(reviewId))
+	deleteReview: reviewId => dispatch(deleteReview(reviewId)),
 	deleteFavorite: favoriteId => dispatch(deleteFavorite(favoriteId))
 
 });
 
 export default connect(
 	mapStateToProps,
-	mapDispatchToState)
+	mapDispatchToProps)

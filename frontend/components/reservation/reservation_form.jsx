@@ -26,7 +26,7 @@ class ReservationForm extends React.Component{
 	update(field){
 		return e=>
 			this.setState({
-				[field]: e.currentTarget.value;
+				[field]: e.currentTarget.value
 			});
 	}
 
@@ -66,7 +66,7 @@ class ReservationForm extends React.Component{
 		let timeArr = [];
 		let openTime = this.props.restaurants[this.state.restaurant_id].openTime;
 		openTime = parseInt(openTime.split(":")[0]);
-		let closeTime = this,props.restaurants[this.state.restaurant_id].closeTime;
+		let closeTime = this.props.restaurants[this.state.restaurant_id].closeTime;
 		closeTime = parseInt(closeTime.split(":"[0]));
 
 		for (let i = openTime; i < closeTime; i++){

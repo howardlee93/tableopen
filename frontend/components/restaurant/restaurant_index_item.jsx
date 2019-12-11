@@ -24,7 +24,7 @@ function restaurantIndexItem(props){
 	if (sum ===  0){
 		avgRating = "No ratings yet";
 	}else{
-		avgRating = (Math.round(sum/restaurant.ratingArr.length *10) / 10)..toFixed(1);
+		avgRating = (Math.round(sum/restaurant.ratingArr.length *10) / 10).toFixed(1);
 
 	}
 	return(

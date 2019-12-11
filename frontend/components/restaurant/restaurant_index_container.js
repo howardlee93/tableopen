@@ -19,7 +19,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch =>({
-	requestAllRestaurants: () => dispatch(requestAllRestaurants());
+	requestAllRestaurants: () => dispatch(requestAllRestaurants()),
 	requestSingleRestaurant: () => dispatch(requestSingleRestaurant())
 });
 

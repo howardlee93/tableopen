@@ -56,8 +56,8 @@ class ReviewForm extends React.Component{
 	ratingStars(){
 		let starArr = [];
 		for (let i = 1; i< 6; i++){
-			let id,;
-			let maxRating ? this.state.hover ? this.state.hoverV: this.state.rating;
+			let id;
+			let maxRating = this.state.hover ? this.state.hoverV: this.state.rating;
 			if (i <= maxRating){
 				id = 'full';
 			}
@@ -131,3 +131,5 @@ class ReviewForm extends React.Component{
   	}
 
 }
+
+export default ReviewForm;

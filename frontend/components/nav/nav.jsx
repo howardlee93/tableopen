@@ -16,7 +16,7 @@ const Nav = ({ currentUser, login, logout, openModal, history }) => {
 	      <div className = "navbar-session">
 	        <div className="nav-header">
 	          <Link to="/" className="top-bar-logo-link">
-	            <h1 className="top-bar-logo-name">StarTable</h1>
+	            <h1 className="top-bar-logo-name">ProjectX</h1>
 	          </Link>
 	          <p> Find Michelin-Starred Restaurants Near You</p>
 	        </div>
@@ -34,6 +34,21 @@ const Nav = ({ currentUser, login, logout, openModal, history }) => {
 	);
 
 	const personalGreeting = () => (
+	<nav className="navbar-container">
+      <div className = "navbar-session">
+      <div className="nav-header">
+        <Link to="/" className="top-bar-logo-link">
+          <h1 className="top-bar-logo-name">StarTable</h1>
+        </Link>
+        <p> Find Michelin-Starred Restaurants Near You</p>
+      </div>
+        <div className="nav-greeting">
+          <h2 className="header-name">Hi, {currentUser.firstName}</h2>
+          <Link className="btn" id="btn-profile" to={`/users/${currentUser.id}`}>My Profile</Link>
+          <button className="btn btn-demo" onClick={handleLogout}>Log Out</button>
+        </div>
+      </div>
+    </nav>
 	);
 
 	return (
@@ -42,3 +57,5 @@ const Nav = ({ currentUser, login, logout, openModal, history }) => {
 		sessionLinks()
 	);
 };
+
+export default Nav;
