@@ -1,5 +1,5 @@
 .hero-img-container {
-  background: url("https://upload.wikimedia.org/wikipedia/commons/1/15/Veggie_burger_flickr_user_bradleyj_creative_commons.jpg") no-repeat;
+  background: url(image-path("hero.jpg")) no-repeat;
   background-size: cover;
   background-position: 0 -40px;
   height: 360px;
@@ -57,37 +57,37 @@
 }
 
 #new_york {
-  background: url("https://res.cloudinary.com/chengzii/image/upload/v1523398619/ny_city.jpg") no-repeat;
+  background: url(image-path("ny.jpg")) no-repeat;
   background-size: cover;
 }
 
 #los_angeles {
-  background: url("https://res.cloudinary.com/chengzii/image/upload/v1523398699/la_city.jpg");
+  background: url(image-path("la.jpg"));
   background-size: cover;
 }
 
 #chicago {
-  background: url("https://res.cloudinary.com/chengzii/image/upload/v1523398619/chicago_city.jpg");
+  background: url(image-path("chicago.jpg"));
   background-size: cover;
 }
 
 #san_francisco {
-  background: url("https://res.cloudinary.com/chengzii/image/upload/v1523398619/sf_city.jpg");
+  background: url(image-path("sf.jpg"));
   background-size: cover;
 }
 
 #washington {
-  background: url("https://res.cloudinary.com/chengzii/image/upload/v1523398619/dc_city.jpg");
+  background: url(image-path("dc.jpg"));
   background-size: cover;
 }
 
 #seattle {
-  background: url("https://res.cloudinary.com/chengzii/image/upload/v1523398619/seattle_city.jpg");
+  background: url(image-path("seattle.jpg"));
   background-size: cover;
 }
 
 .section-footer {
-  background-image: url("https://res.cloudinary.com/chengzii/image/upload/v1523146697/footer.jpg");
+  background-image: url(image-path("waiter.jpg"));
   background-size: cover;
   background-position: 0 -240px;
 
