@@ -8,7 +8,6 @@ import {
 } from 'react-router-dom';
 
 
-import SearchContainer from './search/search_container';
 import Modal from './modal';
 import Home from './home';
 import UserContainer from './user/user_container';
@@ -26,7 +25,7 @@ const App = () => (
 
 		<div>
 			<Modal/>
-			<header>
+			<header id='top-of-page'>
 				<Route path="/" component={Nav}/>
 			</header>
 			<Switch>

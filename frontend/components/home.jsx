@@ -21,8 +21,7 @@ export default () => (
 
     <section className="section-footer">
       <h4>Restaurateurs Join Us</h4>
-      <p>Join the more than 40,000 restaurants which fill seats and</p>
-      <p>manage reservations with StarTable.</p>
+      <h5>Join the more than 40,000 restaurants which fill seats and manage reservations with StarTable.</h5>
       <Link
         to="/restaurants/new"
         className="btn-demo"

@@ -22,8 +22,8 @@ const Nav = ({ currentUser, login, logout, openModal, history }) => {
 	        </div>
 
 	        <div className="nav-session">
-	          <button className="btn" onClick={() => openModal('signup')}>Sign up</button>
-	          <button className="btn" onClick={() => openModal('login')}>Sign in</button>
+	          <button className="btn" onClick={() => openModal('signup')}>Signup</button>
+	          <button className="btn" onClick={() => openModal('login')}>Login</button>
 	          <button className="btn btn-demo"
 	            onClick={() => login({email: "guest@mail.com", password:"password"})}>
 	            Demo
