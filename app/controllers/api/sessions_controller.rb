@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class Api::SessionsController < ApplicationController
 
 
   def create
@@ -8,21 +8,23 @@ class SessionsController < ApplicationController
     )
 
     if user.nil?
-      flash.now[:errors] = ["Incorrect username and/or password"]
-      render :new
+      render json: ['Invalid usernam an password']
     else
       login_user!(user)
-      redirect_to cats_url
+      render "api/users/show" 
     end
   end
 
   def destroy
-    logout_user!
-    redirect_to new_session_url
+  	@user = current_user
+  	if @user 
+		logout_user!
+    	render json: {} 
+    else 
+    	render json: ["Nobody signed in"], status: 404
+    end 
   end
 
-  def new
-    render :new
-  end
+
 
 end 

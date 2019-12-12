@@ -6,7 +6,6 @@ import { closeModal } from "../actions/modal_actions";
 import { connect } from "react-redux";
 import LoginFormContainer from "./session_form/login_container";
 import SignupFormContainer from "./session_form/signup_container";
-//import ReviewFormContainer from "../review/review_form_container";
 import Loading from "./loading";
 
 
@@ -33,7 +32,7 @@ const Modal = ({ modal, closeModal }) => {
 		return null;
 	}
 	return(
-		<div onClick={closeModal}>
+		<div id="modal" onClick={closeModal}>
 			<div onClick={e=>e.stopPropagation}>
 			{component}
 			</div>
@@ -48,7 +47,7 @@ const mapStateToProps = (state) =>({
 });
 
 const mapDispatchToProps = dispatch => ({
-	closeModal: dispatch(closeModal())
+	closeModal: ()=> dispatch(closeModal())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Modal);

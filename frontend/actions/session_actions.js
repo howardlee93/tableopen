@@ -23,8 +23,13 @@ export const signup = formUser => dispatch => APIUtil.postUser(formUser)
 	.then(user => dispatch(receiveCurrentUser(user)));
 	
 
-export const login = formUser => dispatch => APIUtil.postSession(formUser)
-	.then(user => dispatch(receiveCurrentUser(user)));
+export const login = formUser => dispatch =>(
+	APIUtil.postSession(formUser)
+	.then(user => (dispatch(receiveCurrentUser(user))
+		), err => (dispatch(receiveErrors(err.responseJSON))
+			)
+		)
+	);
 
 
 export const logout = () => dispatch => APIUtil.deleteSession()

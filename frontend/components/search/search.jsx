@@ -40,7 +40,6 @@ class Search extends React.Component{
 	render(){
 		 return (
             <div className = "searchForm">
-                <h3> make a reservation</h3>
                 <form onSubmit={e=> this.handleFormSubmit(e)}>
                     <label>I am looking for food in: </label>
                     <input 

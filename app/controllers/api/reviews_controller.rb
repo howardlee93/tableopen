@@ -1,4 +1,4 @@
-class ReviewsController < ApplicationController
+class Api::ReviewsController < ApplicationController
 	def index
 		current_restaurant = Restaurant.find(params[:restaurantId]) if params[:restaurantId]
 		if current_restaurant

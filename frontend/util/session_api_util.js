@@ -21,7 +21,7 @@ export const deleteSession = () =>{
 	return $.ajax({
 		url:'/api/session',
 		method:'DELETE'
-	})
+	});
 
 
 }

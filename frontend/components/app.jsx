@@ -44,7 +44,7 @@ const App = () => (
 			<footer>
 			    <p> Copyright Howard Lee {new Date().getFullYear()}</p>
 			    <a href="https://github.com/howardlee93" target="_blank"><p>Github</p></a><br />
-          		<a href="/https://www.linkedin.com/in/leehoward93/" target="_blank"><p>LinkedIn</p></a><br />
+          		<a href="https://www.linkedin.com/in/leehoward93/" target="_blank"><p>LinkedIn</p></a><br />
           		<a href="https://howardlee93.github.io/" target="_blank"><p>Portfolio</p></a>
 
 			</footer>

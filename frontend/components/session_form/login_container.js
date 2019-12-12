@@ -19,7 +19,7 @@ const mapStateToProps = ({errors}) =>({
 const mapDispatchToProps = dispatch => ({
 	
 	login: formUser => dispatch(login(formUser)),
-	clearErrors: ()=> dispatch(receiveErrors()),
+	clearErrors: ()=> dispatch(receiveErrors([])),
 
 	closeModal: () => dispatch(closeModal()),
 	changeForm: (

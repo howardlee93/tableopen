@@ -16,7 +16,7 @@ const Nav = ({ currentUser, login, logout, openModal, history }) => {
 	      <div className = "navbar-session">
 	        <div className="nav-header">
 	          <Link to="/" className="top-bar-logo-link">
-	            <h1 className="top-bar-logo-name">ProjectX</h1>
+	            <h1>TableOpen</h1>
 	          </Link>
 	          <p> Find Michelin-Starred Restaurants Near You</p>
 	        </div>

@@ -6,7 +6,6 @@ const Top = () =>{
 	const topFunction = () =>{
 		const topPage = document.getElementById("top-of-page");
 		topPage.scrollIntoview({ behavior: 'smooth'});
-
 	}
 	
 	return(

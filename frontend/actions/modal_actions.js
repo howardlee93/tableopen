@@ -11,5 +11,5 @@ export const closeModal = () => ({
 
 export const openModal = modal => ({
 	type: OPEN_MODAL,
-	 modal
+	modal
 })
