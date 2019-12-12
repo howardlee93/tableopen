@@ -1,0 +1,63 @@
+.slider-container {
+ display: block;
+ margin: 20px 0 17px 0;
+ border-radius: 3px;
+ height: 240px;
+}
+
+.slider {
+ height: 240px;
+ width: 100%;
+ outline: none;
+ color: #fff;
+ text-align: center;
+ font-size: 19px;
+ font-weight: bold;
+ text-shadow: 1px 1px 1px #000;
+ background-color: rgba(255, 255, 255, 0.6);
+ cursor: pointer;
+ // opacity: 0.9;
+}
+
+.slider:hover {
+  opacity: 0.8;
+}
+
+.slider p:first-of-type {
+  padding-top: 100px;
+}
+.slider.one {
+ background-image: url("https://res.cloudinary.com/chengzii/image/upload/v1523595721/cuisine_italian.jpg");
+ background-size: 98% 240px;
+ background-position: center;
+ background-repeat: no-repeat;
+}
+.slider.two {
+ background-image: url("https://res.cloudinary.com/chengzii/image/upload/v1523595638/cuisine_seafood.jpg");
+ background-size: 98% 240px;
+ background-position: center;
+ background-repeat: no-repeat;
+}
+.slider.three {
+ background-image: url("https://res.cloudinary.com/chengzii/image/upload/v1523595575/cuisine_american.jpg");
+ background-size: 98% 240px;
+ background-position: center;
+ background-repeat: no-repeat;
+}
+.slider.four {
+ background-image: url("https://res.cloudinary.com/chengzii/image/upload/v1523595993/cuisine_japanese.jpg");
+ background-size: 98% 240px;
+ background-position: center;
+ background-repeat: no-repeat;
+}
+
+.slider.five {
+ background-image: url("https://res.cloudinary.com/chengzii/image/upload/v1523595675/cuisine_french.jpg");
+ background-size: 98% 240px;
+ background-position: center;
+ background-repeat: no-repeat;
+}
+
+.cuisines {
+  padding-bottom: 20px;
+}

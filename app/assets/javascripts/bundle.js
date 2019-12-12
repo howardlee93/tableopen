@@ -623,16 +623,24 @@ var App = function App() {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/",
     component: _home__WEBPACK_IMPORTED_MODULE_4__["default"]
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Hi! This web application was built with Ruby on Rails and React/Redux as a tribute to the popular reservation service OpenTable."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "This is my capstone project for my Object Oriented Design and Analysis class"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, " Copyright Howard Lee ", new Date().getFullYear()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
+    className: "main-footer"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "footer-about"
+  }, "Hi! This web application was built with Ruby on Rails and React/Redux as a tribute to the popular reservation service OpenTable. This is my capstone project for my Object Oriented Design and Analysis class"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "footer-about"
+  }, " Copyright Howard Lee ", new Date().getFullYear()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "footer-links"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://github.com/howardlee93",
     target: "_blank"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Github")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, "Github"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://www.linkedin.com/in/leehoward93/",
     target: "_blank"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "LinkedIn")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, "LinkedIn"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://howardlee93.github.io/",
     target: "_blank"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Portfolio"))));
+  }, "Portfolio"))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -2524,6 +2532,7 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-form-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "search-form",
         onSubmit: function onSubmit(e) {
           return _this4.handleFormSubmit(e);
         }
@@ -3050,9 +3059,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -3077,6 +3086,7 @@ function (_React$Component) {
     _this.state = {
       term: ''
     };
+    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -3132,8 +3142,14 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_slick__WEBPACK_IMPORTED_MODULE_1___default.a, _extends({
         className: "slider-container cuisine-slide"
       }, settings), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slider five",
+        id: "french",
         onClick: this.handleClick
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Best French"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Restaurateurs Around You")));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Best French"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Restaurateurs Around You")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slider one",
+        id: "italian",
+        onClick: this.handleClick
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Best Italian"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Restaurateurs Around You")));
     }
   }]);
 

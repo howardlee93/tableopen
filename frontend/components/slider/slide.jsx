@@ -13,6 +13,8 @@ class Slide extends React.Component{
 		this.state = {
 			term: ''
 		}
+		this.handleClick = this.handleClick.bind(this);
+
 	}
 	handleClick(e){
 		e.preventDefault();
@@ -62,12 +64,24 @@ class Slide extends React.Component{
 					}
 				]
 			};
+			
 		return(
-			<Slider className="slider-container cuisine-slide" {...settings}>
-			<div onClick ={this.handleClick}>
-			<p>Best French</p>
-        	<p>Restaurateurs Around You</p>
+			<Slider className="slider-container cuisine-slide"  {...settings}>
+			<div className="slider five" id="french" onClick ={this.handleClick}>
+				<p>Best French</p>
+        		<p>Restaurateurs Around You</p>
         	</div>
+
+        	<div
+		        className="slider one"
+		        id="italian"
+		        onClick={this.handleClick}>
+		        <p>Best Italian</p>
+		        <p>Restaurateurs Around You</p>
+	       </div>
+
+
+
         	</Slider>
 			);
 	}

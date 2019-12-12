@@ -38,14 +38,18 @@ const App = () => (
 				<Route path="/" component={Home}/>
 			</Switch>
 
-			    <p>Hi! This web application was built with Ruby on Rails and React/Redux as a tribute to the popular reservation service OpenTable.</p>
-			    <p>This is my capstone project for my Object Oriented Design and Analysis class</p>
-			
-			<footer>
-			    <p> Copyright Howard Lee {new Date().getFullYear()}</p>
-			    <a href="https://github.com/howardlee93" target="_blank"><p>Github</p></a><br />
-          		<a href="https://www.linkedin.com/in/leehoward93/" target="_blank"><p>LinkedIn</p></a><br />
-          		<a href="https://howardlee93.github.io/" target="_blank"><p>Portfolio</p></a>
+			<footer className="main-footer">
+
+				<p className="footer-about">Hi! This web application was built with Ruby on Rails and React/Redux as a tribute to the popular reservation service OpenTable.
+			    This is my capstone project for my Object Oriented Design and Analysis class</p>
+
+			    <p className="footer-about"> Copyright Howard Lee {new Date().getFullYear()}</p>
+
+			    <div  className="footer-links">
+			    <a href="https://github.com/howardlee93" target="_blank">Github</a>
+          		<a href="https://www.linkedin.com/in/leehoward93/" target="_blank" >LinkedIn</a>
+          		<a href="https://howardlee93.github.io/" target="_blank">Portfolio</a>
+          		</div>
 
 			</footer>
 
