@@ -2522,18 +2522,20 @@ function (_React$Component) {
       var _this4 = this;
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "searchForm"
+        className: "search-form-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: function onSubmit(e) {
           return _this4.handleFormSubmit(e);
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "I am looking for food in: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, " Make a reservation at your favorite restaurant"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "search-input",
         type: "text",
         placeholder: "Location, Restaurant, or Cuisine",
         value: this.state.term,
         onChange: this.update('term')
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "submit",
+        className: "submit-button",
         onClick: this.handleFormSubmit
       }, "Find a Table ")));
     }

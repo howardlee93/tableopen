@@ -39,17 +39,18 @@ class Search extends React.Component{
 
 	render(){
 		 return (
-            <div className = "searchForm">
+            <div className = "search-form-container">
                 <form onSubmit={e=> this.handleFormSubmit(e)}>
-                    <label>I am looking for food in: </label>
-                    <input 
+                    <h3> Make a reservation at your favorite restaurant</h3>
+                    <input
+                    className="search-input"
                     type = 'text'
                     placeholder="Location, Restaurant, or Cuisine"
                     value={this.state.term}
                     onChange = {this.update('term')}
                     />
 
-                  <button type="submit" onClick={this.handleFormSubmit}>Find a Table </button>
+                  <button type="submit" className="submit-button" onClick={this.handleFormSubmit}>Find a Table </button>
                 </form>
             </div>
         );
