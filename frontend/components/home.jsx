@@ -2,7 +2,6 @@ import React from 'react';
 import SearchContainer from './search/search_container';
 
 import DisplayContainer from './display/display_container';
-import SlideContainer from './slider/slide_container';
 import {Link} from 'react-router-dom';
 import { ProtectedRoute } from '../util/route_util';
 import AddRestaurant from './restaurant/add_restaurant_container';
@@ -17,11 +16,7 @@ export default () => (
       <div className="search-container">
         <SearchContainer />
       </div>
-      <div className="cuisines">
-        <h3>Top Cuisines</h3>
-        <SlideContainer />
-      </div>
-      <DisplayContainer />
+        <DisplayContainer />
     </section>
 
     <section className="section-footer">
