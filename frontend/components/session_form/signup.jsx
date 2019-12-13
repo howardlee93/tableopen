@@ -68,17 +68,21 @@ class Signup extends React.Component{
 
 	render(){
 		return(
-			<div>
-			<form onSubmit={e=> this.handleFormSubmit(e)}>
+			<div className="login-form-box">
+			<form className="login-form" onSubmit={e=> this.handleFormSubmit(e)}>
+				<div className="login-form login-form-signup">
+
 				<h4>Welcome!</h4>
-					<input
+					<input 
+						className="login-input"
 						type="text"
 						value={this.state.first_name}
 						placeholder="First name *"
 						onChange={this.update('first_name')}
 					/>
 
-					<input
+					<input	
+						className="login-input"
 						type="text"
 						value={this.state.last_name}
 						placeholder="Last name *"
@@ -86,6 +90,7 @@ class Signup extends React.Component{
 					/>
 
 					<input
+						className="login-input"
 						type="text"
 						value={this.state.email}
 						placeholder="Email *"
@@ -93,6 +98,7 @@ class Signup extends React.Component{
 					/>
 
 					<input
+						className="login-input"
 						type="password"
 						value={this.state.password}
 						placeholder="Password *"
@@ -101,16 +107,18 @@ class Signup extends React.Component{
 
 
 					<input
+											className="login-input"
+
 						type="password"
 						value={this.state.confirm_password}
 						placeholder="Confirm password *"
 						onChange={this.update('confirm_password')}
 					/>
-					<button type="submit">Create account</button>
-					 <button  onClick={this.handleDemo}>Guest Login</button>
+					<button type="submit" className="session-submit">Create account</button>
+					 <button  onClick={this.handleDemo} className="session-submit">Guest Login</button>
 					 <p>Already have a count? {this.props.changeForm}</p>
 
-
+					 </div>
 			</form>
 
 			<div onClick={this.props.closeModal} className="close-x">&times;</div>

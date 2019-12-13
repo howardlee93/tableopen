@@ -2712,28 +2712,36 @@ function (_React$Component) {
     value: function render() {
       var _this5 = this;
 
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "login-form-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "login-form",
         onSubmit: function onSubmit(e) {
           return _this5.handleFormSubmit(e);
         }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "login-form login-form-signup"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, " Please sign in"), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "login-input",
         type: "text",
         value: this.state.email,
         placeholder: "Enter email *",
         onChange: this.update('email')
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "login-input",
         type: "password",
         value: this.state.password,
         placeholder: "Enter password *",
         onChange: this.update('password')
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "session-submit",
         type: "submit"
       }, "Login"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "session-submit demo-login",
         onClick: this.handleDemo
       }, "Guest Login"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "changeForm"
-      }, "New to StarTable?  ", this.props.changeForm)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "New to StarTable?  ", this.props.changeForm))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         onClick: this.props.closeModal
       }, " \xD7"));
     }
@@ -2925,40 +2933,52 @@ function (_React$Component) {
     value: function render() {
       var _this5 = this;
 
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "login-form-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "login-form",
         onSubmit: function onSubmit(e) {
           return _this5.handleFormSubmit(e);
         }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "login-form login-form-signup"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Welcome!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "login-input",
         type: "text",
         value: this.state.first_name,
         placeholder: "First name *",
         onChange: this.update('first_name')
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "login-input",
         type: "text",
         value: this.state.last_name,
         placeholder: "Last name *",
         onChange: this.update('last_name')
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "login-input",
         type: "text",
         value: this.state.email,
         placeholder: "Email *",
         onChange: this.update('email')
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "login-input",
         type: "password",
         value: this.state.password,
         placeholder: "Password *",
         onChange: this.update('password')
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "login-input",
         type: "password",
         value: this.state.confirm_password,
         placeholder: "Confirm password *",
         onChange: this.update('confirm_password')
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        type: "submit"
+        type: "submit",
+        className: "session-submit"
       }, "Create account"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.handleDemo
-      }, "Guest Login"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Already have a count? ", this.props.changeForm)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        onClick: this.handleDemo,
+        className: "session-submit"
+      }, "Guest Login"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Already have a count? ", this.props.changeForm))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         onClick: this.props.closeModal,
         className: "close-x"
       }, "\xD7"));

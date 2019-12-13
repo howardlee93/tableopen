@@ -62,27 +62,33 @@ class Login extends React.Component {
 
 	render(){
 		return(
-			<div>
-				<form onSubmit={e=>this.handleFormSubmit(e)}>
+			<div className="login-form-box">
+				<form className="login-form" onSubmit={e=>this.handleFormSubmit(e)}>
+				<div className="login-form login-form-signup">
+
 					<h4> Please sign in</h4>
 					{this.renderErrors()}
+
 					<input
-					type="text"
-					value={this.state.email}
-					placeholder="Enter email *"
-					onChange={this.update('email')}
+						className="login-input"
+						type="text"
+						value={this.state.email}
+						placeholder="Enter email *"
+						onChange={this.update('email')}
 					/>
 
 					<input
+						className="login-input"
 						type="password"
 						value={this.state.password}
 						placeholder="Enter password *"
 						onChange={this.update('password')}
 					/>
-					<button type="submit">Login</button>
+
+					<button className="session-submit" type="submit">Login</button>
 					<button className="session-submit demo-login" onClick={this.handleDemo}>Guest Login</button>
 					<p className="changeForm">New to StarTable?  {this.props.changeForm}</p>
-
+				</div>
 				</form>
 				<div onClick={this.props.closeModal}> &times;</div>
 			</div>
