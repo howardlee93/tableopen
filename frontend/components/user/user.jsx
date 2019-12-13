@@ -1,5 +1,5 @@
 // user.jsx
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 
@@ -20,6 +20,13 @@ function User(props){
 			});
 		};
 	};
+
+
+  useEffect(() =>{
+    this.props.requestUserReservations(this.props.currentUser.id);
+    this.props.requestUserFavorites(this.props.currentUser.id);
+  });
+
 
 
 	const getStar = res => {

@@ -11,7 +11,7 @@ import {
 import Modal from './modal';
 import Home from './home';
 import UserContainer from './user/user_container';
-import Nav from './nav/nav_container';
+import NavContainer from './nav/nav_container';
 
 import RestaurantIndexContainer from './restaurant/restaurant_index_container';
 import AddRestaurant from './restaurant/add_restaurant_container';
@@ -26,7 +26,7 @@ const App = () => (
 		<div>
 			<Modal/>
 			<header id='top-of-page'>
-				<Route path="/" component={Nav}/>
+				<Route path="/" component={NavContainer}/>
 			</header>
 			<Switch>
 				<ProtectedRoute path="/restaurants/new" component={AddRestaurant}/>

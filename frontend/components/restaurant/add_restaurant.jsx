@@ -27,7 +27,7 @@ class AddRestaurant extends React.Component{
 
 	}
 
-	componentWillUnmout(){
+	componentWillUnmount(){
 		this.props.clearErrors();
 	}
 

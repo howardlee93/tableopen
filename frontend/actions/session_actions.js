@@ -27,8 +27,7 @@ export const login = formUser => dispatch =>(
 	APIUtil.postSession(formUser)
 	.then(user => (dispatch(receiveCurrentUser(user))
 		), err => (dispatch(receiveErrors(err.responseJSON))
-			)
-		)
+		))
 	);
 
 

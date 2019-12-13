@@ -1,10 +1,15 @@
 // review_index.jsx	
 
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import ReviewIndexItem from './review_index_item';
 
 function ReviewIndex(props){
+
+	useEffect(()=>{
+		props.requestRestaurantReviews(props.restaurantId);
+	});
+	
 	if (Object.keys(props.reviews).length === 0){
 		return null;
 	}

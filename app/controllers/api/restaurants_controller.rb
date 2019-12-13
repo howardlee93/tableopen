@@ -3,8 +3,8 @@ class Api::RestaurantsController < ApplicationController
 	def index
 		if params[:searchTerms]
 			@restaurants = Restaurant.find_by_keyword(params[:searchTerms])
-			if @restaurant
-				@restaurant
+			if @restaurants
+				@restaurants
 			else 
 				render json: ["No restaurants found"], status: 404
 			end 
@@ -15,6 +15,8 @@ class Api::RestaurantsController < ApplicationController
 		render :index
 
 	end 
+
+
 
 	def show
 		@restaurant = Restaurant.find(params[:id])

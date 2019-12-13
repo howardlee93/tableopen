@@ -18,12 +18,14 @@ const Nav = ({ currentUser, login, logout, openModal, history }) => {
 	          <Link to="/" className="top-bar-logo-link">
 	            <h1>TableOpen</h1>
 	          </Link>
-	          <p> Find Michelin-Starred Restaurants Near You</p>
+	          <p> Find Restaurants Near You</p>
 	        </div>
 
 	        <div className="nav-session">
 	          <button className="btn" onClick={() => openModal('signup')}>Signup</button>
+	          
 	          <button className="btn" onClick={() => openModal('login')}>Login</button>
+	          
 	          <button className="btn btn-demo"
 	            onClick={() => login({email: "guest@mail.com", password:"password"})}>
 	            Demo
@@ -40,7 +42,7 @@ const Nav = ({ currentUser, login, logout, openModal, history }) => {
         <Link to="/" className="top-bar-logo-link">
           <h1 className="top-bar-logo-name">StarTable</h1>
         </Link>
-        <p> Find Michelin-Starred Restaurants Near You</p>
+        <p> Find Restaurants Near You</p>
       </div>
         <div className="nav-greeting">
           <h2 className="header-name">Hi, {currentUser.firstName}</h2>

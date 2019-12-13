@@ -1,6 +1,6 @@
 // restaurant_detail.jsx
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Route, withRouter } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../../util/route_util';
 
@@ -25,6 +25,13 @@ function RestaurantDetail(props){
 		el.scrollIntoView({ behavior: 'smooth' });
 
 	}
+
+	useEffect(()=>{
+		window.scrollTo(0, 0);
+    	props.requestSingleRestaurant(this.props.match.params.restaurantId);
+
+
+	})
 
 	const reservationFormChecker = () =>{
 		if (props.currentUser){

@@ -21,12 +21,16 @@ class Signup extends React.Component{
 		this.props.clearErrors();
 	}
 
+	// componentDidUpdate(){
 
-	componentWillReceiveProps(nextProps){
-		if(nextProps.loggedIn){
-			this.props.history.push(`/`);
-		}
-	}
+
+	// }
+
+	// static getDerivedStateFromProps(nextProps, prevState){
+	// 	if(nextProps.loggedIn){
+	// 		this.props.history.push(`/`);
+	// 	}
+	// }
 
 
 	update(field){
@@ -107,16 +111,16 @@ class Signup extends React.Component{
 
 
 					<input
-											className="login-input"
-
+						className="login-input"
 						type="password"
 						value={this.state.confirm_password}
 						placeholder="Confirm password *"
 						onChange={this.update('confirm_password')}
 					/>
+
 					<button type="submit" className="session-submit">Create account</button>
-					 <button  onClick={this.handleDemo} className="session-submit">Guest Login</button>
-					 <p>Already have a count? {this.props.changeForm}</p>
+					<button  onClick={this.handleDemo} className="session-submit">Guest Login</button>
+					<p>Already have an account? {this.props.changeForm}</p>
 
 					 </div>
 			</form>

@@ -11,6 +11,7 @@ class Api::UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+   
     render :show
 
   end
@@ -24,7 +25,8 @@ class Api::UsersController < ApplicationController
       render "api/users/show"
 
     else
-      render json @user.errors.full_messages, status: 422    
+      render json: @user.errors.full_messages, status: 422
+    end  
   end
 
   
@@ -33,6 +35,6 @@ class Api::UsersController < ApplicationController
    
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email)
+      params.require(:user).permit(:email, :password, :first_name, :last_name, :phone_number)
     end
 end

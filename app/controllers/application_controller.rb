@@ -26,7 +26,9 @@ class ApplicationController < ActionController::Base
   	end
 
   	def require_user!
-    	redirect_to new_session_url if current_user.nil?
+      unless current_user
+        render json: { base: ['invalid credentials'] }, status: 401
+      end 
   	end
 
 	
