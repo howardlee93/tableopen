@@ -9,9 +9,9 @@ import favoritesReducer from './favorite_reducer';
 
 
 export default combineReducers({
-	restaurant: restaurantReducer,
-	reservation: reservationReducer,
-	review: reviewReducer,
-	favorite: favoritesReducer
+	restaurants: restaurantReducer,
+	reservations: reservationReducer,
+	reviews: reviewReducer,
+	favorites: favoritesReducer
 
 })

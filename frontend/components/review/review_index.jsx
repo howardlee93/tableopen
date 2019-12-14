@@ -13,7 +13,7 @@ function ReviewIndex(props){
 	if (Object.keys(props.reviews).length === 0){
 		return null;
 	}
-	const revies = Object.values(props.reviews).map((review, i)=>(
+	const reviews = Object.values(props.reviews).map((review, i)=>(
 		<ReviewIndexItem
           key={review.id}
           review={review}

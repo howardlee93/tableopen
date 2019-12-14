@@ -7,6 +7,7 @@ export const RECEIVE_SINGLE_RESTAURANT = 'RECEIVE_SINGLE_RESTAURANT';
 export const RECEIVE_RESTAURANT_ERRORS = 'RECEIVE_RESTAURANT_ERRORS';
 
 export const LOADING_RESTAURANT = "LOADING_RESTAURANT";
+
 export const LOADING_RESTAURANTS = "LOADING_RESTAURANTS";
 
 
@@ -64,3 +65,5 @@ export const searchRestaurants = searchTerms => dispatch =>{
 	.then(searchResult => dispatch(receiveAllRestaurants(searchResult)),
 		err => dispatch(receiveRestaurantErrors(err.responseJSON)));
 }
+
+

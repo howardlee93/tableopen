@@ -40,14 +40,14 @@ const Nav = ({ currentUser, login, logout, openModal, history }) => {
       <div className = "navbar-session">
       <div className="nav-header">
         <Link to="/" className="top-bar-logo-link">
-          <h1 className="top-bar-logo-name">StarTable</h1>
+          <h1 className="top-bar-logo-name">TableOpen</h1>
         </Link>
         <p> Find Restaurants Near You</p>
       </div>
         <div className="nav-greeting">
-          <h2 className="header-name">Hi, {currentUser.firstName}</h2>
-          <Link className="btn" id="btn-profile" to={`/users/${currentUser.id}`}>My Profile</Link>
-          <button className="btn btn-demo" onClick={handleLogout}>Log Out</button>
+          <h2 className="header-name">Hi, {currentUser.first_name}</h2>
+          <Link className="btn" id="btn-profile" to={`/users/${currentUser.id}`}>Profile</Link>
+          <button className="btn btn-demo" onClick={handleLogout}>Logout</button>
         </div>
       </div>
     </nav>

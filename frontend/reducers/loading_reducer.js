@@ -1,7 +1,6 @@
 //loading_reducer.js
 
 
-
 import {
   RECEIVE_SINGLE_RESTAURANT,
   RECEIVE_RESTAURANT_ERRORS,
@@ -26,14 +25,14 @@ const loadingReducer = (state = initialState, action) => {
 		case RECEIVE_SINGLE_RESTAURANT:
 			return Object.assign({}, state, {showLoading: false});
 
-		case RECEIVE_RESTAURANT_ERRORS:
-			return Object.assign({}, state, {initialState});
-
 		case LOADING_RESTAURANTS:
 			return Object.assign({}, state, {indexLoading: true});
 
 		case LOADING_RESTAURANT:
 			return Object.assign({}, state, {showLoading: true });
+			
+		case RECEIVE_RESTAURANT_ERRORS:
+      		return Object.assign({}, state, { showLoading: false, indexLoading: false});
 
 
 		default:
