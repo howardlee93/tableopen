@@ -8,7 +8,7 @@ function User(props){
 	const deleteReservation = id =>(
 		e =>{
 			e.preventDefault();
-			this.props.deleteReservation(id);
+			props.deleteReservation(id);
 			}
 		);
 
@@ -23,8 +23,8 @@ function User(props){
 
 
   useEffect(() =>{
-    this.props.requestUserReservations(this.props.currentUser.id);
-    this.props.requestUserFavorites(this.props.currentUser.id);
+    props.requestUserReservations(props.currentUser.id);
+    props.requestUserFavorites(props.currentUser.id);
   });
 
 
@@ -47,7 +47,7 @@ function User(props){
 		const upcoming = [];
 		const today = new Date().toJSON();
 
-		const allRes = Object.values(this.props.reservations);
+		const allRes = Object.values(props.reservations);
 
 		allRes.forEach(reservation => {
 			if (Date.parse(today.slice(0,10)) <= Date.parse(reservation.date)){
@@ -61,7 +61,7 @@ function User(props){
 					{upcoming.map((res, i)=> 
 						<section key={`upcoming-${i}`}>
 							<div className="restaurant-logo-container">
-				             <img
+				            <img
 				                className="restaurant-logo"
 				                src={res.restaurant.logo}/>
 				            </div>
@@ -70,7 +70,7 @@ function User(props){
 				                to={`/restaurants/${res.restaurant.id}`}
 				                className="restaurant-name">
 				                  {res.restaurant.name}
-				                <span className="restaurant-star">{this.getStar(res)}</span>
+				                <span className="restaurant-star">{getStar(res)}</span>
 				              </Link>
 
 
@@ -90,7 +90,7 @@ function User(props){
 				              </div>
 
 				              <button type="button"
-				                      onClick={this.deleteReservation(res.id)}
+				                      onClick={deleteReservation(res.id)}
 				                      className="btn btn-demo reservation-btn">
 				                      Cancel
 				              </button>
@@ -107,7 +107,7 @@ function User(props){
   	};
 
   	const pastReservations = () => {
-  		let favorites = this.props.favorites;
+  		let favorites = props.favorites;
   		if(Object.keys(favorites).length === 0){
   			return(
   				<p>No reservations</p>
@@ -153,7 +153,7 @@ function User(props){
   		}
   	};
 
-  	const user = this.props.currentUser;
+  	const user = props.currentUser;
 
   	return(
       	<section className='user-profile-main'>
@@ -165,62 +165,62 @@ function User(props){
           <aside className='user-profile-side'>
             <div
               className='user-nav-link'
-              onClick={this.scrollTo(this.upcomingSection)}
+              onClick={scrollTo(upcomingSection)}
             >Upcoming Reservations</div>
             <div
               className='user-nav-link'
-              onClick={this.scrollTo(this.pastSection)}
+              onClick={scrollTo(pastSection)}
             >Past Reservations</div>
             <div
               className='user-nav-link'
-              onClick={this.scrollTo(this.favoriteSection)}
+              onClick={scrollTo(favoriteSection)}
             >Favorite Restaurants</div>
           </aside>
 
           <section className='user-profile-content'>
             <div className='user-profile-section'>
               <div className='user-profile-content-title' name='upcoming'
-                ref={ el => this.upcomingSection = el }>
+                ref={ el => upcomingSection = el }>
                 <h2>
-                  {this.getUpcomingCount() <= 1 ? "Upcoming Reservation" : "Upcoming Reservations"}
+                  {getUpcomingCount() <= 1 ? "Upcoming Reservation" : "Upcoming Reservations"}
                   <span className="user-reservation-count">
-                    {this.getUpcomingCount()}
+                    {getUpcomingCount()}
                   </span>
                 </h2>
 
               </div>
               <div className='user-profile-section-lists' >
-                {this.upcomingReservations()}
+                {upcomingReservations()}
               </div>
             </div>
 
             <div className='user-profile-section'>
               <div className='user-profile-content-title' name='past'
-                ref={ el => this.pastSection = el }>
+                ref={ el => pastSection = el }>
                 <h2>
-                  {this.getPastCount() <= 1 ? "Past Reservation" : "Past Reservations"}
-                  <span className="user-reservation-count">{this.getPastCount()}</span>
+                  {getPastCount() <= 1 ? "Past Reservation" : "Past Reservations"}
+                  <span className="user-reservation-count">{getPastCount()}</span>
                 </h2>
 
               </div>
               <div className='user-profile-section-lists' >
-                {this.pastReservations()}
+                {pastReservations()}
               </div>
             </div>
 
 
             <div className='user-profile-section'>
               <div className='user-profile-content-title' name='favorite'
-                  ref={ el => this.favoriteSection = el }>
+                  ref={ el => favoriteSection = el }>
                   <h2>Favorite Restaurants
                     <span className="user-reservation-count">
-                      {Object.keys(this.props.favorites).length}
+                      {Object.keys(props.favorites).length}
                     </span>
                   </h2>
 
               </div>
               <div className='user-profile-section-lists' >
-                {this.favoriteRestaurants()}
+                {favoriteRestaurants()}
               </div>
             </div>
 

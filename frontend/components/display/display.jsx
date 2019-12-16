@@ -17,6 +17,7 @@ class Display extends React.Component{
 		e.preventDefault();
 		this.props.openModal("loading");
 		let cityName = e.target.id;
+		
 		if(cityName.includes("_")){
 			cityName = cityName.split("_").join(" ");
 		}
