@@ -1,9 +1,13 @@
 // user.jsx
-import React, { useEffect } from 'react';
+import React, { useEffect, createRef} from 'react';
 import { Link } from 'react-router-dom';
 
 
 function User(props){
+  
+  const upcomingSection = createRef();
+  const pastSection = createRef();
+  const favoriteSection = createRef();
 
 	const deleteReservation = id =>(
 		e =>{
@@ -12,8 +16,38 @@ function User(props){
 			}
 		);
 
+
+
+  const upcomingReservations = () => {
+    const upcoming = [];
+    const today = new Date().toJSON();
+
+    const allRes = Object.values(props.reservations);
+    allRes.forEach((reservation) => {
+      if(Date.parse(today.slice(0, 10)) <= Date.parse(reservation.date)) {
+        upcoming.push(reservation);
+      }
+    });
+}
+
+  
+  const getPastCount = () => {
+    const past = [];
+    const today = new Date().toJSON();
+
+    const allRes = Object.values(props.reservations);
+    allRes.forEach((reservation) => {
+      if(Date.parse(today.slice(0, 10)) > Date.parse(reservation.date)) {
+        past.push(reservation);
+      }
+    });
+    return past.length;
+  }
+
+
+
 	const scrollTo = el => {
-		return () => {
+		return (el) => {
 			el.scrollIntoView({
 				behavior: 'smooth',
 				block: "start"
@@ -27,21 +61,6 @@ function User(props){
     props.requestUserFavorites(props.currentUser.id);
   });
 
-
-
-	const getStar = res => {
-		let starCount = res. restaurant.star;
-		const star = [];
-
-		for (let i =0; i < starCount; i++){
-			stars.push(
-				<img
-          		key={(""+Math.random()).substring(2,7)}
-          		src='https://res.cloudinary.com/chengzii/image/upload/c_scale,w_20/v1523389939/star.png' />
-      		);
-		}
-		return stars;
-	};
 
 	const getUpcomingCount = () => {
 		const upcoming = [];
@@ -70,7 +89,6 @@ function User(props){
 				                to={`/restaurants/${res.restaurant.id}`}
 				                className="restaurant-name">
 				                  {res.restaurant.name}
-				                <span className="restaurant-star">{getStar(res)}</span>
 				              </Link>
 
 
@@ -155,6 +173,59 @@ function User(props){
 
   	const user = props.currentUser;
 
+
+
+
+
+  const favoriteRestaurants = () => {
+    let favorites = props.favorites;
+    if (Object.keys(favorites).length === 0 ) {
+      return (
+        <p className="no-reservation">No favorite</p>
+      );
+    } else {
+      return(
+        <div>
+        { Object.values(favorites).map((fav, idx) =>
+          <section key={`favorite-${idx}`} className="reservation-list">
+            <div className="restaurant-logo-container">
+              <img
+                className="restaurant-logo"
+                src={fav.restaurant.logo}/>
+            </div>
+            <div className="restaurant-detail-container res-fav">
+              <Link
+                to={`/restaurants/${fav.restaurant.id}`}
+                className="restaurant-name">
+                  {fav.restaurant.name}  <i className="fas fa-heart"></i>
+              </Link>
+
+              <div className='past-res-date'>
+                Michelin Star Level: {fav.restaurant.star}
+              </div>
+              <div className='past-res-time'>
+                Cuisine: {fav.restaurant.cuisine}
+              </div>
+              <div className='past-res-time'>
+                Contact: {fav.restaurant.phone_number}
+              </div>
+
+              <Link
+                to={`/restaurants/${fav.restaurant.id}`}
+                className="btn btn-demo reservation-btn review-btn">
+                Reserve Now
+              </Link>
+
+            </div>
+          </section>
+        )}
+        </div>
+      );
+    }
+
+  }
+
+
   	return(
       	<section className='user-profile-main'>
         <div className="user-profile">
@@ -180,7 +251,7 @@ function User(props){
           <section className='user-profile-content'>
             <div className='user-profile-section'>
               <div className='user-profile-content-title' name='upcoming'
-                ref={ el => upcomingSection = el }>
+                ref={ upcomingSection }>
                 <h2>
                   {getUpcomingCount() <= 1 ? "Upcoming Reservation" : "Upcoming Reservations"}
                   <span className="user-reservation-count">
@@ -196,7 +267,7 @@ function User(props){
 
             <div className='user-profile-section'>
               <div className='user-profile-content-title' name='past'
-                ref={ el => pastSection = el }>
+                ref={ pastSection }>
                 <h2>
                   {getPastCount() <= 1 ? "Past Reservation" : "Past Reservations"}
                   <span className="user-reservation-count">{getPastCount()}</span>
@@ -211,7 +282,7 @@ function User(props){
 
             <div className='user-profile-section'>
               <div className='user-profile-content-title' name='favorite'
-                  ref={ el => favoriteSection = el }>
+                  ref={favoriteSection }>
                   <h2>Favorite Restaurants
                     <span className="user-reservation-count">
                       {Object.keys(props.favorites).length}
@@ -235,3 +306,5 @@ function User(props){
 
 
 export default User;
+
+

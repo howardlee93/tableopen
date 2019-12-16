@@ -17,7 +17,7 @@ import AddRestaurant from './restaurant/add_restaurant_container';
 
 import RestaurantDetailContainer from './restaurant/restaurant_detail_container';
 
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import { ProtectedRoute } from '../util/route_util';
 
 
 const App = () => (

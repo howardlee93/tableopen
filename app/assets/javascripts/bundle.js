@@ -3063,6 +3063,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function User(props) {
+  var upcomingSection = Object(react__WEBPACK_IMPORTED_MODULE_0__["createRef"])();
+  var pastSection = Object(react__WEBPACK_IMPORTED_MODULE_0__["createRef"])();
+  var favoriteSection = Object(react__WEBPACK_IMPORTED_MODULE_0__["createRef"])();
+
   var deleteReservation = function deleteReservation(id) {
     return function (e) {
       e.preventDefault();
@@ -3070,8 +3074,31 @@ function User(props) {
     };
   };
 
+  var upcomingReservations = function upcomingReservations() {
+    var upcoming = [];
+    var today = new Date().toJSON();
+    var allRes = Object.values(props.reservations);
+    allRes.forEach(function (reservation) {
+      if (Date.parse(today.slice(0, 10)) <= Date.parse(reservation.date)) {
+        upcoming.push(reservation);
+      }
+    });
+  };
+
+  var getPastCount = function getPastCount() {
+    var past = [];
+    var today = new Date().toJSON();
+    var allRes = Object.values(props.reservations);
+    allRes.forEach(function (reservation) {
+      if (Date.parse(today.slice(0, 10)) > Date.parse(reservation.date)) {
+        past.push(reservation);
+      }
+    });
+    return past.length;
+  };
+
   var scrollTo = function scrollTo(el) {
-    return function () {
+    return function (el) {
       el.scrollIntoView({
         behavior: 'smooth',
         block: "start"
@@ -3083,20 +3110,6 @@ function User(props) {
     props.requestUserReservations(props.currentUser.id);
     props.requestUserFavorites(props.currentUser.id);
   });
-
-  var getStar = function getStar(res) {
-    var starCount = res.restaurant.star;
-    var star = [];
-
-    for (var i = 0; i < starCount; i++) {
-      stars.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        key: ("" + Math.random()).substring(2, 7),
-        src: "https://res.cloudinary.com/chengzii/image/upload/c_scale,w_20/v1523389939/star.png"
-      }));
-    }
-
-    return stars;
-  };
 
   var getUpcomingCount = function getUpcomingCount() {
     var upcoming = [];
@@ -3122,9 +3135,7 @@ function User(props) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           to: "/restaurants/".concat(res.restaurant.id),
           className: "restaurant-name"
-        }, res.restaurant.name, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: "restaurant-star"
-        }, getStar(res))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, res.restaurant.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "upcoming-res-date"
         }, res.date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "upcoming-res-time"
@@ -3184,6 +3195,45 @@ function User(props) {
   };
 
   var user = props.currentUser;
+
+  var favoriteRestaurants = function favoriteRestaurants() {
+    var favorites = props.favorites;
+
+    if (Object.keys(favorites).length === 0) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "no-reservation"
+      }, "No favorite");
+    } else {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, Object.values(favorites).map(function (fav, idx) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+          key: "favorite-".concat(idx),
+          className: "reservation-list"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "restaurant-logo-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "restaurant-logo",
+          src: fav.restaurant.logo
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "restaurant-detail-container res-fav"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/restaurants/".concat(fav.restaurant.id),
+          className: "restaurant-name"
+        }, fav.restaurant.name, "  ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fas fa-heart"
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "past-res-date"
+        }, "Michelin Star Level: ", fav.restaurant.star), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "past-res-time"
+        }, "Cuisine: ", fav.restaurant.cuisine), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "past-res-time"
+        }, "Contact: ", fav.restaurant.phone_number), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/restaurants/".concat(fav.restaurant.id),
+          className: "btn btn-demo reservation-btn review-btn"
+        }, "Reserve Now")));
+      }));
+    }
+  };
+
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
     className: "user-profile-main"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3208,9 +3258,7 @@ function User(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "user-profile-content-title",
     name: "upcoming",
-    ref: function ref(el) {
-      return upcomingSection = el;
-    }
+    ref: upcomingSection
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, getUpcomingCount() <= 1 ? "Upcoming Reservation" : "Upcoming Reservations", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "user-reservation-count"
   }, getUpcomingCount()))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3220,9 +3268,7 @@ function User(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "user-profile-content-title",
     name: "past",
-    ref: function ref(el) {
-      return pastSection = el;
-    }
+    ref: pastSection
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, getPastCount() <= 1 ? "Past Reservation" : "Past Reservations", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "user-reservation-count"
   }, getPastCount()))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3232,9 +3278,7 @@ function User(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "user-profile-content-title",
     name: "favorite",
-    ref: function ref(el) {
-      return favoriteSection = el;
-    }
+    ref: favoriteSection
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Favorite Restaurants", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "user-reservation-count"
   }, Object.keys(props.favorites).length))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -4127,12 +4171,11 @@ var updateReview = function updateReview(review) {
 /*!*************************************!*\
   !*** ./frontend/util/route_util.js ***!
   \*************************************/
-/*! exports provided: AuthRoute, ProtectedRoute */
+/*! exports provided: ProtectedRoute */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthRoute", function() { return AuthRoute; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProtectedRoute", function() { return ProtectedRoute; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -4145,33 +4188,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var Auth = function Auth(_ref) {
+var Protected = function Protected(_ref) {
   var Component = _ref.component,
       path = _ref.path,
       loggedIn = _ref.loggedIn,
-      exact = _ref.exact;
+      exact = _ref.exact,
+      openModal = _ref.openModal;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: path,
     exact: exact,
     render: function render(props) {
-      return !loggedIn ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, props) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
-        to: "/"
-      });
-    }
-  });
-};
-
-var Protected = function Protected(_ref2) {
-  var Component = _ref2.component,
-      path = _ref2.path,
-      loggedIn = _ref2.loggedIn,
-      exact = _ref2.exact,
-      openModal = _ref2.openModal;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-    path: path,
-    exact: exact,
-    render: function render(props) {
-      loggedIn ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, props) : (openModal(), null);
+      if (loggedIn) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, props);
+      } else {
+        openModal();
+        return null;
+      }
     }
   });
 };
@@ -4190,7 +4222,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   };
 };
 
-var AuthRoute = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, null)(Auth));
 var ProtectedRoute = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(Protected));
 
 /***/ }),
