@@ -2,19 +2,13 @@
 
 import React, {useEffect} from 'react';
 import { Route, withRouter } from 'react-router-dom';
-import { AuthRoute, ProtectedRoute } from '../../util/route_util';
+import { ProtectedRoute } from '../../util/route_util';
 
-import
-  ReservationFormContainer
-from '../reservation/reservation_form_container';
+import ReservationFormContainer from '../reservation/reservation_form_container';
 
-import
-  ReviewFormContainer
-from '../review/review_form_container';
+import ReviewFormContainer from '../review/review_form_container';
 
-import
-  ReviewIndexContainer
-from '../review/review_index_container';
+import ReviewIndexContainer from '../review/review_index_container';
 
 import Loading from "../loading";
 

@@ -55,7 +55,7 @@ class AddRestaurant extends React.Component{
 		return(
 			 <div className="add-restaurant-container">
 
-        <h4>Grow Your Business with StarTable</h4>
+        <h4>Get on our platform!</h4>
         <a href="/">Back to Homepage <i className="fas fa-arrow-right"></i></a>
         <form onSubmit={this.handleSubmit} className="add-restaurant-form">
           <div>

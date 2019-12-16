@@ -47,7 +47,7 @@ function User(props){
 
 
 	const scrollTo = el => {
-		return (el) => {
+		return () => {
 			el.scrollIntoView({
 				behavior: 'smooth',
 				block: "start"
@@ -251,7 +251,7 @@ function User(props){
           <section className='user-profile-content'>
             <div className='user-profile-section'>
               <div className='user-profile-content-title' name='upcoming'
-                ref={ upcomingSection }>
+                ref={ el => el = upcomingSection }>
                 <h2>
                   {getUpcomingCount() <= 1 ? "Upcoming Reservation" : "Upcoming Reservations"}
                   <span className="user-reservation-count">
@@ -267,7 +267,7 @@ function User(props){
 
             <div className='user-profile-section'>
               <div className='user-profile-content-title' name='past'
-                ref={ pastSection }>
+                ref={  el => el = pastSection }>
                 <h2>
                   {getPastCount() <= 1 ? "Past Reservation" : "Past Reservations"}
                   <span className="user-reservation-count">{getPastCount()}</span>
@@ -282,7 +282,7 @@ function User(props){
 
             <div className='user-profile-section'>
               <div className='user-profile-content-title' name='favorite'
-                  ref={favoriteSection }>
+                  ref={ el => el = favoriteSection }>
                   <h2>Favorite Restaurants
                     <span className="user-reservation-count">
                       {Object.keys(props.favorites).length}

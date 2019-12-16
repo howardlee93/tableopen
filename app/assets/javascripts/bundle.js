@@ -1413,7 +1413,7 @@ function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "add-restaurant-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Grow Your Business with StarTable"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Get on our platform!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/"
       }, "Back to Homepage ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-arrow-right"
@@ -3098,7 +3098,7 @@ function User(props) {
   };
 
   var scrollTo = function scrollTo(el) {
-    return function (el) {
+    return function () {
       el.scrollIntoView({
         behavior: 'smooth',
         block: "start"
@@ -3258,7 +3258,9 @@ function User(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "user-profile-content-title",
     name: "upcoming",
-    ref: upcomingSection
+    ref: function ref(el) {
+      return el = upcomingSection;
+    }
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, getUpcomingCount() <= 1 ? "Upcoming Reservation" : "Upcoming Reservations", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "user-reservation-count"
   }, getUpcomingCount()))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3268,7 +3270,9 @@ function User(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "user-profile-content-title",
     name: "past",
-    ref: pastSection
+    ref: function ref(el) {
+      return el = pastSection;
+    }
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, getPastCount() <= 1 ? "Past Reservation" : "Past Reservations", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "user-reservation-count"
   }, getPastCount()))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3278,7 +3282,9 @@ function User(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "user-profile-content-title",
     name: "favorite",
-    ref: favoriteSection
+    ref: function ref(el) {
+      return el = favoriteSection;
+    }
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Favorite Restaurants", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "user-reservation-count"
   }, Object.keys(props.favorites).length))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
