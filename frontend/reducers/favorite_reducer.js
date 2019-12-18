@@ -11,7 +11,6 @@ import {
 const favoriteReducer = (state= {}, action) => {
 	Object.freeze(state);
 	switch(action.type){
-		// case RECEIVE_SINGLE_FAVORITE:
 
 		case RECEIVE_ALL_FAVORITES:
 			return action.favorites;

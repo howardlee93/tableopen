@@ -1,15 +1,10 @@
  // user.jsx
-import React, { useEffect, useRef} from 'react';
+import React, { useEffect} from 'react';
 import { Link } from 'react-router-dom';
 
-const scrollTo = (ref) => window.scrollTo(0, ref.current.offsetTop)   
 
 
 function User(props){
-
-  const upcomingSection = useRef(null);
-  const pastSection = useRef(null);
-  const favoriteSection = useRef(null);
 
 	const deleteReservation = id =>(
 		e =>{
@@ -19,13 +14,17 @@ function User(props){
 		);
 
 
-  // const scrollTo = (el) => ( 
-  //     el.scrollIntoView({
-  //       behavior: 'smooth',
-  //       block: "start"
-  //     });
-  //   )
-  // 
+  const scrollTo = id => {
+      let elem = document.getElementById(id);
+
+      return () =>{
+       elem.scrollIntoView({
+        behavior: 'smooth',
+        block: "start"
+        });
+      };
+    }
+  
 
 
 
@@ -238,25 +237,28 @@ function User(props){
 
         <div className='user-profile-body'>
           <aside className='user-profile-side'>
+
             <div
               className='user-nav-link'
-              onClick={scrollTo(upcomingSection)}
+              onClick={scrollTo("upcomingSection")}
             >Upcoming Reservations</div>
+
             <div
               className='user-nav-link'
-              onClick={scrollTo(pastSection)}
+              onClick={scrollTo("pastSection")}
             >Past Reservations</div>
+
             <div
               className='user-nav-link'
-              onClick={scrollTo(favoriteSection)}
+              onClick={scrollTo("favoriteSection")}
             >Favorite Restaurants</div>
+
           </aside>
 
           <section className='user-profile-content'>
             <div className='user-profile-section'>
               <div className='user-profile-content-title' name='upcoming'
-                id="upcomingSection"
-                ref={ upcomingSection }>
+                id="upcomingSection">
                 <h2>
                   {getUpcomingCount() <= 1 ? "Upcoming Reservation" : "Upcoming Reservations"}
                   <span className="user-reservation-count">{getUpcomingCount()}
@@ -271,8 +273,7 @@ function User(props){
 
             <div className='user-profile-section'>
               <div className='user-profile-content-title' name='past'
-                id="pastSection"
-                ref={ pastSection}>
+                id="pastSection">
                 <h2>
                   {getPastCount() <= 1 ? "Past Reservation" : "Past Reservations"}
                   <span className="user-reservation-count">{getPastCount()}</span>
@@ -287,8 +288,7 @@ function User(props){
 
             <div className='user-profile-section'>
               <div className='user-profile-content-title' name='favorite'
-                  id="favoriteSection"
-                  ref={favoriteSection }>
+                  id="favoriteSection">
                   <h2>Favorite Restaurants
                     <span className="user-reservation-count">
                       {Object.keys(props.favorites).length}

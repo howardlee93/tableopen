@@ -3037,28 +3037,23 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var scrollTo = function scrollTo(ref) {
-  return window.scrollTo(0, ref.current.offsetTop);
-};
-
 function User(props) {
-  var upcomingSection = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
-  var pastSection = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
-  var favoriteSection = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
-
   var deleteReservation = function deleteReservation(id) {
     return function (e) {
       e.preventDefault();
       props.deleteReservation(id);
     };
-  }; // const scrollTo = (el) => ( 
-  //     el.scrollIntoView({
-  //       behavior: 'smooth',
-  //       block: "start"
-  //     });
-  //   )
-  // 
+  };
 
+  var scrollTo = function scrollTo(id) {
+    var elem = document.getElementById(id);
+    return function () {
+      elem.scrollIntoView({
+        behavior: 'smooth',
+        block: "start"
+      });
+    };
+  };
 
   var getUpcomingCount = function getUpcomingCount() {
     var upcoming = [];
@@ -3222,13 +3217,13 @@ function User(props) {
     className: "user-profile-side"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "user-nav-link",
-    onClick: scrollTo(upcomingSection)
+    onClick: scrollTo("upcomingSection")
   }, "Upcoming Reservations"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "user-nav-link",
-    onClick: scrollTo(pastSection)
+    onClick: scrollTo("pastSection")
   }, "Past Reservations"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "user-nav-link",
-    onClick: scrollTo(favoriteSection)
+    onClick: scrollTo("favoriteSection")
   }, "Favorite Restaurants")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
     className: "user-profile-content"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3236,8 +3231,7 @@ function User(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "user-profile-content-title",
     name: "upcoming",
-    id: "upcomingSection",
-    ref: upcomingSection
+    id: "upcomingSection"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, getUpcomingCount() <= 1 ? "Upcoming Reservation" : "Upcoming Reservations", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "user-reservation-count"
   }, getUpcomingCount()))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3247,8 +3241,7 @@ function User(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "user-profile-content-title",
     name: "past",
-    id: "pastSection",
-    ref: pastSection
+    id: "pastSection"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, getPastCount() <= 1 ? "Past Reservation" : "Past Reservations", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "user-reservation-count"
   }, getPastCount()))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3258,8 +3251,7 @@ function User(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "user-profile-content-title",
     name: "favorite",
-    id: "favoriteSection",
-    ref: favoriteSection
+    id: "favoriteSection"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Favorite Restaurants", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "user-reservation-count"
   }, Object.keys(props.favorites).length))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3465,7 +3457,6 @@ var favoriteReducer = function favoriteReducer() {
   Object.freeze(state);
 
   switch (action.type) {
-    // case RECEIVE_SINGLE_FAVORITE:
     case _actions_favorite_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_FAVORITES"]:
       return action.favorites;
 

@@ -23,8 +23,6 @@ function RestaurantDetail(props){
 	useEffect(()=>{
 		window.scrollTo(0, 0);
     	props.requestSingleRestaurant(props.match.params.restaurantId);
-
-
 	})
 
 	const reservationFormChecker = () =>{
