@@ -22,7 +22,7 @@ function RestaurantDetail(props){
 
 	useEffect(()=>{
 		window.scrollTo(0, 0);
-    	props.requestSingleRestaurant(this.props.match.params.restaurantId);
+    	props.requestSingleRestaurant(props.match.params.restaurantId);
 
 
 	})
@@ -207,7 +207,7 @@ function RestaurantDetail(props){
                 <span className="restaurant-star">{this.getStar()}</span>
               </div>
               <div className='restaurant-nav-detail'>
-                <span>{this.getRate()}</span>
+                <span>{getRate()}</span>
                 <div className='rating_icon'>{this.getAveRating()}</div>
                 <div><i className="fa fa-comment"></i>{restaurant.countReview} reviews</div>
                 <div><i className="fas fa-utensils"></i>{restaurant.cuisine} </div>
@@ -238,7 +238,7 @@ function RestaurantDetail(props){
                 ref={ el => { this.writeReviewsSection = el;} }
                 className='restaurant-reviews'
                 name='writeReviews'>
-                {this.reviewFromChecker()}
+                {reviewFromChecker()}
               </div>
 
             </div>
@@ -247,10 +247,10 @@ function RestaurantDetail(props){
             <div
               name='reservation'
               className='restaurant-reservation'>
-                {this.reservationFormChecker()}
+                {reservationFormChecker()}
             </div>
 
-            {this.favoriteChecker()}
+            {favoriteChecker()}
           </aside>
         </div>
       	</div>
@@ -259,4 +259,8 @@ function RestaurantDetail(props){
 }
 
 export default withRouter(RestaurantDetail);
+
+
+
+
 

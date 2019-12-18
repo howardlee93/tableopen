@@ -7,7 +7,7 @@ class Display extends React.Component{
 	constructor(props){
 		super(props);
 		this.state ={
-			terms:" "
+			term:" "
 		}
 		this.handleClick = this.handleClick.bind(this);
 
@@ -17,20 +17,23 @@ class Display extends React.Component{
 		e.preventDefault();
 		this.props.openModal("loading");
 		let cityName = e.target.id;
+		console.log(cityName);
+
 		
 		if(cityName.includes("_")){
 			cityName = cityName.split("_").join(" ");
 		}
+
 		clearTimeout(this.timer);
 		const that = this;
 		this.timer = setTimeout( ()=>{
 			that.setState({
 				term: cityName
 			}, ()=>(
-				that.props.searchRestaurants(that.state.terms)
+				that.props.searchRestaurants(that.state.term)
 				).then(() =>
 				that.setState({
-					terms:" "
+					term:" "
 				})
 				).then(()=> that.props.history.push('restaurants'))
 			);
@@ -96,3 +99,5 @@ class Display extends React.Component{
 
 
 export default withRouter(Display);
+
+

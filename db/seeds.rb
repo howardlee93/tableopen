@@ -146,7 +146,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Contemporary American",
   description: "Benu offers a set tasting menu. In order to provide you with the best dining experience, we require advance notice for guests with dietary restrictions. For guests avoiding gluten, we are unable to completely remove soy sauce. It is used in many of our base preparations.",
-  logo: "https://cdn.vox-cdn.com/thumbor/9FjFl90P4nghQh3UYuTvFqnpJZk=/0x0:2000x1333/1020x765/filters:focal(840x507:1160x827)/cdn.vox-cdn.com/uploads/chorus_image/image/57429793/benu_bill_addison.0.jpg"
+  logo: "https://s.hdnux.com/photos/11/11/62/2399396/15/940x0.jpg"
 )
 
 Restaurant.create(

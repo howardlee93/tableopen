@@ -17,7 +17,7 @@ const mapStateToProps = ({errors}) => ({
 
 const mapDispatchToProps = dispatch => ({
 	createRestaurant: restaurant => dispatch(createRestaurant(restaurant)),
-	clearErrors: () => dispatch(clearErrors([]))
+	clearErrors: () => dispatch(receiveRestaurantErrors([]))
 });
 
 export default connect(

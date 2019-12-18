@@ -37,7 +37,7 @@ const App = () => (
 
 			<footer className="main-footer">
 
-				<p className="footer-about">Hi! This web application was built with Ruby on Rails and React/Redux as a tribute to the popular reservation service OpenTable.
+				<p className="footer-about">Hi! This web application was built with Ruby on Rails and React/Redux to mimic OpenTable.
 			    This is my capstone project for my Object Oriented Design and Analysis class</p>
 
 			    <p className="footer-about"> Copyright Howard Lee {new Date().getFullYear()}</p>

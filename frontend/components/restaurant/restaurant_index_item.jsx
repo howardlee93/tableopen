@@ -5,20 +5,6 @@ import { Link } from 'react-router-dom';
 function restaurantIndexItem(props){
 	let restaurant = props.restaurant;
 
-	// const getStar =() =>{
-	// 	let starCount = props.restaurant.star;
-	// 	const stars = [];
-	// 	for(let i =0; i < starCount; i++){
-	// 		stars.push(
-	// 			<img
-	// 			key={("" + Math.random()).substring(2,7)}
-	// 			src={star}/>
-	// 			);
-	// 	}
-	// 	return  stars;
-	// }
-	
-
 	return(
 		 <Link to={`/restaurants/${restaurant.id}`}>
 		 <li className="restaurant-list-section">

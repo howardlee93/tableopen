@@ -3,8 +3,6 @@ import SearchContainer from './search/search_container';
 
 import DisplayContainer from './display/display_container';
 import {Link} from 'react-router-dom';
-import { ProtectedRoute } from '../util/route_util';
-import AddRestaurant from './restaurant/add_restaurant_container';
 
 
 export default () => (

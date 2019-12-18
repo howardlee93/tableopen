@@ -8,7 +8,7 @@ class Api::ReservationsController < ApplicationController
     if user
       @reservations = user.reservations.order(:date)
     else
-      render json :["User not found"], status: 404
+      render json: ["User not found"], status: 404
     end 
   end
 
@@ -45,7 +45,7 @@ class Api::ReservationsController < ApplicationController
       reservation.destroy
       render json: reservation
     else 
-      render json :["Reservation doesnt exist"], status: 404 
+      render json: ["Reservation doesnt exist"], status: 404 
     end 
   end
   

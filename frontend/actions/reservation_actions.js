@@ -47,7 +47,7 @@ export const requestSingleReservation = id => (
 
 export const requestUserReservations = userId => dispatch =>(
 	APIUtil.fetchUserReservations(userId)
-		.then((reservation) => dispatch(receiveAllReservations(reservations)),
+		.then((reservations) => dispatch(receiveAllReservations(reservations)),
 			err => dispatch(receiveReservationErrors(err.responseJSON)))
 	);
 

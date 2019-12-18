@@ -35,7 +35,7 @@ class AddRestaurant extends React.Component{
 		e.preventDefault();
 		this.props.createRestaurant(this.state).then(
 			(payload)=>{
-				this.props.history.push(`/restaurants/${payload.restaurat.id}`);
+				this.props.history.push(`/restaurants/${payload.restaurant.id}`);
 			});
 	}
 
