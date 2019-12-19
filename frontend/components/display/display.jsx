@@ -26,22 +26,20 @@ class Display extends React.Component{
 
 		clearTimeout(this.timer);
 		const that = this;
-		this.timer = setTimeout( ()=>{
-			that.setState({
-				term: cityName
-			}, ()=>(
-				that.props.searchRestaurants(that.state.term)
-				).then(() =>
+		 this.timer = setTimeout( ()=>{
+		 	that.setState({
+		 		term: cityName
+		 	}, ()=>(
+		 		that.props.searchRestaurants(that.state.term)
+		 		.then(() => that.props.closeModal()
+				).then(() => 		
 				that.setState({
-					term:" "
-				})
-				).then(()=> that.props.history.push('restaurants'))
-			);
+		 			term:" "
+		 		})
+				).then(()=> that.props.history.push('/restaurants'))
+			));
 		},800)
 	}
-
-
-
 
 	render(){
 		return(

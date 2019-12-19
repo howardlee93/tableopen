@@ -28,7 +28,7 @@ export const receiveFavoriteErrors = errors =>({
 
 
 export const createFavorite = favorite => dispatch => (
-	APIUtil.createFavorites(favorite)
+	APIUtil.createFavorite(favorite)
 	.then(newFavorite => {
 		dispatch(receiveSingleFavorite(newFavorite));
 	},

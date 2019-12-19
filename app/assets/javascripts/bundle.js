@@ -140,7 +140,7 @@ var receiveFavoriteErrors = function receiveFavoriteErrors(errors) {
 };
 var createFavorite = function createFavorite(favorite) {
   return function (dispatch) {
-    return _util_favorite_api_util__WEBPACK_IMPORTED_MODULE_0__["createFavorites"](favorite).then(function (newFavorite) {
+    return _util_favorite_api_util__WEBPACK_IMPORTED_MODULE_0__["createFavorite"](favorite).then(function (newFavorite) {
       dispatch(receiveSingleFavorite(newFavorite));
     }, function (err) {
       return dispatch(receiveFavoriteErrors(err.responseJSON));
@@ -719,11 +719,13 @@ function (_React$Component) {
           term: cityName
         }, function () {
           return that.props.searchRestaurants(that.state.term).then(function () {
+            return that.props.closeModal();
+          }).then(function () {
             return that.setState({
               term: " "
             });
           }).then(function () {
-            return that.props.history.push('restaurants');
+            return that.props.history.push('/restaurants');
           });
         });
       }, 800);
@@ -1532,11 +1534,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../util/route_util */ "./frontend/util/route_util.js");
-/* harmony import */ var _reservation_reservation_form_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reservation/reservation_form_container */ "./frontend/components/reservation/reservation_form_container.js");
-/* harmony import */ var _review_review_form_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../review/review_form_container */ "./frontend/components/review/review_form_container.js");
-/* harmony import */ var _review_review_index_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../review/review_index_container */ "./frontend/components/review/review_index_container.js");
-/* harmony import */ var _loading__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../loading */ "./frontend/components/loading.jsx");
+/* harmony import */ var _reservation_reservation_form_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reservation/reservation_form_container */ "./frontend/components/reservation/reservation_form_container.js");
+/* harmony import */ var _review_review_form_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../review/review_form_container */ "./frontend/components/review/review_form_container.js");
+/* harmony import */ var _review_review_index_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../review/review_index_container */ "./frontend/components/review/review_index_container.js");
+/* harmony import */ var _loading__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../loading */ "./frontend/components/loading.jsx");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 // restaurant_detail.jsx
 
 
@@ -1545,11 +1548,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 function RestaurantDetail(props) {
-  var _this = this;
-
-  var scrollTo = function scrollTo(el) {
+  var scrollTo = function scrollTo(id) {
+    var el = document.getElementById(id);
     el.scrollIntoView({
       behavior: 'smooth'
     });
@@ -1558,25 +1559,25 @@ function RestaurantDetail(props) {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     window.scrollTo(0, 0);
     props.requestSingleRestaurant(props.match.params.restaurantId);
-  });
+  }, []);
 
   var reservationFormChecker = function reservationFormChecker() {
     if (props.currentUser) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         path: "/restaurants/:restaurantId",
-        component: _reservation_reservation_form_container__WEBPACK_IMPORTED_MODULE_3__["default"]
+        component: _reservation_reservation_form_container__WEBPACK_IMPORTED_MODULE_2__["default"]
       });
     } else {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         path: "/restaurants/:restaurantId",
-        component: _reservation_reservation_form_container__WEBPACK_IMPORTED_MODULE_3__["default"]
+        component: _reservation_reservation_form_container__WEBPACK_IMPORTED_MODULE_2__["default"]
       }));
     }
   };
 
   var reviewFormChecker = function reviewFormChecker() {
     if (props.loading) {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_loading__WEBPACK_IMPORTED_MODULE_6__["default"], null);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_loading__WEBPACK_IMPORTED_MODULE_5__["default"], null);
     }
 
     if (!props.currentUser) {
@@ -1589,7 +1590,7 @@ function RestaurantDetail(props) {
     if (reservationUserIds.includes(currentUser.id)) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         path: '/restaurants/:restaurantId',
-        component: _review_review_form_container__WEBPACK_IMPORTED_MODULE_4__["default"]
+        component: _review_review_form_container__WEBPACK_IMPORTED_MODULE_3__["default"]
       });
     } else {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1607,11 +1608,11 @@ function RestaurantDetail(props) {
 
     if (restaurant.currentUserLikes) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        onClick: _this.deleteFavorite(restaurant.id)
+        onClick: deleteFavorite(restaurant.id)
       }, "Restaurant saved!");
     } else {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        onClick: _this.createFavorite(restaurant.id)
+        onClick: createFavorite(restaurant.id)
       }, "Save this restaurant!");
     }
   };
@@ -1706,7 +1707,7 @@ function RestaurantDetail(props) {
   };
 
   if (props.loading) {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_loading__WEBPACK_IMPORTED_MODULE_6__["default"], null);
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_loading__WEBPACK_IMPORTED_MODULE_5__["default"], null);
   }
 
   ;
@@ -1733,17 +1734,17 @@ function RestaurantDetail(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "page-nav-link",
     onClick: function onClick() {
-      return _this.scrollTo(_this.aboutSection);
+      return scrollTo("aboutSection");
     }
   }, "About"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "page-nav-link",
     onClick: function onClick() {
-      return _this.scrollTo(_this.reviewsSection);
+      return scrollTo("reviewsSection");
     }
   }, "Reviews"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "page-nav-link",
     onClick: function onClick() {
-      return _this.scrollTo(_this.writeReviewsSection);
+      return scrollTo("writeReviewsSection");
     }
   }, "Write a Review")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
     className: "restaurant-nav-info"
@@ -1761,27 +1762,20 @@ function RestaurantDetail(props) {
     className: "fas fa-utensils"
   }), restaurant.cuisine, " "))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "restaurant-showpage-main"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    ref: function ref(el) {
-      _this.aboutSection = el;
-    },
-    className: "restaurant-content-about",
-    id: "about"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _defineProperty({
+    id: "aboutSection",
+    className: "restaurant-content-about"
+  }, "id", "about"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "restaurant-description"
   }, restaurant.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Cusines: ", restaurant.cuisine), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Phone number: ", restaurant.phoneNumber), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Hours of operation: ", restaurant.openTime, " - ", restaurant.closeTime), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Address: ", restaurant.address, ", ", restaurant.city, ", ", restaurant.state, " ", restaurant.zipcode)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    ref: function ref(el) {
-      _this.reviewsSection = el;
-    },
+    id: "reviewsSection",
     className: "restaurant-reviews",
     name: "reviews"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "What ", this.props.restaurant.ratingArr.length, " People Are Saying"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: '/restaurants/:restaurantId',
-    component: _review_review_index_container__WEBPACK_IMPORTED_MODULE_5__["default"]
+    component: _review_review_index_container__WEBPACK_IMPORTED_MODULE_4__["default"]
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    ref: function ref(el) {
-      _this.writeReviewsSection = el;
-    },
+    id: "writeReviewsSection",
     className: "restaurant-reviews",
     name: "writeReviews"
   }, reviewFromChecker()))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("aside", {
@@ -3033,231 +3027,567 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 // user.jsx
 
+ // function User(props){
+// 	const deleteReservation = id =>(
+// 		e =>{
+// 			e.preventDefault();
+// 			props.deleteReservation(id);
+// 			}
+// 		);
+//   const scrollTo = id => {
+//       let elem = document.getElementById(id);
+//       return () =>{
+//        elem.scrollIntoView({
+//         behavior: 'smooth',
+//         block: "start"
+//         });
+//       };
+//     }
+//   const getUpcomingCount = () => {
+//     const upcoming = [];
+//     const today = new Date().toJSON();
+//     const allRes = Object.values(props.reservations);
+//     allRes.forEach((reservation) => {
+//       if(Date.parse(today.slice(0, 10)) <= Date.parse(reservation.date)) {
+//         upcoming.push(reservation);
+//       }
+//     });
+//     return upcoming.length;
+// }
+//   const getPastCount = () => {
+//     const past = [];
+//     const today = new Date().toJSON();
+//     const allRes = Object.values(props.reservations);
+//     allRes.forEach((reservation) => {
+//       if(Date.parse(today.slice(0, 10)) > Date.parse(reservation.date)) {
+//         past.push(reservation);
+//       }
+//     });
+//     return past.length;
+//   }
+//   useEffect(() =>{
+//     props.requestUserReservations(props.currentUser.id);
+//     props.requestUserFavorites(props.currentUser.id);
+//   },[]);
+// 	const upcomingReservations = () => {
+// 		const upcoming = [];
+// 		const today = new Date().toJSON();
+// 		const allRes = Object.values(props.reservations);
+// 		allRes.forEach(reservation => {
+// 			if (Date.parse(today.slice(0,10)) <= Date.parse(reservation.date)){
+// 				upcoming.push(reservation);
+// 				}
+// 		});
+// 		if(upcoming.length > 0){
+// 			return (
+// 				<div>
+// 					{upcoming.map((res, i)=> 
+// 						<section key={`upcoming-${i}`}>
+// 							<div className="restaurant-logo-container">
+// 				            <img
+// 				                className="restaurant-logo"
+// 				                src={res.restaurant.logo}/>
+// 				            </div>
+// 				            <div className="restaurant-detail-container">
+// 				              <Link
+// 				                to={`/restaurants/${res.restaurant.id}`}
+// 				                className="restaurant-name">
+// 				                  {res.restaurant.name}
+// 				              </Link>
+// 				              <div className='upcoming-res-date'>
+// 				                {res.date}
+// 				              </div>
+// 				              <div className='upcoming-res-time'>
+// 				                {res.time}:00
+// 				              </div>
+// 				              <div className='upcoming-res-seats'>
+// 				                Table for {res.seats} {res.seats === 1 ? "person" : "people"}
+// 				              </div>
+// 				              <div className='upcoming-res-address'>
+// 				              <i className="fas fa-map-marker-alt"></i>
+// 				                {res.restaurant.address}, {res.restaurant.city}, {res.restaurant.state} {res.restaurant.zipcode}
+// 				              </div>
+// 				              </div>
+// 				              <button type="button"
+// 				                      onClick={deleteReservation(res.id)}
+// 				                      className="btn btn-demo reservation-btn">
+// 				                      Cancel
+// 				              </button>
+// 				         </section>
+// 						)}
+// 				</div>
+// 				);
+// 		}else{
+//       		return (
+//         	<p className="no-reservation">No upcoming reservations</p>
+//       		);
+//     	}
+//   	};
+//   	const pastReservations = () => {
+//   		let favorites = props.favorites;
+//   		if(Object.keys(favorites).length === 0){
+//   			return(
+//   				<p>No reservations</p>
+//   				)
+//   		}else{
+//   			return(
+//   				<div>
+//   				{Object.values(favorites).map((fav,i)=>
+//  					<section key={`favorite-${idx}`} className="reservation-list">
+//             		<div className="restaurant-logo-container">
+//               			<img
+//                 			className="restaurant-logo"
+//                 			src={fav.restaurant.logo}/>
+//             			</div>
+//             			<div className="restaurant-detail-container res-fav">
+//               			<Link
+//                 			to={`/restaurants/${fav.restaurant.id}`}
+//                 			className="restaurant-name">
+//                   			{fav.restaurant.name}  <i className="fas fa-heart"></i>
+//               			</Link>
+// 			            <div className='past-res-date'>
+// 			                Michelin Star Level: {fav.restaurant.star}
+// 			            </div>
+// 			            <div className='past-res-time'>
+// 			                Cuisine: {fav.restaurant.cuisine}
+// 			            </div>
+// 			            <div className='past-res-time'>
+// 			                Contact: {fav.restaurant.phone_number}
+// 			            </div>
+// 			            <Link
+// 			                to={`/restaurants/${fav.restaurant.id}`}
+// 			                className="btn btn-demo reservation-btn review-btn">
+// 			                Reserve Now
+// 			             </Link>
+// 	            		</div>
+//           				</section>
+//   					)}
+//   				</div>
+//  			);
+//   		}
+//   	};
+//   	const user = props.currentUser;
+//   const favoriteRestaurants = () => {
+//     let favorites = props.favorites;
+//     if (Object.keys(favorites).length === 0 ) {
+//       return (
+//         <p className="no-reservation">No favorite</p>
+//       );
+//     } else {
+//       return(
+//         <div>
+//         { Object.values(favorites).map((fav, idx) =>
+//           <section key={`favorite-${idx}`} className="reservation-list">
+//             <div className="restaurant-logo-container">
+//               <img
+//                 className="restaurant-logo"
+//                 src={fav.restaurant.logo}/>
+//             </div>
+//             <div className="restaurant-detail-container res-fav">
+//               <Link
+//                 to={`/restaurants/${fav.restaurant.id}`}
+//                 className="restaurant-name">
+//                   {fav.restaurant.name}  <i className="fas fa-heart"></i>
+//               </Link>
+//               <div className='past-res-date'>
+//                 Michelin Star Level: {fav.restaurant.star}
+//               </div>
+//               <div className='past-res-time'>
+//                 Cuisine: {fav.restaurant.cuisine}
+//               </div>
+//               <div className='past-res-time'>
+//                 Contact: {fav.restaurant.phone_number}
+//               </div>
+//               <Link
+//                 to={`/restaurants/${fav.restaurant.id}`}
+//                 className="btn btn-demo reservation-btn review-btn">
+//                 Reserve Now
+//               </Link>
+//             </div>
+//           </section>
+//         )}
+//         </div>
+//       );
+//     }
+//   }
+//   	return(
+//       	<section className='user-profile-main'>
+//         <div className="user-profile">
+//           <h3>{user.firstName} {user.lastName === "." ? "" : user.lastName}</h3>
+//         </div>
+//         <div className='user-profile-body'>
+//           <aside className='user-profile-side'>
+//             <div
+//               className='user-nav-link'
+//               onClick={scrollTo("upcomingSection")}
+//             >Upcoming Reservations</div>
+//             <div
+//               className='user-nav-link'
+//               onClick={scrollTo("pastSection")}
+//             >Past Reservations</div>
+//             <div
+//               className='user-nav-link'
+//               onClick={scrollTo("favoriteSection")}
+//             >Favorite Restaurants</div>
+//           </aside>
+//           <section className='user-profile-content'>
+//             <div className='user-profile-section'>
+//               <div className='user-profile-content-title' name='upcoming'
+//                 id="upcomingSection">
+//                 <h2>
+//                   {getUpcomingCount() <= 1 ? "Upcoming Reservation" : "Upcoming Reservations"}
+//                   <span className="user-reservation-count">{getUpcomingCount()}
+//                   </span>
+//                 </h2>
+//               </div>
+//               <div className='user-profile-section-lists' >
+//                 {upcomingReservations()}
+//               </div>
+//             </div>
+//             <div className='user-profile-section'>
+//               <div className='user-profile-content-title' name='past'
+//                 id="pastSection">
+//                 <h2>
+//                   {getPastCount() <= 1 ? "Past Reservation" : "Past Reservations"}
+//                   <span className="user-reservation-count">{getPastCount()}</span>
+//                 </h2>
+//               </div>
+//               <div className='user-profile-section-lists' >
+//                 {pastReservations()}
+//               </div>
+//             </div>
+//             <div className='user-profile-section'>
+//               <div className='user-profile-content-title' name='favorite'
+//                   id="favoriteSection">
+//                   <h2>Favorite Restaurants
+//                     <span className="user-reservation-count">
+//                       {Object.keys(props.favorites).length}
+//                     </span>
+//                   </h2>
+//               </div>
+//               <div className='user-profile-section-lists' >
+//                 {favoriteRestaurants()}
+//               </div>
+//             </div>
+//           	</section>
+//         	</div>
+//       		</section>
+//   		);
+// }
+// export default User;
 
+var User =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(User, _React$Component);
 
-function User(props) {
-  var deleteReservation = function deleteReservation(id) {
-    return function (e) {
-      e.preventDefault();
-      props.deleteReservation(id);
-    };
-  };
+  function User(props) {
+    var _this;
 
-  var scrollTo = function scrollTo(id) {
-    var elem = document.getElementById(id);
-    return function () {
-      elem.scrollIntoView({
-        behavior: 'smooth',
-        block: "start"
+    _classCallCheck(this, User);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(User).call(this, props));
+    _this.scrollTo = _this.scrollTo.bind(_assertThisInitialized(_this));
+    _this.upcomingReservations = _this.upcomingReservations.bind(_assertThisInitialized(_this));
+    _this.pastReservations = _this.pastReservations.bind(_assertThisInitialized(_this));
+    _this.favoriteRestaurants = _this.favoriteRestaurants.bind(_assertThisInitialized(_this));
+    _this.deleteReservation = _this.deleteReservation.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(User, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.requestUserReservations(this.props.currentUser.id);
+      this.props.requestUserFavorites(this.props.currentUser.id);
+    }
+  }, {
+    key: "deleteReservation",
+    value: function deleteReservation(id) {
+      var _this2 = this;
+
+      return function (e) {
+        e.preventDefault();
+
+        _this2.props.deleteReservation(id);
+      };
+    }
+  }, {
+    key: "scrollTo",
+    value: function scrollTo(el) {
+      return function () {
+        el.scrollIntoView({
+          behavior: 'smooth',
+          block: "start"
+        });
+      };
+    }
+  }, {
+    key: "getStar",
+    value: function getStar(res) {
+      var starCount = res.restaurant.star;
+      var stars = [];
+
+      for (var i = 0; i < starCount; i++) {
+        stars.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          key: ("" + Math.random()).substring(2, 7),
+          src: "https://res.cloudinary.com/chengzii/image/upload/c_scale,w_20/v1523389939/star.png"
+        }));
+      }
+
+      return stars;
+    }
+  }, {
+    key: "getUpcomingCount",
+    value: function getUpcomingCount() {
+      var upcoming = [];
+      var today = new Date().toJSON();
+      var allRes = Object.values(this.props.reservations);
+      allRes.forEach(function (reservation) {
+        if (Date.parse(today.slice(0, 10)) <= Date.parse(reservation.date)) {
+          upcoming.push(reservation);
+        }
       });
-    };
-  };
-
-  var getUpcomingCount = function getUpcomingCount() {
-    var upcoming = [];
-    var today = new Date().toJSON();
-    var allRes = Object.values(props.reservations);
-    allRes.forEach(function (reservation) {
-      if (Date.parse(today.slice(0, 10)) <= Date.parse(reservation.date)) {
-        upcoming.push(reservation);
-      }
-    });
-    return upcoming.length;
-  };
-
-  var getPastCount = function getPastCount() {
-    var past = [];
-    var today = new Date().toJSON();
-    var allRes = Object.values(props.reservations);
-    allRes.forEach(function (reservation) {
-      if (Date.parse(today.slice(0, 10)) > Date.parse(reservation.date)) {
-        past.push(reservation);
-      }
-    });
-    return past.length;
-  };
-
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    props.requestUserReservations(props.currentUser.id);
-    props.requestUserFavorites(props.currentUser.id);
-  }, []);
-
-  var upcomingReservations = function upcomingReservations() {
-    var upcoming = [];
-    var today = new Date().toJSON();
-    var allRes = Object.values(props.reservations);
-    allRes.forEach(function (reservation) {
-      if (Date.parse(today.slice(0, 10)) <= Date.parse(reservation.date)) {
-        upcoming.push(reservation);
-      }
-    });
-
-    if (upcoming.length > 0) {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, upcoming.map(function (res, i) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-          key: "upcoming-".concat(i)
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "restaurant-logo-container"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          className: "restaurant-logo",
-          src: res.restaurant.logo
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "restaurant-detail-container"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/restaurants/".concat(res.restaurant.id),
-          className: "restaurant-name"
-        }, res.restaurant.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "upcoming-res-date"
-        }, res.date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "upcoming-res-time"
-        }, res.time, ":00"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "upcoming-res-seats"
-        }, "Table for ", res.seats, " ", res.seats === 1 ? "person" : "people"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "upcoming-res-address"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "fas fa-map-marker-alt"
-        }), res.restaurant.address, ", ", res.restaurant.city, ", ", res.restaurant.state, " ", res.restaurant.zipcode)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          type: "button",
-          onClick: deleteReservation(res.id),
-          className: "btn btn-demo reservation-btn"
-        }, "Cancel"));
-      }));
-    } else {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "no-reservation"
-      }, "No upcoming reservations");
+      return upcoming.length;
     }
-  };
-
-  var pastReservations = function pastReservations() {
-    var favorites = props.favorites;
-
-    if (Object.keys(favorites).length === 0) {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "No reservations");
-    } else {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, Object.values(favorites).map(function (fav, i) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-          key: "favorite-".concat(idx),
-          className: "reservation-list"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "restaurant-logo-container"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          className: "restaurant-logo",
-          src: fav.restaurant.logo
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "restaurant-detail-container res-fav"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/restaurants/".concat(fav.restaurant.id),
-          className: "restaurant-name"
-        }, fav.restaurant.name, "  ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "fas fa-heart"
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "past-res-date"
-        }, "Michelin Star Level: ", fav.restaurant.star), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "past-res-time"
-        }, "Cuisine: ", fav.restaurant.cuisine), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "past-res-time"
-        }, "Contact: ", fav.restaurant.phone_number), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/restaurants/".concat(fav.restaurant.id),
-          className: "btn btn-demo reservation-btn review-btn"
-        }, "Reserve Now")));
-      }));
+  }, {
+    key: "getPastCount",
+    value: function getPastCount() {
+      var past = [];
+      var today = new Date().toJSON();
+      var allRes = Object.values(this.props.reservations);
+      allRes.forEach(function (reservation) {
+        if (Date.parse(today.slice(0, 10)) > Date.parse(reservation.date)) {
+          past.push(reservation);
+        }
+      });
+      return past.length;
     }
-  };
+  }, {
+    key: "upcomingReservations",
+    value: function upcomingReservations() {
+      var _this3 = this;
 
-  var user = props.currentUser;
+      var upcoming = [];
+      var today = new Date().toJSON();
+      var allRes = Object.values(this.props.reservations);
+      allRes.forEach(function (reservation) {
+        if (Date.parse(today.slice(0, 10)) <= Date.parse(reservation.date)) {
+          upcoming.push(reservation);
+        }
+      });
 
-  var favoriteRestaurants = function favoriteRestaurants() {
-    var favorites = props.favorites;
-
-    if (Object.keys(favorites).length === 0) {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "no-reservation"
-      }, "No favorite");
-    } else {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, Object.values(favorites).map(function (fav, idx) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-          key: "favorite-".concat(idx),
-          className: "reservation-list"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "restaurant-logo-container"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          className: "restaurant-logo",
-          src: fav.restaurant.logo
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "restaurant-detail-container res-fav"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/restaurants/".concat(fav.restaurant.id),
-          className: "restaurant-name"
-        }, fav.restaurant.name, "  ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "fas fa-heart"
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "past-res-date"
-        }, "Michelin Star Level: ", fav.restaurant.star), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "past-res-time"
-        }, "Cuisine: ", fav.restaurant.cuisine), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "past-res-time"
-        }, "Contact: ", fav.restaurant.phone_number), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/restaurants/".concat(fav.restaurant.id),
-          className: "btn btn-demo reservation-btn review-btn"
-        }, "Reserve Now")));
-      }));
+      if (upcoming.length > 0) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, upcoming.map(function (res, idx) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+            key: "upcoming-".concat(idx),
+            className: "reservation-list"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "restaurant-logo-container"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+            className: "restaurant-logo",
+            src: res.restaurant.logo
+          })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "restaurant-detail-container"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+            to: "/restaurants/".concat(res.restaurant.id),
+            className: "restaurant-name"
+          }, res.restaurant.name, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+            className: "restaurant-star"
+          }, _this3.getStar(res))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "upcoming-res-date"
+          }, res.date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "upcoming-res-time"
+          }, res.time, ":00"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "upcoming-res-seats"
+          }, "Table for ", res.seats, " ", res.seats === 1 ? "person" : "people"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "upcoming-res-address"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-map-marker-alt"
+          }), res.restaurant.address, ", ", res.restaurant.city, ", ", res.restaurant.state, " ", res.restaurant.zipcode), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+            type: "button",
+            onClick: _this3.deleteReservation(res.id),
+            className: "btn btn-demo reservation-btn"
+          }, "Cancel")));
+        }));
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "no-reservation"
+        }, "No upcoming reservations");
+      }
     }
-  };
+  }, {
+    key: "pastReservations",
+    value: function pastReservations() {
+      var _this4 = this;
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    className: "user-profile-main"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "user-profile"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, user.firstName, " ", user.lastName === "." ? "" : user.lastName)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "user-profile-body"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("aside", {
-    className: "user-profile-side"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "user-nav-link",
-    onClick: scrollTo("upcomingSection")
-  }, "Upcoming Reservations"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "user-nav-link",
-    onClick: scrollTo("pastSection")
-  }, "Past Reservations"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "user-nav-link",
-    onClick: scrollTo("favoriteSection")
-  }, "Favorite Restaurants")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    className: "user-profile-content"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "user-profile-section"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "user-profile-content-title",
-    name: "upcoming",
-    id: "upcomingSection"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, getUpcomingCount() <= 1 ? "Upcoming Reservation" : "Upcoming Reservations", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "user-reservation-count"
-  }, getUpcomingCount()))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "user-profile-section-lists"
-  }, upcomingReservations())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "user-profile-section"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "user-profile-content-title",
-    name: "past",
-    id: "pastSection"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, getPastCount() <= 1 ? "Past Reservation" : "Past Reservations", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "user-reservation-count"
-  }, getPastCount()))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "user-profile-section-lists"
-  }, pastReservations())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "user-profile-section"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "user-profile-content-title",
-    name: "favorite",
-    id: "favoriteSection"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Favorite Restaurants", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "user-reservation-count"
-  }, Object.keys(props.favorites).length))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "user-profile-section-lists"
-  }, favoriteRestaurants())))));
-}
+      var past = [];
+      var today = new Date().toJSON();
+      var allRes = Object.values(this.props.reservations);
+      allRes.forEach(function (reservation) {
+        if (Date.parse(today.slice(0, 10)) > Date.parse(reservation.date)) {
+          past.push(reservation);
+        }
+      });
+
+      if (past.length > 0) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, past.map(function (res, idx) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+            key: "past-".concat(idx),
+            className: "reservation-list"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "restaurant-logo-container"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+            className: "restaurant-logo",
+            src: res.restaurant.logo
+          })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "restaurant-detail-container past-res"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+            to: "/restaurants/".concat(res.restaurant.id),
+            className: "restaurant-name"
+          }, res.restaurant.name, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+            className: "restaurant-star"
+          }, _this4.getStar(res))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, res.date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, res.time, ":00"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Table for ", res.seats, " ", res.seats === 1 ? "person" : "people"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+            to: "/restaurants/".concat(res.restaurant.id),
+            className: "btn review-btn"
+          }, "Write Review"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+            type: "button",
+            onClick: _this4.deleteReservation(res.id),
+            className: "reservation-delete-btn"
+          }, "Delete")));
+        }));
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "no-reservation"
+        }, "No reservations history");
+      }
+    }
+  }, {
+    key: "favoriteRestaurants",
+    value: function favoriteRestaurants() {
+      var favorites = this.props.favorites;
+
+      if (Object.keys(favorites).length === 0) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "no-reservation"
+        }, "No favorite");
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, Object.values(favorites).map(function (fav, idx) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+            key: "favorite-".concat(idx),
+            className: "reservation-list"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "restaurant-logo-container"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+            className: "restaurant-logo",
+            src: fav.restaurant.logo
+          })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "restaurant-detail-container res-fav"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+            to: "/restaurants/".concat(fav.restaurant.id),
+            className: "restaurant-name"
+          }, fav.restaurant.name, "  ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: "fas fa-heart"
+          })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "past-res-date"
+          }, "Michelin Star Level: ", fav.restaurant.star), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "past-res-time"
+          }, "Cuisine: ", fav.restaurant.cuisine), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "past-res-time"
+          }, "Contact: ", fav.restaurant.phone_number), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+            to: "/restaurants/".concat(fav.restaurant.id),
+            className: "btn btn-demo reservation-btn review-btn"
+          }, "Reserve Now")));
+        }));
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this5 = this;
+
+      var user = this.props.currentUser;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+        className: "user-profile-main"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-profile"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, user.firstName, " ", user.lastName === "." ? "" : user.lastName)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-profile-body"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("aside", {
+        className: "user-profile-side"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-nav-link",
+        onClick: this.scrollTo(this.upcomingSection)
+      }, "Upcoming Reservations"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-nav-link",
+        onClick: this.scrollTo(this.pastSection)
+      }, "Past Reservations"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-nav-link",
+        onClick: this.scrollTo(this.favoriteSection)
+      }, "Favorite Restaurants")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+        className: "user-profile-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-profile-section"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-profile-content-title",
+        name: "upcoming",
+        ref: function ref(el) {
+          return _this5.upcomingSection = el;
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, this.getUpcomingCount() <= 1 ? "Upcoming Reservation" : "Upcoming Reservations", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "user-reservation-count"
+      }, this.getUpcomingCount()))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-profile-section-lists"
+      }, this.upcomingReservations())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-profile-section"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-profile-content-title",
+        name: "past",
+        ref: function ref(el) {
+          return _this5.pastSection = el;
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, this.getPastCount() <= 1 ? "Past Reservation" : "Past Reservations", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "user-reservation-count"
+      }, this.getPastCount()))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-profile-section-lists"
+      }, this.pastReservations())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-profile-section"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-profile-content-title",
+        name: "favorite",
+        ref: function ref(el) {
+          return _this5.favoriteSection = el;
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Favorite Restaurants", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "user-reservation-count"
+      }, Object.keys(this.props.favorites).length))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-profile-section-lists"
+      }, this.favoriteRestaurants())))));
+    }
+  }]);
+
+  return User;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (User);
 
@@ -3946,18 +4276,18 @@ var configureStore = function configureStore() {
 /*!********************************************!*\
   !*** ./frontend/util/favorite_api_util.js ***!
   \********************************************/
-/*! exports provided: createFavorites, fetchUserFavorites, fetchSingleFavorite, deleteFavorite */
+/*! exports provided: createFavorite, fetchUserFavorites, fetchSingleFavorite, deleteFavorite */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createFavorites", function() { return createFavorites; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createFavorite", function() { return createFavorite; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchUserFavorites", function() { return fetchUserFavorites; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchSingleFavorite", function() { return fetchSingleFavorite; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteFavorite", function() { return deleteFavorite; });
-var createFavorites = function createFavorites(id) {
+var createFavorite = function createFavorite(id) {
   return $.ajax({
-    method: "POST",
+    method: 'POST',
     url: '/api/favorites',
     data: {
       id: id
@@ -36694,7 +37024,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

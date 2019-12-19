@@ -423,7 +423,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Contemporary American",
   description: "Chef Miles Thompson is steering a pretty big boat these days with Michael’s in Santa Monica. The long-standing restaurant has been in the hit-making business for decades, helping to launch the career of countless well-known chefs, but it’s all now in the hands of the eager wunderkind who navigates between classic menu items like foie gras and all-new interpretations like hamachi collar with fish-sauce caramel. Add in the gorgeous leafy patio, the always eclectic crowd, and the fun-loving Michael McCarty himself working the room, and it’s smooth sailing at one of LA’s most iconic restaurants.",
-  logo: "https://cdn.vox-cdn.com/thumbor/UZrddgIgOgZxGCM7rAH4M5jJD_o=/0x0:2000x1335/1020x765/filters:focal(840x508:1160x828)/cdn.vox-cdn.com/uploads/chorus_image/image/58261873/2016-09-14-michaels-004.0.0.jpg"
+  logo: "https://images.squarespace-cdn.com/content/v1/57aaa5b2e6f2e16320ac4aca/1568406852148-H95ANFHMI0F8M68JRVXQ/ke17ZwdGBToddI8pDm48kMFiMyT1nneRMhnmfuSfpxZ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0mlM0or4nqX7jrn5yWu0hA1QXedaIFqnAbw_tQShHbKg4-O_KAc44ak5jGzrnn7f3A/DSC_1943.jpg?format=1500w"
 )
 
 Restaurant.create(

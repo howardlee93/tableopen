@@ -2,7 +2,6 @@
 
 import React, {useEffect} from 'react';
 import { Route, withRouter } from 'react-router-dom';
-import { ProtectedRoute } from '../../util/route_util';
 
 import ReservationFormContainer from '../reservation/reservation_form_container';
 
@@ -15,7 +14,8 @@ import Loading from "../loading";
 
 function RestaurantDetail(props){
 	
-	const scrollTo = el =>{
+	const scrollTo = id =>{
+		let el = document.getElementById(id);
 		el.scrollIntoView({ behavior: 'smooth' });
 
 	}
@@ -23,7 +23,7 @@ function RestaurantDetail(props){
 	useEffect(()=>{
 		window.scrollTo(0, 0);
     	props.requestSingleRestaurant(props.match.params.restaurantId);
-	})
+	}, [])
 
 	const reservationFormChecker = () =>{
 		if (props.currentUser){
@@ -77,7 +77,7 @@ function RestaurantDetail(props){
 		if (restaurant.currentUserLikes){
 			return(
 				<div
-					onClick={this.deleteFavorite(restaurant.id)}
+					onClick={deleteFavorite(restaurant.id)}
 					>
 					Restaurant saved!
 					</div>
@@ -85,7 +85,7 @@ function RestaurantDetail(props){
 		}else{
 			return(
 				<div
-					onClick={this.createFavorite(restaurant.id)}
+					onClick={createFavorite(restaurant.id)}
 					>
 					 Save this restaurant!
 					</div>
@@ -194,9 +194,9 @@ function RestaurantDetail(props){
         <div className="restaurant-main-container">
           <div className='restaurant-main-left'>
             <nav className='nav-link-wrapper'>
-              <a className='page-nav-link' onClick={() => this.scrollTo(this.aboutSection)}>About</a>
-              <a className='page-nav-link' onClick={() => this.scrollTo(this.reviewsSection)}>Reviews</a>
-              <a className='page-nav-link' onClick={() => this.scrollTo(this.writeReviewsSection)}>Write a Review</a>
+              <a className='page-nav-link' onClick={() => scrollTo("aboutSection")}>About</a>
+              <a className='page-nav-link' onClick={() => scrollTo("reviewsSection")}>Reviews</a>
+              <a className='page-nav-link' onClick={() => scrollTo("writeReviewsSection")}>Write a Review</a>
             </nav>
 
             <section className='restaurant-nav-info'>
@@ -215,7 +215,7 @@ function RestaurantDetail(props){
 
 
             <div className='restaurant-showpage-main'>
-              <div ref={ el => { this.aboutSection = el;} } className='restaurant-content-about' id='about'>
+              <div id="aboutSection" className='restaurant-content-about' id='about'>
                     <p className="restaurant-description">{restaurant.description}</p>
                     <p>Cusines: {restaurant.cuisine}</p>
                     <p>Phone number: {restaurant.phoneNumber}</p>
@@ -224,7 +224,7 @@ function RestaurantDetail(props){
               </div>
 
               <div
-                ref={ el => { this.reviewsSection = el;} }
+                id="reviewsSection"
                 className='restaurant-reviews'
                 name='reviews'>
                   <h5>What {this.props.restaurant.ratingArr.length} People Are Saying</h5>
@@ -233,7 +233,7 @@ function RestaurantDetail(props){
               </div>
 
               <div
-                ref={ el => { this.writeReviewsSection = el;} }
+                id="writeReviewsSection"
                 className='restaurant-reviews'
                 name='writeReviews'>
                 {reviewFromChecker()}
