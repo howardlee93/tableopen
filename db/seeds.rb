@@ -65,7 +65,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Contemporary American",
   description: "Chef's Table is Brooklyn Fare's three Michelin-starred restaurant. Settle into the kitchen counter for a communal dining experience featuring the cuisine of Chef Cesar Ramiez. The courses on the tasting menu change to reflect products in season.",
-  logo: "https://cdn.vox-cdn.com/thumbor/Wwfx18Y_OBsxG6tbNAOt8i2tJgg=/0x0:720x480/1020x765/filters:focal(303x183:417x297)/cdn.vox-cdn.com/uploads/chorus_image/image/57389045/bkfare.0.0.jpg"
+  logo: "https://cdn.vox-cdn.com/thumbor/KFXE0ZyhDSDMqTwiPJqzmFmKuPQ=/259x0:4450x3143/1820x1213/filters:focal(259x0:4450x3143):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/48825293/24392094161_cd52a90e32_o.0.0.jpg"
 )
 
 Restaurant.create(
@@ -97,7 +97,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Seafood",
   description: "Born in Paris in 1972 by sibling duo Maguy and Gilbert Le Coze, Le Bernardin only served fish: Fresh, simple and prepared with respect. After receiving its first Michelin star in 1976, and two more in 1980, the Le Coze’s set to open Le Bernardin in New York in 1986.",
-  logo: "https://cdn.vox-cdn.com/thumbor/7Q2hZAuhRiWVYpgyIeUneDZT86Y=/0x0:528x377/1020x765/filters:focal(222x147:306x231)/cdn.vox-cdn.com/uploads/chorus_image/image/57389031/6128984658_747918b790_o.0.0.jpg"
+  logo:"https://www.le-bernardin.com/content/slides/lb-gallery-main.jpg"
 )
 
 Restaurant.create(
@@ -114,7 +114,7 @@ Restaurant.create(
   cuisine: "French",
   description: "Opened in 2004, Per Se is Thomas Keller’s acclaimed New York interpretation of The French Laundry in the Time Warner Center at Columbus Circle. Designed by Adam D. Tihany, Per Se features a serene and intimate environment with spectacular views of Central Park and Columbus Circle.
 The restaurant is Chef Keller’s second three-Michelin-starred property featuring his daily nine-course tasting menu and a nine-course vegetable tasting menu using classic French technique and the finest quality ingredients available. An award-winning wine list, boasting more than 2,000 bottles, complements the menu. The list highlights a collection of older wines as well as wines from small producers that are released in limited quantities. Per Se is a member of French-based associated Relais & Chateaux, Relais Gourmands and Traditions & Qualité organizations, recognized for their dedication to maintaining the highest international standards for hospitality and culinary excellence.",
-  logo: "https://cdn.vox-cdn.com/thumbor/CrrGkyBIWd2hpq5HBzOMriewA44=/0x0:600x406/1020x765/filters:focal(252x155:348x251)/cdn.vox-cdn.com/uploads/chorus_image/image/57389023/PerSeKitchen.0.0.0.jpg"
+  logo: "https://cdn.vox-cdn.com/thumbor/Ml8zFAkAm8az-Y9B0Jf_LO2O0JI=/0x0:1000x665/1200x800/filters:focal(420x253:580x413)/cdn.vox-cdn.com/uploads/chorus_image/image/48668129/7026965971_5a6a49cacc_o.0.jpg"
 )
 
 Restaurant.create(
@@ -130,8 +130,8 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "French",
   description: "Jean‑Georges opened in 1997 to critical acclaim. The jewel of Chef Jean‑Georges Vongerichten’s empire, the restaurant offers the very best in fine dining. Awarded four stars by the New York Times and two Michelin stars.",
-  logo: "https://cdn.vox-cdn.com/thumbor/qytAeiRmsZ15Lj9Qg_7PEXehflQ=/0x0:1000x667/1020x765/filters:focal(420x254:580x414)/cdn.vox-cdn.com/uploads/chorus_image/image/57389019/1268037_714376971910330_678890327_o.0.0.jpg"
-)
+  logo: "https://cdn.vox-cdn.com/thumbor/2so4P_iYwxiGFeCaWKaDU-OR96w=/0x0:5616x3744/1200x800/filters:focal(2359x1423:3257x2321)/cdn.vox-cdn.com/uploads/chorus_image/image/65217599/20120725_dine_109_1.0.jpg"
+  )
 
 Restaurant.create(
   owner_id: 7,
@@ -146,7 +146,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Contemporary American",
   description: "Benu offers a set tasting menu. In order to provide you with the best dining experience, we require advance notice for guests with dietary restrictions. For guests avoiding gluten, we are unable to completely remove soy sauce. It is used in many of our base preparations.",
-  logo: "https://s.hdnux.com/photos/11/11/62/2399396/15/940x0.jpg"
+  logo:"https://s.hdnux.com/photos/11/11/62/2399396/15/rawImage.jpg"
 )
 
 Restaurant.create(
@@ -165,7 +165,7 @@ Restaurant.create(
 We offer one tasting menu nightly.
 Wine pairings are available, as well as an extensive wine list.
 The cost of the tasting menu is $250 per guest.",
-  logo: "https://cdn.vox-cdn.com/thumbor/FejunCFZmk8V2C5iIJ2VYfE_h-I=/0x0:474x350/1020x765/filters:focal(200x138:274x212)/cdn.vox-cdn.com/uploads/chorus_image/image/57429795/sf_coi_ab_2016_9838___web.0.jpg"
+  logo: "https://cdn.vox-cdn.com/thumbor/MCkdxRaP7UPW_G_Uclh40dMa2Gw=/0x0:1440x900/1200x800/filters:focal(605x335:835x565)/cdn.vox-cdn.com/uploads/chorus_image/image/57321163/coi.0.jpeg"
 )
 
 Restaurant.create(
@@ -181,7 +181,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Contemporary American",
   description: "Manresa is the showcase for the inventive cuisine of Chef-Proprietor David Kinch. Chef Kinch and the Manresa team find inspiration from European traditions and refinement, American ingenuity and the vast bounty that California has to offer. ",
-  logo: "https://cdn.vox-cdn.com/thumbor/wpotd7DlapsUAX3gLAD4Cr0Y-lE=/0x0:734x494/1020x765/filters:focal(309x189:425x305)/cdn.vox-cdn.com/uploads/chorus_image/image/57429799/Screen_Shot_2014-10-08_at_9.24.24_AM.0.0.png"
+  logo: "https://media-cdn.tripadvisor.com/media/photo-s/02/2a/a8/1b/manresa.jpg"
 )
 
 Restaurant.create(
@@ -197,8 +197,8 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Contemporary American",
   description: "Situated in San Francisco's historic Jackson Square, Lindsay and Chef Michael Tusk's Quince features a nightly tasting menu that highlights the seasonal bounty of Northern California. The cost of the tasting menu is $275.",
-  logo: "https://cdn.vox-cdn.com/thumbor/_FvKLIjxAaY_qxrs_1RTtd3tLE0=/0x0:1200x800/1020x765/filters:focal(504x304:696x496)/cdn.vox-cdn.com/uploads/chorus_image/image/57429801/IMG_0854_3554673050_O.0.0.jpg"
-)
+  logo:"https://s.hdnux.com/photos/46/50/17/10126280/3/920x920.jpg"
+  )
 
 Restaurant.create(
   owner_id: 11,
@@ -213,7 +213,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Contemporary French",
   description: "Seventeen years after opening its doors in San Francisco’s iconic Fisherman’s Wharf neighborhood, Restaurant Gary Danko continues to refine its award-winning combination of classic French cooking, thoughtful and inventive use of local ingredients, and personable yet impeccable service. “You don’t just open a great restaurant,” says Chef Gary Danko, “it’s a constant work in progress.” PLEASE NOTE: Gary Danko only accepts limited reservations on OpenTable. For more tables and availability, please call us directly.",
-  logo: "https://cdn.vox-cdn.com/thumbor/8BfysyiOjukymlkcp-mPSgOPXKg=/0x0:864x525/1020x765/filters:focal(363x194:501x332)/cdn.vox-cdn.com/uploads/chorus_image/image/57429839/gary_danko.0.0.jpg"
+  logo: "https://infatuation.imgix.net/media/reviews/gary-danko/banners/Gary-Danko_0.jpg?auto=format&h=840&w=1336"
 )
 
 Restaurant.create(
@@ -229,7 +229,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Italian",
   description: "For 28 years, Acquerello has offered an unparalleled Italian fine-dining experience in San Francisco’s Nob Hill neighborhood. The restaurant, operated by Giancarlo Paterlini and Executive Chef Suzette Gresham, has been heralded for its cuisine, wine, and service.",
-  logo: "https://cdn.vox-cdn.com/thumbor/-vk5snSQUZC2BBR1A-uoAI6O9bI=/0x0:610x283/1020x765/filters:focal(257x94:353x190)/cdn.vox-cdn.com/uploads/chorus_image/image/57429807/140910_Acquerello_65.0.jpg"
+  logo: "https://resizer.otstatic.com/v2/photos/huge/23365891.jpg"
 )
 
 Restaurant.create(
@@ -245,7 +245,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Contemporary American",
   description: "Aaron London's new restaurant in the Mission, San Francisco. Northern California regional cuisine rooted in the produce and seafood of the Bay Area.",
-  logo: "https://cdn.vox-cdn.com/thumbor/88nVqFNn1zXpDmBDUSUzC-awukY=/0x0:2000x1333/1020x765/filters:focal(840x507:1160x827)/cdn.vox-cdn.com/uploads/chorus_image/image/57429823/ALsPlace_PChang-5.0.0.jpg"
+  logo: "https://images.getbento.com/accounts/2d1b36f5044847fdec922c26e5c3d4a4/mediausers/custom_fields_galleries/images/zvzcdFAS6OUIHTOJUb2X_ALs-PLACE-October-906-FINALprint.jpg?w=1200&fit=crop&auto=compress,format&h=600"
 )
 
 Restaurant.create(
@@ -262,7 +262,7 @@ Restaurant.create(
   cuisine: "Contemporary American",
   description: "Aster offers a 4 Course Prefix menu for $75, where each guest can create their own tasting menu.
 Located in San Francisco, Aster is a 1-star Michelin rated restaurant serving up creative California cuisine in a warm & cozy, casual setting. On the menu are familiar favorites, elevated through carefully sourced and house-made ingredients and the impeccable technique of chef/owner Brett Cooper and his team.",
-  logo: "https://cdn.vox-cdn.com/thumbor/DH4Cxjpq7dl_HG3QE_pG60zZaXc=/0x0:2000x1333/1020x765/filters:focal(840x507:1160x827)/cdn.vox-cdn.com/uploads/chorus_image/image/57429825/Aster_PChang-7.0.0.jpg"
+  logo: "https://insidescoopsf.sfgate.com/files/2015/06/bauer0617_aster_2221.jpg"
 )
 
 Restaurant.create(
@@ -279,7 +279,7 @@ Restaurant.create(
   cuisine: "Contemporary French",
   description: "Winner of 2 coveted Michelin Stars for 2016 as well as 2017, and winner of one Michelin star for 5 years prior, Campton Place Restaurant is an oasis of exceptional service and extraordinary cuisine just steps from Union Square.
 A landmark dining destination for over two decades, Chef Srijith Gopinathan continues the legacy of the country’s most renowned chefs who have called Campton Place home. Chef Sri’s sophisticated cooking style combines French classical techniques with local, seasonal ingredients and global flavors, particularly those from South Asia.",
-  logo: "https://cdn.vox-cdn.com/thumbor/SG1eNmf4nsJJy6c1ryaMtFneLFU=/0x0:958x322/1020x765/filters:focal(403x85:555x237)/cdn.vox-cdn.com/uploads/chorus_image/image/57429831/01.0.0.png"
+  logo: "http://secure.s.forbestravelguide.com/img/properties/Property_CamptonPlaceDiningRoom_SanFrancisco_Restaurant_Style_creditCamptonPlaceDiningRoom.jpg"
 )
 
 Restaurant.create(
@@ -295,7 +295,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Contemporary American",
   description: "Located in the heart of San Francisco's Mission District, Commonwealth is a progressive American restaurant. Chef Jason Fox takes a decidedly global approach to California's tradition of showcasing local, seasonal foods by incorporating diverse culinary ingredients and techniques. Commonwealth also donates part of the proceeds from Chef Fox’s tasting menus ($85) to local non-profits.",
-  logo: "https://cdn.vox-cdn.com/thumbor/82xqLuTssBweh_7oNL2m5Grv2Rs=/0x0:700x525/1020x765/filters:focal(294x207:406x319)/cdn.vox-cdn.com/uploads/chorus_image/image/57429835/commonwealth.0.0.jpg"
+  logo: "https://images.squarespace-cdn.com/content/v1/58f125793a0411fc98b6df0a/1492222148908-DXLEF50PI3FFEETOL8GK/ke17ZwdGBToddI8pDm48kKAwwdAfKsTlKsCcElEApLR7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UegTYNQkRo-Jk4EWsyBNhwKrKLo5CceA1-Tdpfgyxoog5ck0MD3_q0rY3jFJjjoLbQ/cmw+interior+1.jpg?format=2500w"
 )
 
 Restaurant.create(
@@ -311,7 +311,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Contemporary American",
   description: "The Modern is a 2 Michelin-starred contemporary American restaurant at the Museum of Modern Art. Helmed by Executive Chef Abram Bissell, the restaurant features refined, playful dishes that highlight exceptional ingredients and seasonality in a $168 four-course menu and a $228 eight-course tasting menu. Lunch offers a $138 three-course menu or $178 six-course menu. Master Sommelier Michaël Engelmann's extensive selection of wines showcases exceptional diversity and value.",
-  logo: "https://cdn.vox-cdn.com/thumbor/s3itw0ZFGfwBmSyivesacedf-ME=/0x0:1600x807/1020x765/filters:focal(672x276:928x532)/cdn.vox-cdn.com/uploads/chorus_image/image/57389033/11187765_10153247476930140_942734355215030168_o__1_.0.0.jpg"
+  logo: "https://images.getbento.com/accounts/a49040ddb2103dc89022de8feabef2de/mediausers/galleries/images/369/Gwlijw0gQAePFsJqQDef_a.png?w=1800&fit=max&auto=compress,format&h=1800"
 )
 
 Restaurant.create(
@@ -327,7 +327,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Seafood",
   description: "Two Michelin-starred and New York Times Three-starred Aquavit, located in Midtown Manhattan showcases seasonal, Modern Nordic fare and has been a pioneer of Nordic cuisine since opening in 1987. The restaurant has an extensive wine list as well as an aquavit infusion and cocktail program. At lunch we offer an a la carte menu, a 3-course prix fixe for $58pp, and a 5-course seasonal tasting menu for $105pp. At dinner we offer a 3-course prix fixe for $105pp, a 5-course seasonal tasting menu for $135pp and a 11-course chef's tasting menu for $175pp.",
-  logo: "https://cdn.vox-cdn.com/thumbor/xxomQ_XtZmIIIiu5lb4U77r_Xx8=/0x0:2000x1331/1020x765/filters:focal(840x506:1160x826)/cdn.vox-cdn.com/uploads/chorus_image/image/57389035/14971407624_20fec26d3d_o.0.0.jpg"
+  logo: "https://static01.nyt.com/images/2015/05/27/dining/20150527REST-slide-KLRT/20150527REST-slide-KLRT-videoLarge.jpg"
 )
 
 Restaurant.create(
@@ -343,7 +343,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Contemporary French",
   description: "Tucked away on Madison Avenue this Michelin Star restaurant serves out the best caviar available, complimenting it with some of the finest cuisine in NYC.",
-  logo: "https://cdn.vox-cdn.com/thumbor/kksuDhx_paNrIFAslie_UM6-4gM=/0x0:596x592/1020x765/filters:focal(251x249:345x343)/cdn.vox-cdn.com/uploads/chorus_image/image/57389037/12020024_1203258679689774_3265744249338374890_n.0.0.png"
+  logo: "data:image/jpeg;base64,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"
 )
 
 Restaurant.create(
@@ -359,8 +359,8 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "French",
   description: "Daniel Boulud’s namesake restaurant features contemporary, seasonal French cuisine in a setting that combines striking neoclassical architecture with elegant modern furnishings. The sophisticated bar and lounge are a welcoming spot for before and after dinner drinks.",
-  logo: "https://cdn.vox-cdn.com/thumbor/IJfS0Jk-CssfALUcMl30avdGtsg=/0x0:1000x665/1020x765/filters:focal(420x253:580x413)/cdn.vox-cdn.com/uploads/chorus_image/image/57389027/daniel.0.0.jpg"
-)
+  logo: "https://cdn.vox-cdn.com/thumbor/DuppFOxqjmYd1EOhOqYxGYNPPQU=/28x0:471x332/1200x800/filters:focal(28x0:471x332)/cdn.vox-cdn.com/uploads/chorus_image/image/38898868/daniel-nyc.0.jpg"
+  )
 
 Restaurant.create(
   owner_id: 21,
@@ -375,7 +375,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Italian",
   description: "Marea Ristorante, located in one of Manhattans most storied addresses, features Chef Michael White's ode to Italian seafood. From his trademark handmade pastas to his fresh crudo and whole fish, Chef White is committed to reinventing the notion of seafood in New York.",
-  logo: "https://cdn.vox-cdn.com/thumbor/qhoxK9ClB0BDj7wyIPkL-Xdry9o=/0x0:528x351/1020x765/filters:focal(222x134:306x218)/cdn.vox-cdn.com/uploads/chorus_image/image/57389025/3530066814_1489b47154_o.0.0.jpg"
+  logo: "https://d37219swed47g7.cloudfront.net/media/CACHE/images/images/reviews/marea/banners/1452892280.66/3282e3c03fcd1da0dff80224c059a793.jpg"
 )
 
 Restaurant.create(
@@ -391,7 +391,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "French",
   description: "CAFÉ BOULUD features a French-American menu inspired by Chef Daniel Boulud's four culinary muses: la tradition, classic French cuisine; la saison, seasonal delicacies; le potager, the vegetable garden; and le voyage, the flavors of world cuisines. ",
-  logo: "https://cdn.vox-cdn.com/thumbor/rwZ--7-qedEZhi8cwDArVecROoc=/0x0:960x795/1020x765/filters:focal(404x322:556x474)/cdn.vox-cdn.com/uploads/chorus_image/image/57389017/110888536_10152957212796730_8013862048883697008_n.0.0.jpg"
+  logo: "https://media-cdn.tripadvisor.com/media/photo-s/09/a9/37/f6/cafe-boulud.jpg"
 )
 
 Restaurant.create(
@@ -407,7 +407,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Contemporary American",
   description: "Located just steps away from the American Museum of Natural History and Central Park on Manhattan’s Upper West Side, Dovetail offers an intimate dining experience showcasing Chef John Fraser’s award-winning contemporary American cuisine and creative use of seasonal, farm-fresh ingredients. Dovetail has been recognized with numerous accolades over the years since its opening, including Wine Spectator’s prestigious Award of Excellence, three stars from The New York Times and has consistently earned a Michelin Guide star since 2011. Dovetail offers a myriad of dining options throughout the week. Choose from our three or four course prix fixe, chef’s tasting menu or a la carte dining at the bar. Pre-theater, vegan and vegetarian menus are available nightly.",
-  logo: "https://cdn.vox-cdn.com/thumbor/d94bZv8beC5FxBlSGnNtgD_7_r8=/0x0:5796x3872/1020x765/filters:focal(2435x1473:3361x2399)/cdn.vox-cdn.com/uploads/chorus_image/image/57389015/20150709-Dovetail-1.0.0.jpg"
+  logo: "https://2qnwk534wspy32octm1bhyvz-wpengine.netdna-ssl.com/wp-content/uploads/2017/09/MICHAELS_LUNCH-featured-L.jpg"
 )
 
 Restaurant.create(
@@ -439,7 +439,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "French",
   description: "Bryant and Kim Ng partnered with Rustic Canyon’s Josh Loeb and Zoe Nathan for a powerhouse restaurant in Santa Monica. The vibe is wonderful: Expansive and vibrant without being too formal, it's the kind of place one can drop in for a cocktail and raw seafood at the bar, or a long sit-down dinner with friends. The plates recall Bryant’s upbringing, incorporating flavors of Singapore and Vietnam with a heavy dose of French technique.",
-  logo: "https://cdn.vox-cdn.com/thumbor/xW39BgTwGpvZQEXvSoXymEQP-gI=/0x0:2000x1331/1020x765/filters:focal(840x506:1160x826)/cdn.vox-cdn.com/uploads/chorus_image/image/56977465/2015-06-18-cassia-005.0.0.jpg"
+  logo: "https://cdn.vox-cdn.com/thumbor/30rpU-nQVFjQXWtXT1TtF4SfGcQ=/0x0:902x600/1200x800/filters:focal(379x228:523x372)/cdn.vox-cdn.com/uploads/chorus_image/image/64000718/2015-06-18-cassia-006.0.0.0.1504173814.0.jpg"
 )
 
 Restaurant.create(
@@ -455,7 +455,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Japanese",
   description: "Phillip Frankland and Margarita Lee have taken their tasting menu restaurant to the next level thanks to a retooled dining experience (like the cocktails and amuse bouches at a secret new bar) and a sharper, more polished set of dishes. This Encino restaurant is now the premier dining destination in the Valley, with a slew of creative and flavorful dishes that excite and delight diners with every course. Reservations required.",
-  logo: "https://cdn.vox-cdn.com/thumbor/8-Ow7z0y_GB71-_RpoWYxsg4mcM=/0x0:6720x4480/1020x765/filters:focal(2823x1703:3897x2777)/cdn.vox-cdn.com/uploads/chorus_image/image/59341103/JakobLayman.0118.ScratchBarandKitchen_393_1.0.jpg"
+  logo:"https://cdn.vox-cdn.com/thumbor/UVEsv_qpDoxawaLwis95vk4fwgo=/0x0:6539x4359/1200x0/filters:focal(0x0:6539x4359):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/10176761/JakobLayman.0118.ScratchBarandKitchen_553_1.jpg"
 )
 
 Restaurant.create(
@@ -471,8 +471,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Contemporary American",
   description: "This iconic Venice restaurant has undergone a complete makeover, offering a wide-ranging menu to anticipate the neighborhood’s every dining need, from breakfast through dinner service. Jason Neroni's produce-driven, pasta-centric menu is sure to please most people, while the multifaceted building allows for everything from a casual bite at the bar to a more composed sit-down experience on the patio.",
-  logo: "https://cdn.vox-cdn.com/thumbor/o30i4O0DSBXLkNt2okld8Rh8lqo=/0x0:2000x1331/1020x765/filters:focal(840x506:1160x826)/cdn.vox-cdn.com/uploads/chorus_image/image/56977469/2015-11-04-rosecafe-009.0.0.jpg"
-)
+  logo: "http://www.whereislosangeles.com/Yukle/Resim/LOGO/rose-caferestaurant.jpg")
 
 Restaurant.create(
   owner_id: 28,
@@ -487,7 +486,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Italian",
   description: "Evan Funke returns to Los Angeles with one of the city’s most celebrated new restaurants, a temple of pasta and Italian cuisine in Venice in the iconic former Joe’s space along Abbot Kinney. Start with the superb focaccia, served in a plush round at the start of the meal. Then venture into one of the fresh salads prepared as lovingly as the pastas. But the main draws are the handmade pastas: rigatoni all’amatriciana, tonnarelli cacio e pepe, and pappardelle bolognese.",
-  logo: "https://cdn.vox-cdn.com/thumbor/LnDlm1uH6WpQZX9rw75uqMDsWHA=/0x0:2000x1335/1020x765/filters:focal(840x508:1160x828)/cdn.vox-cdn.com/uploads/chorus_image/image/58261875/2017_03_31_Felix_021.0.jpg"
+  logo: "https://cdn.vox-cdn.com/thumbor/9pweLaINPK6X6i2Vdgz0EMHd_F8=/0x0:2000x1335/1200x800/filters:focal(840x508:1160x828)/cdn.vox-cdn.com/uploads/chorus_image/image/55908437/2017_03_31_Felix_021.0.jpg"
 )
 
 Restaurant.create(
@@ -503,7 +502,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Japanese",
   description: "Niki Nakayama’s phenomenal California-Japanese kaiseki might possibly be the most impressive restaurant to visit in Los Angeles. If the Michelin Guide were still rating in LA, n/naka would be a strong contender for three stars. The hidden-in-plain-sight building in Palms hosts one of the warmest, loveliest dining rooms, with fantastic wine pairings and pristine seafood prepared with a master’s touch. Reservations required, often weeks in advance.",
-  logo: "https://cdn.vox-cdn.com/thumbor/DznypgSH-jXvKKyDVRN-HkZmays=/0x0:2000x1335/1020x765/filters:focal(840x508:1160x828)/cdn.vox-cdn.com/uploads/chorus_image/image/56977547/2017_06_13_n_naka_014.0.jpg"
+  logo: "https://cdn.vox-cdn.com/thumbor/ZJTtnekGDic4Nk-zFT6Qt67gU8M=/0x0:2000x1335/1200x675/filters:focal(840x508:1160x828)/cdn.vox-cdn.com/uploads/chorus_image/image/55513187/2017_06_13_n_naka_014.0.jpg"
 )
 
 Restaurant.create(
@@ -519,7 +518,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Contemporary American",
   description: "David LeFevre's enduring Manhattan Beach restaurant remains packed every night of the week thanks to its crowd-pleasing menu of market-driven fare with a chef's touch. The dark environs make for a perfect date spot just steps from the ocean, while crave-worthy fare like the cheddar bacon biscuits, green curry mussels, and braised lamb belly convince diners to become regulars after just one bite.",
-  logo: "https://cdn.vox-cdn.com/thumbor/1Zk5kwZex0nyaf8mf2hPwLv_wvg=/0x0:1000x667/1020x765/filters:focal(420x254:580x414)/cdn.vox-cdn.com/uploads/chorus_image/image/56977471/011_11_12_STONE_COLD_STUNNERS_MB_POST-38.0.0.jpg"
+  logo: "http://www.theseaviewinn.com/media/k2/items/cache/ccb4e23c8aa216f1e96d31ab209c036b_XL.jpg"
 )
 
 Restaurant.create(
@@ -535,7 +534,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Contemporary American",
   description: "Wolfgang Puck's Beverly Hills flagship still has a compelling tasting menu that stands up to the city's best. Throw in a star-powered crowd with world-class service, and there's a truly iconic LA restaurant that will appeal to high-end diners and people-watchers alike. Don't be surprised if Wolfgang himself is working the dining room and giving tours to the kitchen.",
-  logo: "https://cdn.vox-cdn.com/thumbor/6_yk_fgNapNTyZZsyYkGIGn55hs=/0x0:1000x667/1020x765/filters:focal(420x254:580x414)/cdn.vox-cdn.com/uploads/chorus_image/image/56977475/10_2012_SPAGO-45.0.0.jpg"
+  logo: "https://d37219swed47g7.cloudfront.net/media/images/reviews/spago-beverly-hills/banners/1509146784.48.jpg"
 )
 
 Restaurant.create(
@@ -551,7 +550,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Korean",
   description: "Sang Yoon put together one of the most impressive (and most unsung) dining rooms in the city. Yoon continues to tinker with the Asian-inspired menu, pulling off old favorites and testing new ones without any remorse. All the flavors will seem familiar, but come presented in a fresh, more thoughtful way. If LA had its own version of New York’s rollicking Momofuku Ssam Bar, this might be it.",
-  logo: "https://cdn.vox-cdn.com/thumbor/d2B5Vk-LWACEo2xTvshrZ-wJ5ro=/0x0:571x427/1020x765/filters:focal(241x169:331x259)/cdn.vox-cdn.com/uploads/chorus_image/image/56977479/lukshon.0.0.jpg"
+  logo:"http://lukshon.com/wp-content/uploads/la-times.jpg"
 )
 
 Restaurant.create(
@@ -567,7 +566,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Seafood",
   description: "Suzanne Goin and Caroline Styne’s enduring West Third Street classic has one of the most pleasant patio spaces in town, making for a quality lunch with perfect produce and great execution. Dinner’s even more expansive, with Goin's trademark touch on rustic American cuisine coupled with suave service. Nearly everyone has a plate of the Spanish fried chicken on their table, though anything from the wood oven would be a solid dish to order. A.O.C. is one of LA’s modern icons, and everyone should dine here at least once a year.",
-  logo: "https://cdn.vox-cdn.com/thumbor/Jy-moZN1-f6iMtiUP9svVR5xIeM=/0x0:800x510/1020x765/filters:focal(336x191:464x319)/cdn.vox-cdn.com/uploads/chorus_image/image/56977481/aoc5_INTERIOR.0.0.jpg"
+  logo:"https://www.aocwinebar.com/images/ss4.jpg?crc=4266061653"
 )
 
 Restaurant.create(
@@ -583,7 +582,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Italian",
   description: "Jon Shook and Vinny Dotolo wanted to put their mark on Fairfax, and while their still-excellent restaurant Animal occupies the western part of the block, this shiny Italian-American-inspired place is all the rage. With composed pastas and salads and some fine pizzas, it's the kind of comfort food that everyone can get behind.",
-  logo: "https://cdn.vox-cdn.com/thumbor/C3Q3DtzUYEvezRT6rKgAqIdwLDs=/0x0:2000x1331/1020x765/filters:focal(840x506:1160x826)/cdn.vox-cdn.com/uploads/chorus_image/image/56977485/2015-04-18-JonVinnys-005.0.0.jpg"
+  logo:"https://cdn.vox-cdn.com/thumbor/dkRgjne8EguIveRDqUxDV955TOQ=/0x0:2000x1335/1200x675/filters:focal(840x508:1160x828)/cdn.vox-cdn.com/uploads/chorus_image/image/62856589/2019_01_16_Jon_Vinny_002.0.jpg"
 )
 
 Restaurant.create(
@@ -599,7 +598,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Contemporary American",
   description: "When Walter and Margarita Manzke took over the iconic Campanile space, they knew the stakes were high. And who in LA would have thought they would’ve succeeded this much, offering a swell breakfast-to-dinner menu with a French point of view? Throw in some pockets of new American and even Asian influences and the bill of fare will likely appeal to everyone. The desserts, breads, and pastries by Margarita are near perfect, while the charcuterie board is sure to stun anyone.",
-  logo: "https://cdn.vox-cdn.com/thumbor/i7Q5grpT1YdmI9EkU71MBmo1G8c=/0x0:1394x958/1020x765/filters:focal(586x368:808x590)/cdn.vox-cdn.com/uploads/chorus_image/image/56977489/republique.0.0.jpg"
+  logo:"https://media.architecturaldigest.com/photos/55f9e1524254f7de3455ed52/16:9/w_1280,c_limit/dam-images-daily-2014-03-republique-la-republique-los-angeles-01-interior-dining-area.jpg"
 )
 
 Restaurant.create(
@@ -615,8 +614,8 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Seafood",
   description: "Since it opened just a few years ago, Luv2eat has ascended into the heights of LA's Thai restaurant scene with wonderfully prepared plates of Southern and sometimes Northern specialties. The Phuket-style crab curry should be on every table, along with the khao soi. Kua gling, a Southern Thai spicy dry meat curry, is fantastic, along with the fried sour Thai sausage, served with crunchy vegetables. Just remember, anything “medium” spicy or above will likely blow the lights out for most people, so order mild if insane spice is an issue.",
-  logo: "https://cdn.vox-cdn.com/thumbor/nLHdfEhfRYBRyY3b4GFsKisAxhI=/0x0:594x599/1020x765/filters:focal(250x253:344x347)/cdn.vox-cdn.com/uploads/chorus_image/image/56977501/Screen_Shot_2017_07_24_at_12.28.29_PM.0.png"
-)
+  logo:"https://s3-media1.fl.yelpcdn.com/bphoto/cQjYBmmK_PZ3R3XYpEd6jw/l.jpg
+")
 
 Restaurant.create(
   owner_id: 36,
@@ -631,8 +630,8 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Contemporary American",
   description: "Dining at Alinea is not only delicious, but also fun, emotional, and provocative. After a complete renovation in 2016, Alinea now features three unique and distinct experiences: The Gallery, The Salons, and the Kitchen Table. Alinea has been universally praised for its innovative approach to modernist cuisine. It has four times been named the Best Restaurant in America and is one of only 13 restaurants in the U.S. to earn the coveted Michelin 3-Star rating. We look forward to welcoming...+ More",
-  logo: "https://cdn.vox-cdn.com/thumbor/JBHjebEKCeJ7gqKrjrOJmgeKJ_U=/0x0:2048x1367/1020x765/filters:focal(1257x635:1583x961)/cdn.vox-cdn.com/uploads/chorus_image/image/57240073/14324404_1194840237243738_3371027755255943143_o.0.jpg"
-)
+  logo:"https://www.alinearestaurant.com/site/wp-content/uploads/2014/02/alinea+dishes-9821-3097691494-O_700Res.jpg"
+  )
 
 Restaurant.create(
   owner_id: 37,
@@ -647,7 +646,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Contemporary American",
   description: "Grace, the highly anticipated restaurant from acclaimed chef Curtis Duffy, opened late 2012 in the Randolph Street area, just west of downtown Chicago. The subtle elegance of the dining room provides a comfortably luxurious setting in which to enjoy Chef Duffy's Progressive American cuisine, offered in a tasting menu format. In addition to the dining room, a private dining space to accommodate up to 12 is available, as well as a lounge for a pre- or post-dinner drink.",
-  logo: "https://cdn.vox-cdn.com/thumbor/I6HvQhHnjQC3PFCXZreeEp4ItWs=/0x0:2048x1365/1020x765/filters:focal(861x520:1187x846)/cdn.vox-cdn.com/uploads/chorus_image/image/57240075/22548883_1578412772219977_7220683683718921224_o.0.jpg"
+  logo: "https://resizer.otstatic.com/v2/photos/large/24943279.jpg"
 )
 
 Restaurant.create(
@@ -663,7 +662,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "French",
   description: "Acadia is a two star Michelin restaurant in Chicago's South Loop Neighborhood. Chef Ryan McCaskey's seven course menu is seasonal with contemporary takes on classic food. Most roots come from classic American, French and Italian influences. Seafood and shellfish products will mostly be sourced from the area in Maine where Chef McCaskey spent his summers, but also which happens to be a source to some of the highest quality shellfish in the world.",
-  logo: "https://cdn.vox-cdn.com/thumbor/tZ4BsFeWLfC45eEmvSL5Mhktf3M=/0x0:960x606/1020x765/filters:focal(404x227:556x379)/cdn.vox-cdn.com/uploads/chorus_image/image/57240077/22491552_1797096406980212_4872594173605159850_n.0.jpg"
+  logo: "https://resizer.otstatic.com/v2/photos/huge/25053221.jpg"
 )
 
 Restaurant.create(
@@ -682,7 +681,7 @@ Restaurant.create(
 The Michelin-starred and Jean Banchet award-winning team hosts 28 in an intimate and elegant dining room shared with an open kitchen.
 Never bending to industry trends, the dishes and service at Oriole give guests a thought-provoking and interactive experience, where the diner is the true focus of the meal.
 ",
-  logo: "https://cdn.vox-cdn.com/thumbor/IykKF-CI4VjQMv1ry5a8szLhzqE=/0x0:960x960/1020x765/filters:focal(404x404:556x556)/cdn.vox-cdn.com/uploads/chorus_image/image/57240079/16649053_1394790953926016_447703365172402037_n.0.jpg"
+  logo: "https://www.chicagomag.com/dining-drinking/July-2018/The-50-Best-Restaurants-in-Chicago/Oriole/room.jpg"
 )
 
 Restaurant.create(
@@ -698,7 +697,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Contemporary American",
   description: "Located on the 16th floor of Trump International Hotel & Tower, the signature Two-Michelin star rated Sixteen offers panoramic views of the Chicago skyline. Chef Dostal’s innovative dinner menu showcases the highest quality ingredients and shows the guest a new approach to modern cuisine.",
-  logo: "https://cdn.vox-cdn.com/thumbor/RoNPzkaImsAoXnynTDgPX2tdLsY=/0x0:1080x1080/1020x765/filters:focal(454x454:626x626)/cdn.vox-cdn.com/uploads/chorus_image/image/57240081/22181225_10155863229153413_7017392436904691460_o.0.jpg"
+  logo:"https://cdn.vox-cdn.com/thumbor/uFHAQuMsUzyui-zKMBHzajZKgbU=/0x0:1400x700/1200x800/filters:focal(588x238:812x462)/cdn.vox-cdn.com/uploads/chorus_image/image/59110965/Trump-Chicago-Sixteen-1400x700.0.0.jpg"
 )
 
 Restaurant.create(
@@ -715,7 +714,7 @@ Restaurant.create(
   cuisine: "Contemporary American",
   description: "Located in Chicago’s West Loop neighborhood, John Shields & Karen Urie Shields present two distinct, exciting restaurants, Smyth and The Loyalist.
 SMYTH features a joyful tasting menu journey, offering flexible 5-, 8-, or 12-course experiences. The menu changes every day, as the Shields’ travel to The Farm. This unique collaboration is the heartbeat of Smyth, the source of the restaurant’s inspiration and its living pantry.",
-  logo: "https://cdn.vox-cdn.com/thumbor/sHARgeLlJMIAv0s1aGsy4pipkNc=/0x0:1080x1080/1020x765/filters:focal(454x454:626x626)/cdn.vox-cdn.com/uploads/chorus_image/image/57240083/19983682_1942059039366719_5160591221179369274_o.0.jpg"
+  logo: "https://storage.googleapis.com/tock-public-assets/imagesprod/338/59a8bb91b79e64776b1b48afcb120013.jpg"
 )
 
 Restaurant.create(
@@ -731,7 +730,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Contemporary American",
   description: "Located in Chicago's Ravenswood neighborhood, Band of Bohemia strives to offer a pairings-based experience, beginning with our rotating collection of culinary-inspired session ales brewed in-house. Our seasonally influenced menu is driven by the philosophy that one can create a unique beer that is appropriate, if not essential, to a finer dining experience.",
-  logo: "https://cdn.vox-cdn.com/thumbor/woTPWCPChdJbkgnzh3sbIEzEdj0=/0x0:469x586/1020x765/filters:focal(198x256:272x330)/cdn.vox-cdn.com/uploads/chorus_image/image/57240085/20106587_1438861612857470_695657884639674149_n.0.png"
+  logo: "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fcdn-image.foodandwine.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2F1511884315%2Fband-of-bohemia-interior-FT-BLOG1117.jpg%3Fitok%3DhGIFN83i&w=400&c=sc&poi=face&q=85"
 )
 Restaurant.create(
   owner_id: 43,
@@ -746,7 +745,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Contemporary American",
   description: "At Blackbird, we are true believers in elegance through freedom. Freedom of interpretation, which often happens upon creating a culinary experience through art. Each year, we look to collaborate with an artist on a private, one-night dinner, during which our Chef de Cuisine, Ryan Pfeiffer, creates a menu that evokes the same depth of emotion and feeling as our featured artist's work.",
-  logo: "https://cdn.vox-cdn.com/thumbor/WMdKDOuqWhWxfmJ7x2pr4rx6E7k=/0x0:1080x1080/1020x765/filters:focal(454x454:626x626)/cdn.vox-cdn.com/uploads/chorus_image/image/57240087/10358915_10153949777283540_7226800148309040075_o.0.jpg"
+  logo: "https://images.squarespace-cdn.com/content/v1/568b32b31c1210665117d570/1452042883998-TO7AOP0YJJU84COQS0WV/ke17ZwdGBToddI8pDm48kEVFYEVztyS3qJ4_egv6B9F7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UbR4B_yVYMolhLBCWVx9KjcjO3DTT1ZIij5o89XwY6BEKkmXVT_xGV3fBWPDXIkqAg/blackbird_sandy+noto.jpg?format=2500w"
 )
 Restaurant.create(
   owner_id: 44,
@@ -761,7 +760,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Seafood",
   description: "Michelin starred Boka Restaurant has been a fixture in Chicago dining since 2003. In January 2014, Chef Lee Wolen joined as Executive Chef/Partner after the restaurant underwent a major renovation. Since his time at Boka, critics have taken notice. Phil Vettel of Chicago Tribune and Eater Chicago both named Lee as “2014 Chef of the Year.” Most recently, Lee was named 2015 “Chef of the Year” and Boka restaurant was awarded 2015 “Restaurant of the Year” at Chicago’s coveted Jean Banchet Awards. Boka’s food features contemporary, American cuisine, focusing on seasonality and sourcing as many local ingredients as possible. Pasty Chef Meg Galus joined Boka’s kitchen in 2015 and provides a seamless transition between savory and sweet, mirroring Wolen’s use of excellent, high quality ingredients that are prepared and plated beautifully.",
-  logo: "https://cdn.vox-cdn.com/thumbor/EMgXwQBjOD2i8Sz2P8JAC2WPbP0=/0x0:1365x2048/1020x765/filters:focal(574x915:792x1133)/cdn.vox-cdn.com/uploads/chorus_image/image/57240089/20045469_692050924252731_5880653084363013551_o.0.jpg"
+  logo: "http://www.bokachicago.com/assets/images/boka-interior-1.jpg"
 )
 Restaurant.create(
   owner_id: 45,
@@ -776,7 +775,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Contemporary American",
   description: "Seamlessly melding refined and rustic, vintage and contemporary, Sepia has the feel of an instant classic. The stylish space is warm and inviting, comfortable yet lively. Attention to detail runs throughout Sepia -- both in the room and on the plate -- from the custom Art Nouveau tile floor to the hand-crafted millwork and the vintage stemware. The easy elegance of the room serves as the perfect backdrop for the inventive American cuisine. Chef Andrew Zimmerman's product-driven, seasonal menu showcases the purity and quality of the ingredients, letting both the ingredients and his passion for what he does shine through. Sepia celebrates tradition – with a modern twist.",
-  logo: "https://cdn.vox-cdn.com/thumbor/LsP6alJLGxZTa31zyZ3kZllQCQg=/0x0:960x640/1020x765/filters:focal(404x244:556x396)/cdn.vox-cdn.com/uploads/chorus_image/image/57240117/12376120_10153126713942447_2998190812230758035_n.0.jpg"
+  logo: "https://zagat-photos.imgix.net/ChIJ_0NFbsYsDogRHqnXKkBCgs8/74859289932288c340b280185132011e.jpg?fit=crop&crop=center&max-w=384&max-h=384&auto=format"
 )
 
 Restaurant.create(
@@ -792,7 +791,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Seafood",
   description: "A third Michelin star continues to elude self-taught chef and restaurateur Patrick O’Connell, who will celebrate the 40th anniversary of the world renowned Inn at Little Washington next year.",
-  logo: "https://cdn.vox-cdn.com/thumbor/LprWlRyzV6Ac7Vrmc6MLR6nFq4s=/0x0:960x720/1020x765/filters:focal(320x202:472x354)/cdn.vox-cdn.com/uploads/chorus_image/image/57189261/Inn_at_Little_Washington_VA_lobster.0.jpg"
+  logo: "https://theinnatlittlewashington.com/wp-content/uploads/2016/04/main_03.jpg"
 )
 
 Restaurant.create(
@@ -808,7 +807,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "French",
   description: "Minibar, a two Michelin-starred restaurant, is a study in avant-garde cooking where each bite is designed to thrill the senses by pushing the limits of what we have come to expect - and what is possible - from food. The creations combine art and science, as well as tradition and technique, to deliver an imaginative and progressive tasting menu, offered at a communal setting for up to 6 guests.",
-  logo: "https://cdn.vox-cdn.com/thumbor/XJnm5-Oq8MxzrzxXd3X1XKKTfBA=/0x0:960x640/1020x765/filters:focal(393x247:545x399)/cdn.vox-cdn.com/uploads/chorus_image/image/57189265/Minibar_DC_food.0.jpg"
+  logo: "https://cdn.vox-cdn.com/thumbor/1FCOXoiPVRu5nTKHUGRxmjIOrHU=/86x0:1411x994/1200x800/filters:focal(86x0:1411x994)/cdn.vox-cdn.com/uploads/chorus_image/image/49022605/barmini-minibar-219.0.0.jpg"
 )
 
 Restaurant.create(
@@ -824,7 +823,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Seafood",
   description: "We offer an elegant yet playful tasting menu comprised of approximately twelve courses with paired beverages (either with or without alcohol, depending on your preference) for a singular ticket price that is all inclusive; gratuity, tax, food and beverages. Just show up, let us take care of you, and enjoy yourself! ",
-  logo: "https://cdn.vox-cdn.com/thumbor/o-UeEYnzbWFf9y7peycIYNhN_m0=/0x0:960x640/1020x765/filters:focal(385x307:537x459)/cdn.vox-cdn.com/uploads/chorus_image/image/57189269/Pineapple_and_Pearls_DC_food.0.jpg"
+  logo: "https://www.washingtonian.com/wp-content/uploads/2016/04/PineapplePearls.lead_.jpg"
 )
 
 Restaurant.create(
@@ -840,7 +839,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Contemporary American",
   description: "Blue Duck Tavern, a contemporary neighborhood restaurant, invites its guests to gather and celebrate in good taste with a menu focusing on the freshest ingredients available from local purveyors and artisans. The menu notes every farm where the main ingredient for the dish was raised before its journey to the table. Dishes are genuine, time-honored and traditional -- slow roasting in wood embers, braising, preserving and smoking techniques bring the true flavors of America's great, simple and wholesome foods to the Blue Duck Tavern.",
-  logo: "https://cdn.vox-cdn.com/thumbor/tc4LsqIh4jJoyi-kJNDwUwdRtk8=/0x0:960x640/1020x765/filters:focal(459x195:611x347)/cdn.vox-cdn.com/uploads/chorus_image/image/57189271/Blue_Duck_Tavern_DC_food.0.jpg"
+  logo: "https://washington-org.s3.amazonaws.com/s3fs-public/image-c_fitw_800h_600crmwashingtondc1111_blue-duck-tavern-chef-s-table_fb4fa2ae-5056-a348-3a5cf0353c459def-4206.jpg"
 )
 
 Restaurant.create(
@@ -856,7 +855,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Seafood",
   description: "This Adams Morgan eatery with a globally inspired menu (and a soft spot for all things Caribbean) stands with one star.",
-  logo: "https://cdn.vox-cdn.com/thumbor/I00EXrvf8gZFta24l5Xoii35hSg=/0x0:899x703/1020x765/filters:focal(186x184:328x326)/cdn.vox-cdn.com/uploads/chorus_image/image/57189291/Tail_Up_Goat_DC_food.0.jpg"
+  logo: "https://www.washingtonian.com/wp-content/uploads/2019/01/TAILUPGOAT_027-1024x1000.jpg"
 )
 
 Restaurant.create(
@@ -872,7 +871,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Contemporary American",
   description: "Per Ellis, finally admitting the prix fixe companion to Kinship was all about ensuring that the guided tasting tours consistently led to a transportive experience.",
-  logo: "https://cdn.vox-cdn.com/thumbor/o_YpcIloZfVrrU1tSN-EMaAlMJA=/0x0:960x960/1020x765/filters:focal(434x391:586x543)/cdn.vox-cdn.com/uploads/chorus_image/image/57189283/Metier_DC_food.0.jpg"
+  logo: "https://www.washingtonian.com/wp-content/uploads/2018/01/METIER_0008b.jpg"
 )
 
 Restaurant.create(
@@ -888,7 +887,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Italian",
   description: "Restaurateur Nicholas Stefanelli’s prix fixe Italian restaurant stands with one star. The expansion-minded chef will have new ways to woo inspectors next spring once his three-story, hybrid bar/restaurant/market debuts inside the Wharf complex.",
-  logo: "https://cdn.vox-cdn.com/thumbor/hWUtoErZ7AjCqB1lv0oe8uTlsmw=/0x0:908x605/1020x765/filters:focal(281x200:425x344)/cdn.vox-cdn.com/uploads/chorus_image/image/57189281/Masseria_DC_linguine.0.jpg"
+  logo: "https://images.squarespace-cdn.com/content/v1/597a191bbebafb0a625278ea/1503874674061-0CFY9TSFDB21FG9TJ48E/ke17ZwdGBToddI8pDm48kKArCOF0iFL0YYkLV67uZFEUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcTCbhelkpjCM5CH604iSToq5qn1s07TaySxVIGNJHnIOW4aDFT3KiuJQ54Lxag8Sa/events-3.jpg"
 )
 
 Restaurant.create(
@@ -904,7 +903,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Seafood",
   description: "Michelin Guide director Michael Ellis billed Komi founder Johnny Monis as “a great inspiration” to other local chefs. “We’re going to continue to follow him very closely,” he says of the driving force behind this tasting menu-centric Greek restaurant.",
-  logo: "https://cdn.vox-cdn.com/thumbor/czVc-89LvR3vosaQNCWk7LKNbZg=/0x0:960x720/1020x765/filters:focal(356x431:508x583)/cdn.vox-cdn.com/uploads/chorus_image/image/57189279/Komi_DC_fish.0.jpg"
+  logo: "https://d37219swed47g7.cloudfront.net/media/images/reviews/komi/banners/1486072717.51.jpg"
 )
 
 Restaurant.create(
@@ -920,7 +919,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Contemporary American",
   description: "Local sourcing champ Jeremiah Langhorne’s Shaw restaurant stands with one star. Might his new wine bar, Dabney Cellar, prove intoxicating enough to earn him a higher rating next year?",
-  logo: "https://cdn.vox-cdn.com/thumbor/HPcBiIqtn_Zn1uiVjWX_DQVTs_4=/0x0:742x742/1020x765/filters:focal(353x350:471x468)/cdn.vox-cdn.com/uploads/chorus_image/image/57189273/Dabney_DC_quail.0.jpg"
+  logo: "https://www.washingtonian.com/wp-content/uploads/2019/02/100VB2019-TheDabney.jpg"
 )
 
 Restaurant.create(
@@ -936,7 +935,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Contemporary American",
   description: "Hitchcock is chef Brendan McGill’s ode to the land he’s worked since moving to Bainbridge Island years ago. He opened the restaurant in 2010, and though the initial buzz has died down, there are still outstanding things happening here. “Microseasonal” in its approach and therefore obsessive about its preservation techniques, Hitchcock features local produce, seafood, and meat, flawlessly executed. The wine-pairing program is strong, too.",
-  logo: "https://cdn.vox-cdn.com/thumbor/ZeSC0WZWpM_Ol3KePMG-jTg8V9Y=/0x0:1627x1133/1020x765/filters:focal(684x437:944x697)/cdn.vox-cdn.com/uploads/chorus_image/image/59339257/11705521_995468873828997_3370975274006679221_o.0.0.jpg"
+  logo: "https://media2.fdncms.com/stranger/imager/u/original/25103730/hitchcock_cafe.png"
 )
 
 Restaurant.create(
@@ -952,7 +951,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Italian",
   description: "Despite its name, the sibling to seafood-stunner Rockcreek focuses more on responsibly raised game meats (quail pate, bison hanger steak, wild boar shoulder) than on beef. Even more surprising is the quality of the vegetable dishes, like the pickled vegetables with blue cheese-tahini sauce, which make even vegetarians feel well taken care of. Together with a fantastic cocktail list and a chic 120-seat corner-space boasting a mezzanine and huge windows, this is Greenwood’s first real destination restaurant.",
-  logo: "https://cdn.vox-cdn.com/thumbor/aU_hQgoTFym91Vcp0TmUTSDC5aY=/0x0:2000x1500/1020x765/filters:focal(840x590:1160x910)/cdn.vox-cdn.com/uploads/chorus_image/image/59339259/eatersea0117_flintcreek_adam.0.0.jpg"
+  logo: "https://flintcreekseattle.com/wp-content/uploads/2018/10/FC-8-18_0090.jpg"
 )
 
 Restaurant.create(
@@ -968,7 +967,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Japanese",
   description: "Chef Edouardo Jordan’s second Ravenna eatery, a a highly personal exploration of Jordan’s heritage and Eater Seattle’s pick for 2017 Restaurant of the Year, is America’s next great Southern restaurant. Vegetable-heavy selections like a salad of “swamp cabbage” (hearts of palm) and pickled strawberry, classic chitterlings and catfish and grits, and rotating nightly specials are served in a casual, boisterous setting that also tells a powerful tale of race, family, and class through the menu and artwork. A hefty online encyclopedia of Southern terms helps Seattle diners better prepare for the culinary and history lessons that await them.",
-  logo: "https://cdn.vox-cdn.com/thumbor/fDYgpFY9whR47b2dQH3Xmq3nsDM=/0x0:2300x1533/1020x765/filters:focal(966x583:1334x951)/cdn.vox-cdn.com/uploads/chorus_image/image/59339267/junebaby_catfishandgrits.0.0.0.0.jpg"
+  logo: "https://api.time.com/wp-content/uploads/2018/08/junebaby-seattle-worlds-greatest-places-20181.jpg?w=720&quality=85"
 )
 
 Restaurant.create(
@@ -984,7 +983,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Japanese",
   description: "Sushi legend Shiro Kashiba continues to spread his influence throughout Seattle, as former students perfect their own styles and, as some have suggested of Wataru’s Kotaro Kumita, even surpass their former master. Ordering omakase at the chef’s counter is the best way to experience this intimate restaurant’s Edomae-style sushi, which is subtly manipulated — cured, marinated, smoked, sliced — to unlock new flavors in familiar seasonal items like geoduck and scallops.",
-  logo: "https://cdn.vox-cdn.com/thumbor/Vi_lb84bai5u4J1CtGBSCeHMYuQ=/0x0:1000x746/1020x765/filters:focal(420x293:580x453)/cdn.vox-cdn.com/uploads/chorus_image/image/59339269/eatersea0117_wataru_yelp_kathleen_c.0.0.jpg"
+  logo: "https://static.seattletimes.com/wp-content/uploads/2016/01/ada53584-c3ca-11e5-9ba1-7404aa7b08f0-780x719.jpg"
 )
 
 Restaurant.create(
@@ -1000,7 +999,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Contemporary American",
   description: "Critics of veganism rarely associate a word like “fun” with the plant-based cuisine, but Harvest Beat — spiritual successor to Sutra, RIP — is joyous, exuding a respect for its ingredients and their provenance as well as a relaxed vibe that’s far more hippie than hip. It wouldn’t amount to a hill of heirloom beans if the food weren’t spot on, but the creative, ever-changing tasting menu experience here will inspire Meatless Mondays for months to come.",
-  logo: "https://cdn.vox-cdn.com/thumbor/0xPVJiARdd6pdAxf1KoX3hV3BIM=/0x0:1200x800/1020x765/filters:focal(504x304:696x496)/cdn.vox-cdn.com/uploads/chorus_image/image/59339273/eatersea0716_harvest_beat_fb.0.0.jpg"
+  logo: "https://www.harvestbeat.com/uploads/1/0/3/6/103684354/food-1_orig.jpg"
 )
 
 Restaurant.create(
@@ -1016,7 +1015,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Contemporary American",
   description: "Husband-and-wife duo Rachel Yang and Seif Chirchi keep falling just short of a James Beard Award; nevertheless, their hip, unconventional Korean steakhouse deserves the attention it gets, with a lively atmosphere and wickedly good dishes from Kalbi beef short ribs with grilled kimchi to smoked tofu salad.",
-  logo: "https://cdn.vox-cdn.com/thumbor/3dUogm1IX_9jv6Ok64HjI8olwmM=/0x0:2000x1333/1020x765/filters:focal(840x507:1160x827)/cdn.vox-cdn.com/uploads/chorus_image/image/59339285/joule_shortrib.0.0.0.0.0.jpg"
+  logo: "http://www.relayrestaurantgroup.com/wp-content/uploads/2016/05/Short-rib.jpg"
 )
 
 Restaurant.create(
@@ -1032,7 +1031,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Italian",
   description: "This trattoria shines with memorable pastas and Piedmont-influenced fare — the nest of tajarin with butter and sage sauce is a true Seattle icon. And adjoining bar Artusi is a perfect place for a nightcap.",
-  logo: "https://cdn.vox-cdn.com/thumbor/K-cjapxsTA4qsyFO3L9_dEAhLI4=/0x0:2000x1333/1020x765/filters:focal(840x507:1160x827)/cdn.vox-cdn.com/uploads/chorus_image/image/59339299/eatersea0417_spinasse_tajarin_official.0.0.jpg"
+  logo: "https://ot-foodspotting-production.s3.amazonaws.com/reviews/3119557/thumb_600.jpg"
 )
 
 Restaurant.create(
@@ -1048,7 +1047,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "French",
   description: "This traditional French bistro boasts both a legendary roast chicken that takes up to an hour to prepare and an informal charm that makes diners want to linger all afternoon with some charcuterie and cheese. And the soups here, from classic French onion or creamy mushroom to specials like celery root puree with walnut oil, will fend off any fall chills.",
-  logo: "https://cdn.vox-cdn.com/thumbor/BLxJAqqHQsif4GrG2Y16gwBo5Oc=/0x0:2592x1728/1020x765/filters:focal(1089x657:1503x1071)/cdn.vox-cdn.com/uploads/chorus_image/image/59339311/SOUPLePichet.0.0.jpg"
+  logo: "https://parkersanpei.files.wordpress.com/2014/01/cover_pichet01.jpg"
 )
 
 Restaurant.create(
@@ -1064,7 +1063,7 @@ Restaurant.create(
   close_time: "22:00:00",
   cuisine: "Italian",
   description: "Mike Easton’s handmade pasta and charcuterie are a regular habit for Seattle diners, but only at lunch on weekdays. Stand in line for some of the finest and most affordable fare around, at the kind of restaurant that every neighborhood needs.",
-  logo: "https://cdn.vox-cdn.com/thumbor/63tNjXVGI8xRp_d-RzJM60BisWE=/0x0:4755x3170/1020x765/filters:focal(1998x1205:2758x1965)/cdn.vox-cdn.com/uploads/chorus_image/image/59339317/pesto2_ilcorvo16.0.0.0.0.jpg"
+  logo: "https://d37219swed47g7.cloudfront.net/media/images/reviews/il-corvo/banners/SuziPratt_IlCorvo_Interior_07.jpg"
 )
 
 
