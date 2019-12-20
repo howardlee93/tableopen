@@ -5,22 +5,29 @@ import React from 'react';
 class ReservationForm extends React.Component{
 	constructor(props){
 		super(props);
+
 		this.state = {
+
 			user_id: "",
 	      	restaurant_id: this.props.match.params.restaurantId,
 	      	seats: 1,
 	      	time: "12:00",
 	      	date: ""
-
 		};
+
+
 
 		this.handleFormSubmit = this.handleFormSubmit.bind(this);
 		this.renderErrors = this.renderErrors.bind(this);
 
     	//helper methods
-    	this.timePickerBuilder = this.timePickerBuilder.bind(this);
+    	this.timePicker = this.timePicker.bind(this);
     	this.seatsBuilder = this.seatsBuilder.bind(this);
 
+	}
+
+	componentWillUnmount(){
+		this.props.clearErrors();	
 	}
 
 	update(field){
@@ -43,6 +50,7 @@ class ReservationForm extends React.Component{
 			date: this.state.date,
 			time: this.state.time 
 		};
+
 		this.props.createReservation(fetchInfo).then(()=>{
 			this.props.clearErrors();
 			this.props.history.push(`/users/${this.props.currentUser.id}`);
@@ -52,7 +60,7 @@ class ReservationForm extends React.Component{
 
 	renderErrors(){
 		return(
-			<ul>
+			<ul className="error-ul">
 			{this.props.errors.map((error,i)=> (
 				<li key={`error-${i}`}>
 				{error}
@@ -64,9 +72,9 @@ class ReservationForm extends React.Component{
 
 	timePicker(){
 		let timeArr = [];
-		let openTime = this.props.restaurants[this.state.restaurant_id].openTime;
+		let openTime = this.props.restaurants[this.state.restaurant_id].open_time;
 		openTime = parseInt(openTime.split(":")[0]);
-		let closeTime = this.props.restaurants[this.state.restaurant_id].closeTime;
+		let closeTime = this.props.restaurants[this.state.restaurant_id].close_time;
 		closeTime = parseInt(closeTime.split(":"[0]));
 
 		for (let i = openTime; i < closeTime; i++){
@@ -96,10 +104,6 @@ class ReservationForm extends React.Component{
 
 	}
 
-
-
-
-
 	render(){
 		let date = new Date();
 		let minDate = date.toISOString().slice(0, 10);
@@ -107,7 +111,7 @@ class ReservationForm extends React.Component{
 		return(
 			<div>
 			<h4> Make a reservation</h4>
-			{this.renderErrors}
+			{this.renderErrors()}
 			<form>
 			 <select
             	className="reservation-input  input-1"
@@ -120,7 +124,7 @@ class ReservationForm extends React.Component{
             	className="reservation-input  input-2"
             	onChange={this.update("time")}
           	>
-            	{this.timePickerBuilder()}
+            	{this.timePicker()}
           	</select>
 
           	<input
@@ -163,3 +167,6 @@ class ReservationForm extends React.Component{
 
 
 export default ReservationForm;
+
+
+  

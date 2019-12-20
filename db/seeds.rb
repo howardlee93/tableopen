@@ -22,8 +22,6 @@ User.create(
   phone_number: "347-464-1688"
 )
 
-
-
 80.times do
   User.create(
     email: Faker::Internet.unique.email,

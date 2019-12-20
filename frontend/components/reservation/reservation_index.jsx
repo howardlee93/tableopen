@@ -15,7 +15,7 @@ function ReservationIndex(props){
 	return (
 		<div>
 		<h1> Reservations</h1>
-		{indexEl}
+		{indexEl()}
 		</div>
 	);
 }

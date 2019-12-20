@@ -29,7 +29,7 @@ const App = () => (
 			</header>
 			<Switch>
 				<ProtectedRoute path="/restaurants/new" component={AddRestaurant}/>
-				<Route exact path="/restaurants/:restaurantId" component={RestaurantDetailContainer}/>
+				<Route path="/restaurants/:restaurantId" component={RestaurantDetailContainer}/>
 				<ProtectedRoute exact path="/users/:userId" component={UserContainer}/>
 				<Route path="/restaurants" component={RestaurantIndexContainer}/>
 				<Route path="/" component={Home}/>

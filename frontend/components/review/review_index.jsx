@@ -7,8 +7,13 @@ import ReviewIndexItem from './review_index_item';
 function ReviewIndex(props){
 
 	useEffect(()=>{
+		console.log("mounted");
 		props.requestRestaurantReviews(props.restaurantId);
-	});
+		console.log(props.reviews);
+
+
+	},[]);
+
 	
 	if (Object.keys(props.reviews).length === 0){
 		return null;
@@ -21,12 +26,16 @@ function ReviewIndex(props){
           currentUser={tprops.currentUser}/>
 		));
 	
+
 	return(
-		<ul>
-		{reviews}
+		<ul className="review-ul">
+			<h1> Testing</h1>
+			{reviews}
 		</ul>
 	);
+
 
 }
 
 export default ReviewIndex;
+

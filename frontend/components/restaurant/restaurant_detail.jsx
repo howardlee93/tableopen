@@ -22,170 +22,104 @@ function RestaurantDetail(props){
 
 	useEffect(()=>{
 		window.scrollTo(0, 0);
+		console.log(props.restaurant);
+
     	props.requestSingleRestaurant(props.match.params.restaurantId);
+    	console.log(props.match.params.restaurantId);
 	}, [])
-
-	const reservationFormChecker = () =>{
-		if (props.currentUser){
-			return (
-				<Route
-				path={`/restaurants/:restaurantId`}
-				component={ReservationFormContainer}/>
-				);
-		}else{
-			return(
-				<div>
-				<Route
-				path={`/restaurants/:restaurantId`}
-				component={ReservationFormContainer}/>
-				</div>
-				);
-		}
-	}
-
-	const reviewFormChecker = () =>{
-		if(props.loading){
-			return <Loading/>;
-
-		}
-		if(!props.currentUser) { 
-			return null; 
-		}
-
-		const resrvationUserIds = props.restaurant.resrvationUserIds;
-		const currentUser = props.currentUser;
-		if(reservationUserIds.includes(currentUser.id)){
-			return(
-				<Route path={'/restaurants/:restaurantId'}
-				component={ReviewFormContainer}/>
-				);
-		}else{
-			return(
-				<div className="review-form-container review-form-messgae">
-          			<p>Want to write a review? Make a reservation first!</p>
-        		</div>
-        		);
-		}
-
-	}
-
-	const favoriteChecker = () => {
-		if (!props.currentUser){
-			return null;
-		}
-		const restaurant = props.restaurant;
-		if (restaurant.currentUserLikes){
-			return(
-				<div
-					onClick={deleteFavorite(restaurant.id)}
-					>
-					Restaurant saved!
-					</div>
-					);
-		}else{
-			return(
-				<div
-					onClick={createFavorite(restaurant.id)}
-					>
-					 Save this restaurant!
-					</div>
-				);
-		}
-	}
-
-	const deleteFavorite = id =>{
-		return e =>{
-			e.preventDefault();
-			props.deleteFavorite(id);
-		};
-
-	}
-
-	const createFavorite = () =>{
-		return e=> {
-			e.preventDefault();
-			props.createFavorite(props.restaurant.id);
-		};
-	}
-
-	const getStar = () => {
-		let starCount = props.restaurant.star;
-		const stars =[];
-		for (let i =0; i< starCount; i++){
-			stars.push(
-				<img
-          			key={(""+Math.random()).substring(2,7)}
-          			src='https://res.cloudinary.com/chengzii/image/upload/c_scale,w_20/v1523389939/star.png' />
-      		);
-		};
-		return stars;
-
-	}
-
-	const getAvgRating = () => {
-		const restaurant = props.restaurant;
-		let sum = 0;
-		for (let i = 0; i < restaurant.ratingArr.length; i++){
-			sum += restaurant.ratingArr[i];
-		};
-		let avgRating;
-		if (sum === 0){
-			avgRating = "No ratings yet!";
-		}else{
-			avgRating = (Math.round(sum/restaurant.ratingArr.length * 10) / 10).toFixed(1);
-
-		};
-		return avgRating;
-	}
-
-	const getRate =() => {
-		const restaurant = props.restaurant;
-		let sum = 0;
-		for (let i = 0; i < restaurant.ratingArr.length; i++){
-			sum += restaurant.ratingArr[i];
-		};
-		let avgRating;
-		if (sum === 0){
-			avgRating = 0;
-		}else{
-			avgRating = Math.floor((sum / restaurant.ratingArr.length * 10) / 10);
-		}
-
-		const rateArr = [];
-		for (let i = 0; i < avgRating; i++){
-			rateArr.push(
-				 <img
-          			key={(""+Math.random()).substring(2,7)}
-          			src="https://res.cloudinary.com/chengzii/image/upload/c_scale,w_20/v1523511580/rating_icon_full.png"
-          			/>
-				);
-		};
-
-		for (let i = avgRating; i< 5 ; i ++){
-			rateArr.push(
-				 <img
-          			key={(""+Math.random()).substring(2,7)}
-          			src="https://res.cloudinary.com/chengzii/image/upload/c_scale,w_20/v1523511580/rating_icon_full.png"
-          		/>
-          		);
-		};
-		return rateArr;
-
-	}
-
-	if (props.loading){
-		return <Loading/>
-	};
-
-	if (props.restaurant){
-		return null;
-	};
 
 	const restaurant = props.restaurant;
 
-	return (
 
-		<div className='restaurant-showpage'>
+	//favorites 
+	const favoriteChecker = () =>{
+		if (!props.currentUser){
+			return null;
+		}
+		if (restaurant.currentUserLikes){
+			return(
+				<div
+				 onClick={deleteFavorite(restaurant.id)}
+          		className="favorite-btn favorite-active">
+          		<i className="far fa-bookmark"></i>
+          		Restaurant saved!
+        		</div>
+        		);
+		}else{
+			return(
+				<div
+          		onClick={createFavorite(restaurant.id)}
+          		className="favorite-btn">
+		        <i className="far fa-bookmark"></i>
+		        Save this restaurant
+		        </div>
+		    );
+		}
+	}
+
+	const deleteFavorite = id => {
+		return e => {
+			e.preventDefault();
+			props.deleteFavorite(id);
+		};
+	}
+
+
+	const createFavorite = ()  => {
+		return e => {
+			e.preventDefault();
+			props.createFavorite(restaurant.id)
+		}
+	}
+
+	//reservation
+
+	const reservationFormChecker = () => {
+	    if(props.currentUser) {
+	      return (
+	        <Route
+	          path={`/restaurants/:restaurantId`}
+	          component={ReservationFormContainer}/>
+	      );
+	    } else {
+	      return (
+	        <div>
+	          <Route
+	            path={`/restaurants/:restaurantId`}
+	            component={ReservationFormContainer}/>
+	        </div>
+	      );
+	    }
+	  }
+
+
+	// reviews
+	const reviewFromChecker = () =>{
+		if (props.loading){
+			return <Loading/>
+		}
+		if (!props.currentUser){
+			return null;
+		}
+		const reservationUserIds = props.restaurant.reservationUserIds;
+		const currentUser = props.currentUser;
+		if (reservationUserIds.includes(currentUser.id)){
+			return(
+				<Route path={'restaurants/:restaurantId'}
+					component={ReviewFormContainer}/>
+			);
+		} else {
+			return (
+				<div className="review-form-container review-form-messgae">
+          			<p>Want to write a review? Make a reservation first!</p>
+          		</div>
+			);
+		}
+	}
+
+
+	 return (
+      <div className='restaurant-showpage'>
         <div className='restaurant-showpage-header'>
             <img
               className='showpage-header-img'
@@ -202,11 +136,10 @@ function RestaurantDetail(props){
             <section className='restaurant-nav-info'>
               <div className='restaurant-nav-name'>
                 <h1>{restaurant.name}</h1>
-                <span className="restaurant-star">{this.getStar()}</span>
               </div>
               <div className='restaurant-nav-detail'>
-                <span>{getRate()}</span>
-                <div className='rating_icon'>{this.getAveRating()}</div>
+                <span>Rating</span>
+                <div className='rating_icon'><h3>Star</h3></div>
                 <div><i className="fa fa-comment"></i>{restaurant.countReview} reviews</div>
                 <div><i className="fas fa-utensils"></i>{restaurant.cuisine} </div>
               </div>
@@ -215,11 +148,11 @@ function RestaurantDetail(props){
 
 
             <div className='restaurant-showpage-main'>
-              <div id="aboutSection" className='restaurant-content-about' id='about'>
+              <div id=" aboutSection" className='restaurant-content-about' id='about'>
                     <p className="restaurant-description">{restaurant.description}</p>
                     <p>Cusines: {restaurant.cuisine}</p>
-                    <p>Phone number: {restaurant.phoneNumber}</p>
-                    <p>Hours of operation: {restaurant.openTime} - {restaurant.closeTime}</p>
+                    <p>Phone number: {restaurant.phone_number}</p>
+                    <p>Hours of operation: {restaurant.open_time} - {restaurant.close_time}</p>
                     <p>Address: {restaurant.address}, {restaurant.city}, {restaurant.state} {restaurant.zipcode}</p>
               </div>
 
@@ -227,7 +160,7 @@ function RestaurantDetail(props){
                 id="reviewsSection"
                 className='restaurant-reviews'
                 name='reviews'>
-                  <h5>What {this.props.restaurant.ratingArr.length} People Are Saying</h5>
+                  <h5>What People Are Saying</h5>
                   <Route path={'/restaurants/:restaurantId'}
                     component={ReviewIndexContainer} />
               </div>
@@ -248,16 +181,15 @@ function RestaurantDetail(props){
                 {reservationFormChecker()}
             </div>
 
-            {favoriteChecker()}
+            <h3>{favoriteChecker()}check favorites</h3>
           </aside>
         </div>
-      	</div>
-		);
+      </div>
+    );
 
 }
 
 export default withRouter(RestaurantDetail);
-
 
 
 
