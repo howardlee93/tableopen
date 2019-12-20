@@ -78,14 +78,14 @@ function RestaurantDetail(props){
 	    if(props.currentUser) {
 	      return (
 	        <Route
-	          path={`/restaurants/:restaurantId`}
+	          path='/restaurants/:restaurantId'
 	          component={ReservationFormContainer}/>
 	      );
 	    } else {
 	      return (
 	        <div>
 	          <Route
-	            path={`/restaurants/:restaurantId`}
+	            path='/restaurants/:restaurantId'
 	            component={ReservationFormContainer}/>
 	        </div>
 	      );
@@ -109,6 +109,7 @@ function RestaurantDetail(props){
 		const reservationUserIds = props.restaurant.reservationUserIds;
 		const currentUser = props.currentUser;
 		if (reservationUserIds.includes(currentUser.id)){
+			console.log("you are logged in");
 			return(
 				<Route path={'restaurants/:restaurantId'}
 					component={ReviewFormContainer}/>

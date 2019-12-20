@@ -1641,6 +1641,7 @@ function RestaurantDetail(props) {
     var currentUser = props.currentUser;
 
     if (reservationUserIds.includes(currentUser.id)) {
+      console.log("you are logged in");
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         path: 'restaurants/:restaurantId',
         component: _review_review_form_container__WEBPACK_IMPORTED_MODULE_3__["default"]
