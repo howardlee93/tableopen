@@ -99,8 +99,13 @@ function RestaurantDetail(props){
 			return <Loading/>
 		}
 		if (!props.currentUser){
-			return null;
+			return (
+				<div className="review-form-container review-form-messgae">
+          			<p>You need to sign in to review.</p>
+          		</div>
+			);		
 		}
+
 		const reservationUserIds = props.restaurant.reservationUserIds;
 		const currentUser = props.currentUser;
 		if (reservationUserIds.includes(currentUser.id)){
@@ -181,7 +186,7 @@ function RestaurantDetail(props){
                 {reservationFormChecker()}
             </div>
 
-            <h3>{favoriteChecker()}check favorites</h3>
+            {favoriteChecker()}
           </aside>
         </div>
       </div>

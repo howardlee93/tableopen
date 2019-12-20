@@ -141,12 +141,16 @@ class ReservationForm extends React.Component{
           			type="submit"
           			onClick={this.handleFormSubmit}
           			value="Book a table"
+          			className="submit-button"
+              		id="reservation-submit"
           			/>
           		) : (
           		<input
           		type="submit"
           			onClick={this.handleFormSubmit}
           			value="Book a table"
+          			className="submit-button"
+              		id="reservation-submit"
           			/> 
           		)}
 

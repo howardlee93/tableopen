@@ -1,6 +1,6 @@
  // user.jsx
 import React, { useEffect} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 
 
 
@@ -88,7 +88,7 @@ function User(props){
 				                src={res.restaurant.logo}/>
 				            </div>
 				            <div className="restaurant-detail-container">
-				              <Link
+				              <Link 
 				                to={`/restaurants/${res.restaurant.id}`}
 				                className="restaurant-name">
 				                  {res.restaurant.name}
@@ -128,59 +128,78 @@ function User(props){
   	};
 
   	const pastReservations = () => {
-  		let favorites = props.favorites;
-  		if(Object.keys(favorites).length === 0){
-  			return(
-  				<p>No reservations</p>
-  				)
-  		}else{
-  			return(
-  				<div>
-  				{Object.values(favorites).map((fav,i)=>
- 					<section key={`favorite-${idx}`} className="reservation-list">
-            		<div className="restaurant-logo-container">
-              			<img
-                			className="restaurant-logo"
-                			src={fav.restaurant.logo}/>
-            			</div>
-            			<div className="restaurant-detail-container res-fav">
-              			<Link
-                			to={`/restaurants/${fav.restaurant.id}`}
-                			className="restaurant-name">
-                  			{fav.restaurant.name}  <i className="fas fa-heart"></i>
-              			</Link>
+  		const past = [];
+    	const today = new Date().toJSON();
 
-			            <div className='past-res-date'>
-			                Michelin Star Level: {fav.restaurant.star}
-			            </div>
-			            <div className='past-res-time'>
-			                Cuisine: {fav.restaurant.cuisine}
-			            </div>
-			            <div className='past-res-time'>
-			                Contact: {fav.restaurant.phone_number}
-			            </div>
+    	const allRes = Object.values(props.reservations);
+    	allRes.forEach((reservation) => {
+      	if(Date.parse(today.slice(0, 10)) > Date.parse(reservation.date)) {
+        	past.push(reservation);
+      	}
+    	});
 
-			            <Link
-			                to={`/restaurants/${fav.restaurant.id}`}
-			                className="btn btn-demo reservation-btn review-btn">
-			                Reserve Now
-			             </Link>
+  		
+    if(past.length > 0) {
+     	return(
+        <div>
+        	{past.map((res, idx) =>
+          	<section key={`past-${idx}`} className="reservation-list">
+            	<div className="restaurant-logo-container">
+              	<img
+                	className="restaurant-logo"
+                	src={res.restaurant.logo}/>
+            	</div>
+            	
+            	<div className="restaurant-detail-container past-res">
+              	<Link
+                	to={`/restaurants/${res.restaurant.id}`}
+                	className="restaurant-name">
+                  	{res.restaurant.name}
+              	</Link>
+              	
+              	<div>
+                	{res.date}
+              	</div>
+              
+              	<div>
+                	{res.time}:00
+              	</div>
+              	
+              	<div>
+                	Table for {res.seats} {res.seats === 1 ? "person" : "people"}
+              	</div>
 
-	            		</div>
-          				</section>
-  					)}
-  				</div>
- 			);
-  		}
-  	};
+              	<Link
+                	to={`/restaurants/${res.restaurant.id}`}
+                	className="btn review-btn">
+                	Write Review
+              	</Link>
+              	
+              	<button type="button"
+                    onClick={deleteReservation(res.id)}
+                    className="reservation-delete-btn">
+                    Delete
+              	</button>
+            	</div>
 
+          		</section>
+        		)}
+       	 		</div>
+      			);
+    		} else {
+      		return (
+        		<p className="no-reservation">No reservations history</p>
+      		);
+    	}
+  	}
+  	
   	const user = props.currentUser;
 
 
 
 
 
-  const favoriteRestaurants = () => {
+  	const favoriteRestaurants = () => {
     let favorites = props.favorites;
     if (Object.keys(favorites).length === 0 ) {
       return (
