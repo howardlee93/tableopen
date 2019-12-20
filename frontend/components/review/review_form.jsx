@@ -102,37 +102,35 @@ class ReviewForm extends React.Component{
   	}
 
   	render(){
-  		return(
-  			<h1>TESTING this is where you write reviews </h1>
-  		);
+  		
 
-  		// return(   
-  		// 	<div className="review-form-container">
-	   //     	{this.renderErrors()}
-	   //     	<form className="review-form">
-	   //        <h5>Write Reviews</h5>
-	   //        <div className="rating-stars">{this.ratingStars()}</div>
+  		return(   
+  			<div className="review-form-container">
+	       	{this.renderErrors()}
+	       	<form className="review-form">
+	          <h5>Write Reviews</h5>
+	          <div className="rating-stars">{this.ratingStars()}</div>
 
-	   //       <div className="review-form-middle">
-	   //         <textarea
-	   //          placeholder="Please leave your feedback!"
-	   //          value={this.state.comment}
-	   //          onChange={this.update('comment')}
-	   //          className="review-text-input"
-	   //         />
-	   //       </div>
+	         <div className="review-form-middle">
+	           <textarea
+	            placeholder="Please leave your feedback!"
+	            value={this.state.comment}
+	            onChange={this.update('comment')}
+	            className="review-text-input"
+	           />
+	         </div>
 
-	   //       <div className="review-form-bottom">
-	   //         <input type="submit"
-	   //           onClick={this.handleSubmit}
-	   //           value="Submit Review"
-	   //           className="submit-button"
-	   //           id="review-submit"
-	   //         /><br/>
-	   //       </div>
-	   //     	</form>
-    //  		</div>
-    //  );
+	         <div className="review-form-bottom">
+	           <input type="submit"
+	             onClick={this.handleSubmit}
+	             value="Submit Review"
+	             className="submit-button"
+	             id="review-submit"
+	           /><br/>
+	         </div>
+	       	</form>
+     		</div>
+     );
   	}
 
 }

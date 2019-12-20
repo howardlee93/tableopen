@@ -23,7 +23,7 @@ function ReviewIndex(props){
           key={review.id}
           review={review}
           deleteReview={props.deleteReview}
-          currentUser={tprops.currentUser}/>
+          currentUser={props.currentUser}/>
 		));
 	
 

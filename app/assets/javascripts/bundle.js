@@ -2074,31 +2074,28 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "TESTING this is where you write reviews "); // return(   
-      // 	<div className="review-form-container">
-      //     	{this.renderErrors()}
-      //     	<form className="review-form">
-      //        <h5>Write Reviews</h5>
-      //        <div className="rating-stars">{this.ratingStars()}</div>
-      //       <div className="review-form-middle">
-      //         <textarea
-      //          placeholder="Please leave your feedback!"
-      //          value={this.state.comment}
-      //          onChange={this.update('comment')}
-      //          className="review-text-input"
-      //         />
-      //       </div>
-      //       <div className="review-form-bottom">
-      //         <input type="submit"
-      //           onClick={this.handleSubmit}
-      //           value="Submit Review"
-      //           className="submit-button"
-      //           id="review-submit"
-      //         /><br/>
-      //       </div>
-      //     	</form>
-      //  		</div>
-      //  );
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "review-form-container"
+      }, this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "review-form"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Write Reviews"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rating-stars"
+      }, this.ratingStars()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "review-form-middle"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+        placeholder: "Please leave your feedback!",
+        value: this.state.comment,
+        onChange: this.update('comment'),
+        className: "review-text-input"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "review-form-bottom"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "submit",
+        onClick: this.handleSubmit,
+        value: "Submit Review",
+        className: "submit-button",
+        id: "review-submit"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null))));
     }
   }]);
 
@@ -2180,7 +2177,7 @@ function ReviewIndex(props) {
       key: review.id,
       review: review,
       deleteReview: props.deleteReview,
-      currentUser: tprops.currentUser
+      currentUser: props.currentUser
     });
   });
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
@@ -2249,7 +2246,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function ReviewIndexItem(props) {
   var getRate = function getRate() {
-    var rating = props.reivew.rating;
+    var rating = props.review.rating;
     var rateArr = [];
 
     for (var i = 0; i < rating; i++) {
@@ -2277,7 +2274,7 @@ function ReviewIndexItem(props) {
   };
 
   var review = props.review;
-  var createdAt = review.createdAt.slice(0, 10);
+  var createdAt = review.created_at.slice(0, 10);
 
   if (!props.currentUser) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -2286,7 +2283,7 @@ function ReviewIndexItem(props) {
       className: "review-name"
     }, review.user.first_name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "rate-icon"
-    }, this.getRate()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    }, getRate()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
       className: "fa fa-share"
     }), "comment on ", createdAt), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, review.comment));
   } else {
@@ -2294,13 +2291,13 @@ function ReviewIndexItem(props) {
       className: "review-li"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "review-name"
-    }, this.props.currentUser.id === review.user.id ? "You" : review.user.first_name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    }, props.currentUser.id === review.user.id ? "You" : review.user.first_name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "rate-icon"
-    }, this.getRate()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    }, getRate()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
       className: "fa fa-share"
-    }), "comment on ", createdAt, this.props.currentUser.id === review.user.id ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    }), "comment on ", createdAt, props.currentUser.id === review.user.id ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       type: "button",
-      onClick: this.deleteReview(review.id),
+      onClick: deleteReview(review.id),
       className: "btn btn-demo",
       id: "delete-review"
     }, "Delete") : ""), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, review.comment));

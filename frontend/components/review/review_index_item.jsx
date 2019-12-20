@@ -3,8 +3,9 @@
 import React from 'react';
 
 function ReviewIndexItem(props){
+
 	const getRate =() =>{
-		let rating = props.reivew.rating;
+		let rating = props.review.rating;
 		const rateArr = [];
 		for (let i = 0; i< rating; i ++){
 			rateArr.push(
@@ -34,13 +35,13 @@ function ReviewIndexItem(props){
 	}
 
 	const review = props.review;
-	let createdAt = review.createdAt.slice(0,10);
+	let createdAt = review.created_at.slice(0,10);
 
 	if (!props.currentUser){
 		return(
 			<li className="review-li">
           	<span className="review-name">{review.user.first_name}</span>
-          	<span className="rate-icon">{this.getRate()}</span>
+          	<span className="rate-icon">{getRate()}</span>
           	<span>
             <i className="fa fa-share" />
             comment on {createdAt}
@@ -52,18 +53,18 @@ function ReviewIndexItem(props){
 		return(
 		<li className="review-li">
           <span className="review-name">
-            {this.props.currentUser.id === review.user.id
+            {props.currentUser.id === review.user.id
               ? "You"
               : review.user.first_name}
           </span>
-          <span className="rate-icon">{this.getRate()}</span>
+          <span className="rate-icon">{getRate()}</span>
           <span>
             <i className="fa fa-share" />
             comment on {createdAt}
-            {this.props.currentUser.id === review.user.id ? (
+            {props.currentUser.id === review.user.id ? (
               <button
                 type="button"
-                onClick={this.deleteReview(review.id)}
+                onClick={deleteReview(review.id)}
                 className="btn btn-demo"
                 id="delete-review"
               >
