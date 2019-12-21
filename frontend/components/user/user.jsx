@@ -1,10 +1,21 @@
  // user.jsx
 import React, { useEffect} from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 
 function User(props){
+
+
+//COULD BE ISSUE HERE: seems to not be issue LOL
+  useEffect(() =>{
+    props.requestUserReservations(props.currentUser.id);
+    props.requestUserFavorites(props.currentUser.id);
+    console.log(props.reservations);
+    console.log(props.favorites)
+  },[]);
+
+
 
 	const deleteReservation = id =>(
 		e =>{
@@ -25,8 +36,6 @@ function User(props){
       };
     }
   
-
-
 
   const getUpcomingCount = () => {
     const upcoming = [];
@@ -57,14 +66,6 @@ function User(props){
   }
 
 
-
-
-  useEffect(() =>{
-    props.requestUserReservations(props.currentUser.id);
-    props.requestUserFavorites(props.currentUser.id);
-  },[]);
-
-
 	const upcomingReservations = () => {
 		const upcoming = [];
 		const today = new Date().toJSON();
@@ -81,13 +82,15 @@ function User(props){
 			return (
 				<div>
 					{upcoming.map((res, i)=> 
-						<section key={`upcoming-${i}`}>
-							<div className="restaurant-logo-container">
+						<section key={`upcoming-${i}`} className="reservation-list">
+							<div className="restaurant-logo-container" >
 				            <img
 				                className="restaurant-logo"
 				                src={res.restaurant.logo}/>
 				            </div>
+
 				            <div className="restaurant-detail-container">
+
 				              <Link 
 				                to={`/restaurants/${res.restaurant.id}`}
 				                className="restaurant-name">
@@ -98,16 +101,20 @@ function User(props){
 				              <div className='upcoming-res-date'>
 				                {res.date}
 				              </div>
+
 				              <div className='upcoming-res-time'>
 				                {res.time}:00
 				              </div>
+
 				              <div className='upcoming-res-seats'>
 				                Table for {res.seats} {res.seats === 1 ? "person" : "people"}
 				              </div>
+
 				              <div className='upcoming-res-address'>
 				              <i className="fas fa-map-marker-alt"></i>
 				                {res.restaurant.address}, {res.restaurant.city}, {res.restaurant.state} {res.restaurant.zipcode}
 				              </div>
+                      
 				              </div>
 
 				              <button type="button"
@@ -326,8 +333,6 @@ function User(props){
   		);
 
 }
-
-
 
 
 export default User;

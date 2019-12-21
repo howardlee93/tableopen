@@ -18,11 +18,12 @@ class Login extends React.Component {
 		this.props.clearErrors();
 	}
 
-	// componentWillReceiveProps(nextProps){
-	// 	if(nextProps.loggedIn){
-	// 		this.props.history.push(`/`);
-	// 	}
-	// }
+	
+	componentDidUpdate(nextProps){
+		if(nextProps.loggedIn){
+			this.props.history.push(`/`);
+		}
+	}
 
 	update(field){
 		return e=> this.setState({
@@ -87,7 +88,7 @@ class Login extends React.Component {
 
 					<button className="session-submit" type="submit">Login</button>
 					<button className="session-submit demo-login" onClick={this.handleDemo}>Guest Login</button>
-					<p className="changeForm">New to StarTable?  {this.props.changeForm}</p>
+					<p className="changeForm">New to TableOpen?  {this.props.changeForm}</p>
 				</div>
 				</form>
 				<div onClick={this.props.closeModal}> &times;</div>
