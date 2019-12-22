@@ -6,7 +6,7 @@ class CreateReservations < ActiveRecord::Migration[5.2]
 	    t.string   :email
 	    t.datetime :datetime
 	    t.string   :phone
-      	t.timestamps
+      t.timestamps
     end
   end
 end
