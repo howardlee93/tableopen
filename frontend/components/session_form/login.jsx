@@ -18,7 +18,7 @@ class Login extends React.Component {
 		this.props.clearErrors();
 	}
 	
-	componentDidUpdate(nextProps){
+	shouldComponentUpdate(nextProps){
 		if(nextProps.loggedIn){
 			this.props.history.push(`/`);
 		}
