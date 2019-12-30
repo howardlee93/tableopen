@@ -17,20 +17,12 @@ class Login extends React.Component {
 	componentWillUnmount(){
 		this.props.clearErrors();
 	}
-
-
-
-	static getDerivedStateFromProps(nextProps){
+	
+	componentDidUpdate(nextProps){
 		if(nextProps.loggedIn){
 			this.props.history.push(`/`);
 		}
 	}
-	
-	// componentDidUpdate(nextProps){
-	// 	if(nextProps.loggedIn){
-	// 		this.props.history.push(`/`);
-	// 	}
-	// }
 
 	update(field){
 		return e=> this.setState({

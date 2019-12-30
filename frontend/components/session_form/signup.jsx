@@ -21,21 +21,13 @@ class Signup extends React.Component{
 		this.props.clearErrors();
 	}
 
-	// componentDidUpdate(nextProps){
-	// 	if(nextProps.loggedIn){
-	// 		this.props.history.push(`/`);
-	// 	}
-	// }
-
-	
-	static getDerivedStateFromProps(nextProps){
+	componentDidUpdate(nextProps){
 		if(nextProps.loggedIn){
 			this.props.history.push(`/`);
 		}
 	}
+
 	
-
-
 	update(field){
 		return e=> this.setState({
 			[field]: e.currentTarget.value
